@@ -12,6 +12,6 @@ package com.mycompany.proyectogrupo1poop1;
 public class ProyectoGrupo1POOP1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello World poo!");
     }
 }

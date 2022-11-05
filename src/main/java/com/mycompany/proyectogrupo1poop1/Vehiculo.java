@@ -20,6 +20,22 @@ public class Vehiculo {
         this.llantas = llantas;
         this.combustible = combustible;
     }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getLlantas() {
+        return llantas;
+    }
+
+    public String getCombustible() {
+        return combustible;
+    }
     
     
 }
