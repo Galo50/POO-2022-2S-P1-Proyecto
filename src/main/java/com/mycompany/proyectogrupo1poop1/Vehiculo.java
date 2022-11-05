@@ -15,10 +15,10 @@ public class Vehiculo {
     private String combustible;
 
     public Vehiculo(int year, String marca, int llantas, String combustible) {
-        this.year = year;
-        this.marca = marca;
-        this.llantas = llantas;
-        this.combustible = combustible;
+       this.year = year;
+       this.marca = marca;
+       this.llantas = llantas;
+       this.combustible = combustible;
     }
 
     public int getYear() {
@@ -36,6 +36,23 @@ public class Vehiculo {
     public String getCombustible() {
         return combustible;
     }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setLlantas(int llantas) {
+        this.llantas = llantas;
+    }
+
+    public void setCombustible(String combustible) {
+        this.combustible = combustible;
+    }
+    
     
     
 }
