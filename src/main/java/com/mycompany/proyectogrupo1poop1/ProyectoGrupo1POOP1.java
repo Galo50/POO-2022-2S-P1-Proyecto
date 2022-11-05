@@ -13,5 +13,8 @@ public class ProyectoGrupo1POOP1 {
 
     public static void main(String[] args) {
         System.out.println("Hello World poo!");
+        System.out.println("###################################");
+        System.out.println("TESTING :v");
+        System.out.println("###################################");
     }
 }
