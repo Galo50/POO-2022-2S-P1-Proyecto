@@ -36,10 +36,6 @@ public class Tractor extends Vehiculo {
     public void setTransmision(String transmision) {
         this.transmision = transmision;
     }
-
-    
-    
-    
 }
     
    

@@ -20,7 +20,7 @@ public abstract class Vehiculo {
     public enum combustible{GASOLINA,DIESEL};
     public enum estado{ADMITIDO,REPARACION,PRUEBA,ENTREGADO};
 
-    public Vehiculo(int year, String marca, String combustible,String modelo,Double precio,String estado) {
+    public Vehiculo(int year, String marca, String combustible, String modelo, Double precio, String estado) {
        this.year = year;
        this.marca = marca;
        this.combustible = combustible;
@@ -83,9 +83,5 @@ public abstract class Vehiculo {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    
-    
-    
+    } 
 }
