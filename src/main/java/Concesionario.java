@@ -6,9 +6,16 @@ import java.io.File;
 import java.io.IOException;
 
 public class Concesionario {
+    public static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    private Usuario usuario;
+    
+    public Concesionario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
     public static void main(String[] args) {
-        Concesionario concesionario = new Concesionario();
-        concesionario.write();
+        //Concesionario concesionario = new Concesionario();
+        //concesionario.write();
         //concesionario.read();
     }
     
@@ -53,5 +60,9 @@ public class Concesionario {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    public static void cargarUsuarios() {
+        
     }
 }
