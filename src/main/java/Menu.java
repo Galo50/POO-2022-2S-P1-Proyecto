@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author TODOS :v
  */
 public class Menu {
-    public static void iniciarSesion() {
+    public static ArrayList<String> iniciarSesion() {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();
         
@@ -28,5 +28,6 @@ public class Menu {
         System.out.println(userName + passwordUser);
         credenciales.add(userName);
         credenciales.add(passwordUser);
+        return credenciales;
     }
 }
