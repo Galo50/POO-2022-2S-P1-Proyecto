@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import solicitudes.Solicitud;
 import java.io.File;
 import java.io.IOException;
+import vehiculos.Vehiculo;
 
 public class Concesionario {
     public static void main(String[] args) {
@@ -29,4 +30,9 @@ public class Concesionario {
            e.printStackTrace();
        }
     }
+    
+    
+   
+ 
+}
 }
