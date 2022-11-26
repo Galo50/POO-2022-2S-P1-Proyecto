@@ -6,6 +6,7 @@ package usuarios;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import solicitudes.Solicitud;
+import vehiculos.Vehiculo;
 import java.util.ArrayList;
 
 /**
@@ -24,6 +25,22 @@ public class Supervisor extends Usuario {
             @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes) {
         super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.SUPERVISOR);
         this.certificaciones = certificaciones;
+    }
+    
+    public void solicitudesSupervisor() {
+        System.out.println("############ LISTA DE SOLICITUDES ############");
+        for (Solicitud i: solicitudes) {
+            System.out.println(i);
+        }
+    }
+    
+    public void ingresoVehiculos(Vehiculo carro, ArrayList<Vehiculo> carrosDisponibles) {
+        carrosDisponibles.add(carro);
+    }
+    
+    public void vendidosVendedor(Vendedor vendedor) {
+        System.out.println("El " + vendedor.getNombres()+ " vendió un total de "
+        + vendedor.getVendidos() + ".");
     }
 }
     
