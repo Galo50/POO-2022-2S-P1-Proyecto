@@ -16,19 +16,30 @@ public class MIniciarSesion {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();
         
-        System.out.println(
-                "-------------------------------------"+"\n"+
-                "           INICIAR SESIÓN            "+"\n"+
-                "-------------------------------------"+"\n"+
-                "Ingrese su nombre de usuario: "
-        );
+        System.out.println("""
+                           -----------------------------------------------
+                           |Bienvenido a la Concesionaria 'AMLO'         |
+                           |                                             |
+                           |El siguiente sistema le otorgará la capacidad|
+                           |de aprobar solicitudes de crédito para la    |
+                           |compra de vehículos, receptar pagos, emitir, | 
+                           |cotizaciones entre otros aspectos.           |
+                           |                                             |
+                           |Para ingresar al programa, siga los pasos    |
+                           |indicados en la parte inferior...            |
+                           -----------------------------------------------
+                           """);
+        System.out.println("""
+                           ===============================================
+                                     I N I C I A R  S E S I Ó N
+                           ===============================================
+                           Ingrese su nombre de usuario:""");
         Scanner inputJava = new Scanner(System.in);
         String userName = inputJava.nextLine();
         System.out.println(
                 "Ingrese su contraseña: "
         );
         String passwordUser = inputJava.nextLine();
-        System.out.println(userName + passwordUser);
         credenciales.add(userName);
         credenciales.add(passwordUser);
         return credenciales;
