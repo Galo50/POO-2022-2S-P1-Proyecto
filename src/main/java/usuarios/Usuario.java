@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author USER
  */
-public class Usuario {
+public abstract class Usuario {
     protected String userName;
     
     protected String password;
