@@ -19,8 +19,15 @@ public class Cliente extends Usuario {
     private final double ingresos;
     private ArrayList<Vehiculo> carros;
 
-    public Cliente(int cedula, String ocupacion, double ingresos, String userName, String contraseña, String nombres, String apellidos, ArrayList BanEntrada) {
-        super(userName, contraseña, nombres, apellidos, BanEntrada);
+    public Cliente(int cedula, 
+            String ocupacion, 
+            double ingresos, 
+            String userName, 
+            String contraseña, 
+            String nombres, 
+            String apellidos, 
+            ArrayList<Solicitud> solicitudes) {
+        super(userName, contraseña, nombres, apellidos, solicitudes);
         this.cedula = cedula;
         this.ocupacion = ocupacion;
         this.ingresos = ingresos;

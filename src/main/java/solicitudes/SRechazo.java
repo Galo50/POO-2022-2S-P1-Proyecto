@@ -23,7 +23,6 @@ public class SRechazo extends Solicitud {
     @Override
     public void imprimir(){
     System.out.println("Estimado "+destinatario+"\n Por medio de la presente se le informa que su solicitud de "+tramiteRechazado+" fue rechazada por el siguiente motivo:\n"+justificacion);
-    
     }
 }
     

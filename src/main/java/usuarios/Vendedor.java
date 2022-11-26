@@ -6,6 +6,7 @@ package usuarios;
 
 import java.util.ArrayList;
 import solicitudes.Solicitud;
+import vehiculos.Vehiculo;
 
 /**
  *
@@ -30,6 +31,12 @@ public class Vendedor extends Usuario{
         return vendidos;
     }
     
+    public void accesoStock(ArrayList<Vehiculo> carrosDisponibles) {
+        
+    }
     
+    public void editarVehiculo(Vehiculo carro) {
+        
+    }
     
 }
