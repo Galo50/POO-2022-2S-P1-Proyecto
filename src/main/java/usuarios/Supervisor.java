@@ -4,6 +4,7 @@
  */
 package usuarios;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import solicitudes.Solicitud;
 import java.util.ArrayList;
 
@@ -14,13 +15,17 @@ import java.util.ArrayList;
 public class Supervisor extends Usuario {
     private ArrayList<String> certificaciones;
 
-    public Supervisor(ArrayList<String> certificaciones, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+    public Supervisor(
+            @JsonProperty("certificaciones") ArrayList<String> certificaciones,
+            @JsonProperty("userName") String userName,
+            @JsonProperty("password") String password,
+            @JsonProperty("nombres") String nombres,
+            @JsonProperty("apellidos") String apellidos,
+            @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes) {
         super(userName, password, nombres, apellidos, solicitudes);
         this.certificaciones = certificaciones;
     }
-
-   
-    }
+}
     
  
 
