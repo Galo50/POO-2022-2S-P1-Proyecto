@@ -4,7 +4,6 @@
  */
 package usuarios;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.Random;
 import solicitudes.Solicitud;
@@ -15,7 +14,6 @@ import vehiculos.Vehiculo;
  * @author USER
  */
 public class JefeTaller extends Usuario{
-    @JsonProperty("certificacionTecnica")
     private ArrayList<String> certificacionTecnica;
 
     public JefeTaller(ArrayList<String> certificacionTecnica, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
