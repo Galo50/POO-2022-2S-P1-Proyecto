@@ -5,6 +5,7 @@
 package usuarios;
 
 import java.util.ArrayList;
+import solicitudes.Solicitud;
 
 /**
  *
@@ -12,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Mecanico extends Usuario{
 
-    public Mecanico(String userName, String contraseña, String nombres, String apellidos, ArrayList BanEntrada) {
-        super(userName, contraseña, nombres, apellidos, BanEntrada); 
+    public Mecanico(String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+        super(userName, password, nombres, apellidos, solicitudes); 
     }
     
 }
