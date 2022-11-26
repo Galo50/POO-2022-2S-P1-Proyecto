@@ -30,7 +30,7 @@ public class Cliente extends Usuario {
             @JsonProperty("apellidos") String apellidos, 
             @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes
     ) {
-        super(userName, password, nombres, apellidos, solicitudes);
+        super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.CLIENTE);
         this.cedula = cedula;
         this.ocupacion = ocupacion;
         this.ingresos = ingresos;

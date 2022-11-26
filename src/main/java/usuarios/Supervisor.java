@@ -22,7 +22,7 @@ public class Supervisor extends Usuario {
             @JsonProperty("nombres") String nombres,
             @JsonProperty("apellidos") String apellidos,
             @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes) {
-        super(userName, password, nombres, apellidos, solicitudes);
+        super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.SUPERVISOR);
         this.certificaciones = certificaciones;
     }
 }

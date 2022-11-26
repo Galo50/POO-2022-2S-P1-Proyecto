@@ -21,19 +21,23 @@ public abstract class Usuario {
     protected String apellidos;
     
     protected ArrayList<Solicitud> solicitudes = new ArrayList<>();
+   
+    protected TipoUsuario tipo;
 
     public Usuario(
             @JsonProperty("userName") String userName,
             @JsonProperty("password") String password,
             @JsonProperty("nombres") String nombres,
             @JsonProperty("apellidos") String apellidos,
-            @JsonProperty("solicitudes") ArrayList solicitudes
+            @JsonProperty("solicitudes") ArrayList solicitudes,
+            @JsonProperty("tipo") TipoUsuario tipo
     ) {
         this.userName = userName;
         this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.solicitudes = solicitudes;
+        this.tipo = tipo;
     }
 
     public String getUserName() {

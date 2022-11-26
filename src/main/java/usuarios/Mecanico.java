@@ -34,7 +34,7 @@ public class Mecanico extends Usuario{
             @JsonProperty("carroMecanico") ArrayList<Vehiculo> carros
             ) 
             {
-        super(userName, password, nombres, apellidos, solicitudes);
+        super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.MECANICO);
         this.carros = carros;
     }
    

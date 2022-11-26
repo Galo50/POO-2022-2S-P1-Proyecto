@@ -28,7 +28,7 @@ public class Vendedor extends Usuario{
             @JsonProperty("apellidos") String apellidos, 
             @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes
     ) {
-        super(userName, password, nombres, apellidos, solicitudes);
+        super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.VENDEDOR);
         this.id = id;
         this.vendidos = vendidos;
     }
