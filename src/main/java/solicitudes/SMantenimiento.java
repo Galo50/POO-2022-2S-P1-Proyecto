@@ -5,6 +5,7 @@
 package solicitudes;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
@@ -18,7 +19,13 @@ public class SMantenimiento extends Solicitud{
     private String tipoMantenimiento;
     private Vehiculo carro;
     private enum tipoMantenimiento{PREVENTIVO, EMERGENCIA};
-    public SMantenimiento( String tipoMantenimiento, Vehiculo carro, Usuario remitente, Usuario destinatario) {
+    
+    public SMantenimiento(
+            @JsonProperty("tipoMantenimiento") String tipoMantenimiento, 
+            @JsonProperty("carro") Vehiculo carro, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.tramite = "Mantenimiento";
         this.tipoMantenimiento = tipoMantenimiento;

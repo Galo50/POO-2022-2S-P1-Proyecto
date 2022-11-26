@@ -4,6 +4,7 @@
  */
 package solicitudes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
 
 /**
@@ -14,7 +15,12 @@ public class SRechazo extends Solicitud {
     private String justificacion;
     private String tramiteRechazado;
 
-    public SRechazo(String justificacion, String tramite, Usuario remitente, Usuario destinatario) {
+    public SRechazo(
+            @JsonProperty("justificacion") String justificacion, 
+            @JsonProperty("tramite") String tramite, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.justificacion = justificacion;
         this.tramiteRechazado = tramite;
