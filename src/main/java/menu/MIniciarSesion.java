@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package menu;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  *
- * @author TODOS :v
+ * @author Todos :v
  */
-public class Menu {
+public class MIniciarSesion {
     public static ArrayList<String> iniciarSesion() {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();
@@ -22,7 +25,7 @@ public class Menu {
         Scanner inputJava = new Scanner(System.in);
         String userName = inputJava.nextLine();
         System.out.println(
-                "Ingrese su password: "
+                "Ingrese su contraseña: "
         );
         String passwordUser = inputJava.nextLine();
         System.out.println(userName + passwordUser);
