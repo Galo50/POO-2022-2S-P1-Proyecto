@@ -14,8 +14,8 @@ import solicitudes.Solicitud;
 public class JefeTaller extends Usuario{
     private ArrayList certificacionTecnica;
 
-    public JefeTaller(ArrayList certificacionTecnica, String userName, String contraseña, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
-        super(userName, contraseña, nombres, apellidos, solicitudes);
+    public JefeTaller(ArrayList certificacionTecnica, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+        super(userName, password, nombres, apellidos, solicitudes);
         this.certificacionTecnica = certificacionTecnica;
     }
     

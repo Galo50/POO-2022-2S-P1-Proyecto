@@ -40,17 +40,14 @@ public class Concesionario {
     
     public void read()  {
         try {
-            ClassLoader cargador = getClass().getClassLoader();
-            URL resource = cargador.getResource("../../src/main/java/usuarios.json");
-            System.out.println(resource);
-            File file = new File(resource.toURI());
+            File file = new File("usuarios.json");
+            
+            String json = "{\"userName\":\"infrative\",\"password\":\"12345gmt\",\"nombres\":\"Fredder\",\"apellidos\":\"Gudrow\",\"solicitudes\":[],\"certificaciones\":[]}";
 
             ObjectMapper objectMapper = new ObjectMapper();
-            JefeTaller jefeTaller = objectMapper.readValue(file, JefeTaller.class);
+            JefeTaller jefeTaller = objectMapper.readValue(json, JefeTaller.class);
             System.out.println(jefeTaller.getUserName());
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
