@@ -4,6 +4,7 @@
  */
 package usuarios;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import vehiculos.*;
 import solicitudes.*;
@@ -19,15 +20,17 @@ public class Cliente extends Usuario {
     private final double ingresos;
     private ArrayList<Vehiculo> carros;
 
-    public Cliente(int cedula, 
-            String ocupacion, 
-            double ingresos, 
-            String userName, 
-            String contraseña, 
-            String nombres, 
-            String apellidos, 
-            ArrayList<Solicitud> solicitudes) {
-        super(userName, contraseña, nombres, apellidos, solicitudes);
+    public Cliente(
+            @JsonProperty("cedula") int cedula, 
+            @JsonProperty("ocupacion") String ocupacion, 
+            @JsonProperty("ingresos") double ingresos, 
+            @JsonProperty("userName") String userName, 
+            @JsonProperty("password") String password, 
+            @JsonProperty("nombres") String nombres, 
+            @JsonProperty("apellidos") String apellidos, 
+            @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes
+    ) {
+        super(userName, password, nombres, apellidos, solicitudes);
         this.cedula = cedula;
         this.ocupacion = ocupacion;
         this.ingresos = ingresos;
