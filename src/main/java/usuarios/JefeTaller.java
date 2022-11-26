@@ -12,13 +12,14 @@ import solicitudes.Solicitud;
  * @author USER
  */
 public class JefeTaller extends Usuario{
-    private ArrayList cetificacionTecnica;
+    private ArrayList certificacionTecnica;
 
-    public JefeTaller(ArrayList cetificacionTecnica, String userName, String contraseña, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+    public JefeTaller(ArrayList certificacionTecnica, String userName, String contraseña, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
         super(userName, contraseña, nombres, apellidos, solicitudes);
-        this.cetificacionTecnica = cetificacionTecnica;
+        this.certificacionTecnica = certificacionTecnica;
     }
     
-    
-    
+    public ArrayList getCertificaciones() {
+        return this.certificacionTecnica;
+    }
 }

@@ -29,7 +29,7 @@ public class Cliente extends Usuario {
     public void Cotizacion(Vehiculo carro, String tramite, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
         Random rand = new Random();
         int randomPosition = rand.nextInt(listaVendedores.size());
-        SCotizacion sc1 = new SCotizacion(carro, tramite, remitente, listaVendedores.get(randomPosition));
+        SCotizacion sc1 = new SCotizacion(carro, remitente, listaVendedores.get(randomPosition));
         listaVendedores.get(randomPosition).solicitudes.add(sc1);
     }
 
@@ -66,10 +66,9 @@ public class Cliente extends Usuario {
         }
     }
     
-    public void solicitarMantenimiento(Vehiculo carro, String tipoMantenimiento, Usuario remitente, JefeTaller jefeTaller) {
-        String tramite = "MANTENIMIENTO";
-        SMantenimiento sm1 = new SMantenimiento(tramite, tipoMantenimiento, carro, remitente, jefeTaller);
-        
+    public void solicitarMantenimiento(Vehiculo carro, String tipoMantenimiento, Cliente remitente, JefeTaller jefeTaller) {
+        SMantenimiento sm1 = new SMantenimiento(tipoMantenimiento, carro, remitente, jefeTaller);
+        jefeTaller.solicitudes.add(sm1);
     }
     
     public String consultarEstado(Vehiculo carro) {
