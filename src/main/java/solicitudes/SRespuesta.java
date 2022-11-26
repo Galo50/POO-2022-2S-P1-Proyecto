@@ -6,7 +6,7 @@ package solicitudes;
 
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
-import java.util.ArrayList;
+
 
 /**
  *
@@ -39,13 +39,7 @@ public class SRespuesta extends Solicitud{
             }
         if (precio != 0.0){
     System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y tendra un costo de "+precio+"centavos por kilometro");
-    }
-}
-    public void resolucionRes(boolean aceptacion){
-        if (aceptacion == true){
-        SCompra mensaje1 = new SCompra(carro, tramite, destinatario, remitente) ;
-        ArrayList BandejaCliente = remitente.getSolicitudes();
-        BandejaCliente.add(mensaje1);
             }
         }
     }
+    
