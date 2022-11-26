@@ -4,6 +4,7 @@
  */
 package solicitudes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
 
@@ -17,16 +18,30 @@ public class SRespuesta extends Solicitud{
     public double precio;
     public Vehiculo carro;
 
-    public SRespuesta(String tramite, Usuario remitente, Usuario destinatario) {
+    public SRespuesta(
+            @JsonProperty("tramite") String tramite, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.tramite = tramite;
     }
-    public SRespuesta(String tramite, Usuario remitente, Usuario destinatario,double precio) {
+    public SRespuesta(
+            @JsonProperty("tramite") String tramite, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario,
+            @JsonProperty("precio") double precio
+    ) {
         super(remitente, destinatario);
         this.tramite = tramite;
         this.precio = precio;
     }
-    public SRespuesta(String tramite, Usuario remitente, Usuario destinatario,Vehiculo carro) {
+    public SRespuesta(
+            @JsonProperty("tramite") String tramite, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario,
+            @JsonProperty("carro") Vehiculo carro
+    ) {
         super(remitente, destinatario);
         this.tramite = tramite;
         this.carro = carro;

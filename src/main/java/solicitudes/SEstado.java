@@ -4,6 +4,7 @@
  */
 package solicitudes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
 
@@ -14,7 +15,11 @@ import vehiculos.Vehiculo;
 public class SEstado extends Solicitud{
     private Vehiculo carro;
 
-    public SEstado(Vehiculo carro, Usuario remitente, Usuario destinatario) {
+    public SEstado(
+            @JsonProperty("carro") Vehiculo carro, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.carro = carro;
     }
