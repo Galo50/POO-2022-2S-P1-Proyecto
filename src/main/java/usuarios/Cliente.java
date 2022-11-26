@@ -5,7 +5,7 @@
 package usuarios;
 
 import java.util.ArrayList;
-import vehiculos.Vehiculo;
+import vehiculos.*;
 import solicitudes.*;
 import java.util.Random;
 
@@ -26,7 +26,7 @@ public class Cliente extends Usuario {
         this.ingresos = ingresos;
     }
     
-    public void Cotizacion(Vehiculo carro, String tramite, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
+    public void solicitarCotizacion(Vehiculo carro, String tramite, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
         Random rand = new Random();
         int randomPosition = rand.nextInt(listaVendedores.size());
         SCotizacion sc1 = new SCotizacion(carro, remitente, listaVendedores.get(randomPosition));
@@ -55,7 +55,42 @@ public class Cliente extends Usuario {
     public void drawVehicles(ArrayList<Vehiculo> carrosDisponibles) {
         System.out.println("############ GRAFICACIÓN DE VEHÍCULOS EN STOCK ############");
         for (Vehiculo i: carrosDisponibles) {
-            System.out
+            if (i instanceof Automovil) {
+                System.out.println("""
+                                     ______
+                                    /|_||_\\`.__
+                                   (   _    _ _\\
+                                   =`-(_)--(_)-' """);
+                System.out.println("\n");
+            }
+            if (i instanceof Camion) {
+                System.out.println("""
+                                      o_______________}o{
+                                      |              |   \\
+                                      |    911       |____\\_____
+                                      | _____        |    |_o__ |
+                                      [/ ___ \\       |   / ___ \\|
+                                     []_/.-.\\_\\______|__/_/.-.\\_[]
+                                        |(O)|             |(O)|
+                                         '-'   ScS         '-'""");
+                System.out.println("\n");
+            }
+            if (i instanceof Motocicleta) {
+                System.out.println("""
+                                      ,
+                                   .-/c-.,::  
+                                   (_)'==(_)""");
+                System.out.println("\n");
+            }
+            if (i instanceof Tractor) {
+                System.out.println("""
+                                         /\\  ,-,---,
+                                        //\\\\/|_|___|  Y
+                                    ,__//  \\\\|/``\\ |--'-q  _
+                                     \\_/    {( () ) {(===t||
+                                              \\__/````\\_/  \\ """);
+                System.out.println("\n");
+            }
         }
     }
     
