@@ -13,13 +13,11 @@ import vehiculos.Vehiculo;
  *
  * @author USER
  */
-
 public class SMantenimiento extends Solicitud{
     private String tramite;
     private String tipoMantenimiento;
     private Vehiculo carro;
     private enum tipoMantenimiento{PREVENTIVO, EMERGENCIA};
-
     public SMantenimiento( String tipoMantenimiento, Vehiculo carro, Usuario remitente, Usuario destinatario) {
         super(remitente, destinatario);
         this.tramite = "Mantenimiento";
