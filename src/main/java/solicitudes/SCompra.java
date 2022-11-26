@@ -4,6 +4,7 @@
  */
 package solicitudes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
 
@@ -12,7 +13,11 @@ public class SCompra extends Solicitud  {
     private Vehiculo carro;
     private String tramite;
 
-    public SCompra(Vehiculo carro, Usuario remitente, Usuario destinatario) {
+    public SCompra(
+            @JsonProperty("carro") Vehiculo carro, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.carro = carro;
         this.tramite = "compra";

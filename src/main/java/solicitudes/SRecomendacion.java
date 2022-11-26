@@ -4,6 +4,7 @@
  */
 package solicitudes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
 
@@ -15,7 +16,12 @@ public class SRecomendacion extends Solicitud{
     private Vehiculo carro;
     private int posicionVehiculo;
 
-    public SRecomendacion(Vehiculo carro, int posicionVehiculo, Usuario remitente, Usuario destinatario) {
+    public SRecomendacion(
+            @JsonProperty("carro") Vehiculo carro, 
+            @JsonProperty("posicionVehiculo") int posicionVehiculo, 
+            @JsonProperty("remitente") Usuario remitente, 
+            @JsonProperty("destinatario") Usuario destinatario
+    ) {
         super(remitente, destinatario);
         this.carro = carro;
         this.posicionVehiculo = posicionVehiculo;
