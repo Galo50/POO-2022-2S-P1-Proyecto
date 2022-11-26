@@ -4,8 +4,10 @@
  */
 package usuarios;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import solicitudes.Solicitud;
+import solicitudes.SRecomendacion;
 import vehiculos.Vehiculo;
 
 /**
@@ -17,7 +19,15 @@ public class Vendedor extends Usuario{
     private final String id;
     private int vendidos;
 
-    public Vendedor(String id, int vendidos, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+    public Vendedor(
+            @JsonProperty("id") String id, 
+            @JsonProperty("vendidos") int vendidos, 
+            @JsonProperty("userName") String userName, 
+            @JsonProperty("password") String password, 
+            @JsonProperty("nombres") String nombres, 
+            @JsonProperty("apellidos") String apellidos, 
+            @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes
+    ) {
         super(userName, password, nombres, apellidos, solicitudes);
         this.id = id;
         this.vendidos = vendidos;
@@ -32,11 +42,18 @@ public class Vendedor extends Usuario{
     }
     
     public void accesoStock(ArrayList<Vehiculo> carrosDisponibles) {
-        
+        System.out.println("Actualmente existen " + carrosDisponibles.size() + " vehículo en la Concesionaria.");
     }
     
-    public void editarVehiculo(Vehiculo carro) {
-        
+    public void solicitudesVendedor() {
+        System.out.println("############ LISTA DE SOLICITUDES ############");
+        for (Solicitud i: this.solicitudes) {
+            System.out.println(i);
+        }
     }
     
+    public void sugerirModelos(Cliente destinatario, Vendedor remitente, Vehiculo carro, ArrayList<Vehiculo> carrosDisponibles) {
+        
+        SRecomendacion sr1 = new SRecomendacion(carro, );
+    }
 }

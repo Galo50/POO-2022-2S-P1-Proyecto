@@ -13,10 +13,12 @@ import vehiculos.Vehiculo;
  */
 public class SRecomendacion extends Solicitud{
     private Vehiculo carro;
+    private int posicionVehiculo;
 
-    public SRecomendacion(Vehiculo carro, Usuario remitente, Usuario destinatario) {
+    public SRecomendacion(Vehiculo carro, int posicionVehiculo, Usuario remitente, Usuario destinatario) {
         super(remitente, destinatario);
         this.carro = carro;
+        this.posicionVehiculo = posicionVehiculo;
     }
     
     @Override

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package usuarios;
+
 import solicitudes.Solicitud;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;

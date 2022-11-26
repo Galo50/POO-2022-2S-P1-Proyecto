@@ -33,7 +33,7 @@ public class Cliente extends Usuario {
         this.ingresos = ingresos;
     }
     
-    public void solicitarCotizacion(Vehiculo carro, String tramite, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
+    public void solicitarCotizacion(Vehiculo carro, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
         Random rand = new Random();
         int randomPosition = rand.nextInt(listaVendedores.size());
         SCotizacion sc1 = new SCotizacion(carro, remitente, listaVendedores.get(randomPosition));
