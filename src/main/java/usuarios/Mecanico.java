@@ -5,29 +5,16 @@
 package usuarios;
 
 import java.util.ArrayList;
-import vehiculos.Vehiculo;
+import solicitudes.Solicitud;
 
 /**
  *
  * @author USER
  */
 public class Mecanico extends Usuario{
-    
-    private ArrayList<Vehiculo> carrosMecanico;
 
-    public Mecanico(ArrayList<Vehiculo> carrosMecanico, String userName, String password, String nombres, String apellidos, ArrayList solicitudes) {
-        super(userName, password, nombres, apellidos, solicitudes);
-        this.carrosMecanico = carrosMecanico;
+    public Mecanico(String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+        super(userName, password, nombres, apellidos, solicitudes); 
     }
-
-    public ArrayList<Vehiculo> getCarrosMecanico() {
-        return carrosMecanico;
-    }
-
-    public void setCarrosMecanico(ArrayList<Vehiculo> carrosMecanico) {
-        this.carrosMecanico = carrosMecanico;
-    }
-            
-    
     
 }

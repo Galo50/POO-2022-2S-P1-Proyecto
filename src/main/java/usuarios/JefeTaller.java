@@ -14,9 +14,9 @@ import vehiculos.Vehiculo;
  * @author USER
  */
 public class JefeTaller extends Usuario{
-    private ArrayList certificacionTecnica;
+    private ArrayList<String> certificacionTecnica;
 
-    public JefeTaller(ArrayList certificacionTecnica, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+    public JefeTaller(ArrayList<String> certificacionTecnica, String userName, String password, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
         super(userName, password, nombres, apellidos, solicitudes);
         this.certificacionTecnica = certificacionTecnica;
     }
