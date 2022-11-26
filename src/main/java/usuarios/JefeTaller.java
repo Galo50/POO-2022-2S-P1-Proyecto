@@ -5,6 +5,7 @@
 package usuarios;
 
 import java.util.ArrayList;
+import solicitudes.Solicitud;
 
 /**
  *
@@ -13,8 +14,8 @@ import java.util.ArrayList;
 public class JefeTaller extends Usuario{
     private ArrayList cetificacionTecnica;
 
-    public JefeTaller(ArrayList cetificacionTecnica, String userName, String contraseña, String nombres, String apellidos, ArrayList BanEntrada) {
-        super(userName, contraseña, nombres, apellidos, BanEntrada);
+    public JefeTaller(ArrayList cetificacionTecnica, String userName, String contraseña, String nombres, String apellidos, ArrayList<Solicitud> solicitudes) {
+        super(userName, contraseña, nombres, apellidos, solicitudes);
         this.cetificacionTecnica = cetificacionTecnica;
     }
     
