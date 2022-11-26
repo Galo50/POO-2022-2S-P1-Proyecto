@@ -4,6 +4,8 @@
  */
 package solicitudes;
 
+
+import java.util.ArrayList;
 import usuarios.Usuario;
 import vehiculos.Vehiculo;
 
@@ -17,17 +19,20 @@ public class SMantenimiento extends Solicitud{
     private Vehiculo carro;
     private enum tipoMantenimiento{PREVENTIVO, EMERGENCIA};
 
-    public SMantenimiento(String tramite, String tipoMantenimiento, Vehiculo carro, Usuario remitente, Usuario destinatario) {
+    public SMantenimiento( String tipoMantenimiento, Vehiculo carro, Usuario remitente, Usuario destinatario) {
         super(remitente, destinatario);
-        this.tramite = tramite;
+        this.tramite = "Mantenimiento";
         this.tipoMantenimiento = tipoMantenimiento;
         this.carro = carro;
     }
     
+    
     @Override
-    public void imprimir(){
+    public void imprimir(){}
+    
+    public void imprimir(ArrayList <Vehiculo> mantenimientos){
     System.out.println("Estimado "+destinatario+"\n Por medio de la presente se le pido el ingreso de mi vehiculo "+carro.getMarca()+" "+carro.getModelo() +" al taller para un matenimiento de tipo "+tipoMantenimiento);
-    
+    carro.setEstado("Admitido");
+    mantenimientos.add(carro);
     }
-    
 }
