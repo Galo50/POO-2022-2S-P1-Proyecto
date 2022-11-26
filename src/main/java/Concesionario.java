@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import solicitudes.Solicitud;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.net.URISyntaxException;
 
 public class Concesionario {
     public static void main(String[] args) {
@@ -15,10 +13,13 @@ public class Concesionario {
     }
     
     public void write() {
+        // TODO: Make generic
         ObjectMapper objectMapper = new ObjectMapper();
         
         ArrayList<String> certificaciones = new ArrayList<String>();
         ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
+        
+        certificaciones.add("Hola mundo");
         
         JefeTaller jefeTaller = new JefeTaller(
                 certificaciones,
@@ -39,6 +40,7 @@ public class Concesionario {
     }
     
     public void read()  {
+        // TODO: Make generic
         try {
             File file = new File("usuarios.json");
             
