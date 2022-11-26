@@ -20,6 +20,11 @@ public abstract class Solicitud {
     }
 
     
-    public abstract void imprimir();  
+    public abstract void imprimir();
+    
+    @Override
+    public String toString() {
+        return "Remitente: " + remitente + "\nDestinatario: " + destinatario;
+    }
     
 }

@@ -10,9 +10,9 @@ package vehiculos;
  */
 public abstract class Vehiculo {
     
-    private int year;
-    private String marca;
-    private String modelo;
+    private int year; 
+    private String marca; 
+    private String modelo; 
     protected int llantas;
     private String combustible;
     private double precio;

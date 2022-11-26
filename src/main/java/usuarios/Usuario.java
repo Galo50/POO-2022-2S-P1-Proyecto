@@ -14,7 +14,7 @@ public abstract class Usuario {
     protected String contraseña;
     protected String nombres;
     protected String apellidos;
-    protected ArrayList solicitudes= new ArrayList<Solicitud>();
+    protected ArrayList<Solicitud> solicitudes = new ArrayList<>();
 
     public Usuario(String userName, String contraseña, String nombres, String apellidos, ArrayList solicitudes) {
         this.userName = userName;
