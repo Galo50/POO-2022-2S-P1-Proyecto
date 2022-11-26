@@ -7,7 +7,7 @@ package solicitudes;
 import usuarios.Usuario;
 import usuarios.Vendedor;
 import vehiculos.Vehiculo;
-import java.util.ArrayList;
+
 
 /**
  *
