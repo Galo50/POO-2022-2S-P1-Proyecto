@@ -40,9 +40,9 @@ public class JefeTaller extends Usuario{
 public void asignarMecanico(Vehiculo carro, ArrayList<Mecanico> listaMecanicos) {
         Random rand = new Random();
         int randomPosition = rand.nextInt(listaMecanicos.size());
-        ArrayList<Vehiculo> carrosMecanico= listaMecanicos.get(randomPosition).getCarrosMecanico();
+        ArrayList<Vehiculo> carrosMecanico= listaMecanicos.get(randomPosition).getCarros();
         carrosMecanico.add(carro);
-        listaMecanicos.get(randomPosition).setCarrosMecanico(carrosMecanico);
+        listaMecanicos.get(randomPosition).setCarros(carrosMecanico);
     }
     public void vehiculosMantenimiento(ArrayList<Vehiculo> carrosMantenimiento){
         System.out.println("Actualmente existen "+carrosMantenimiento.size()+"vehiculos en el taller");

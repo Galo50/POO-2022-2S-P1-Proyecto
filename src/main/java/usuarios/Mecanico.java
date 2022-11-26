@@ -4,8 +4,10 @@
  */
 package usuarios;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import vehiculos.Vehiculo;
+import solicitudes.*;
 
 /**
  *
@@ -13,19 +15,27 @@ import vehiculos.Vehiculo;
  */
 public class Mecanico extends Usuario{
 
-      private ArrayList<Vehiculo> carrosMecanico;
+      private ArrayList<Vehiculo> carros;
 
-    public ArrayList<Vehiculo> getCarrosMecanico() {
-        return carrosMecanico;
+    public ArrayList<Vehiculo> getCarros() {
+        return carros;
     }
 
-    public void setCarrosMecanico(ArrayList<Vehiculo> carrosMecanico) {
-        this.carrosMecanico = carrosMecanico;
+    public void setCarros(ArrayList<Vehiculo> carros) {
+        this.carros = carros;
     }
 
-    public Mecanico(ArrayList<Vehiculo> carrosMecanico, String userName, String password, String nombres, String apellidos, ArrayList solicitudes) {
+    public Mecanico(
+            @JsonProperty("userName") String userName,
+            @JsonProperty("password") String password,
+            @JsonProperty("nombres") String nombres, 
+            @JsonProperty("apellidos") String apellidos, 
+            @JsonProperty("solicitudes") ArrayList<Solicitud> solicitudes,
+            @JsonProperty("carroMecanico") ArrayList<Vehiculo> carros
+            ) 
+            {
         super(userName, password, nombres, apellidos, solicitudes);
-        this.carrosMecanico = carrosMecanico;
+        this.carros = carros;
     }
    
     
