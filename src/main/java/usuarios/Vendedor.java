@@ -53,7 +53,8 @@ public class Vendedor extends Usuario{
     }
     
     public void sugerirModelos(Cliente destinatario, Vendedor remitente, Vehiculo carro, ArrayList<Vehiculo> carrosDisponibles) {
-        
-        SRecomendacion sr1 = new SRecomendacion(carro, );
+        int posicionVehiculo = carrosDisponibles.indexOf(carro);
+        SRecomendacion sr1 = new SRecomendacion(carro, posicionVehiculo, remitente, destinatario);
+        destinatario.solicitudes.add(sr1);
     }
 }
