@@ -20,8 +20,7 @@ public class Concesionario {
         ArrayList<String> certificaciones = new ArrayList<String>();
         ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
         
-        JefeTaller jefeTaller = new JefeTaller(
-                certificaciones,
+        Usuario usuario = new Usuario(
                 "infrative",
                 "12345gmt",
                 "Fredder",
@@ -32,7 +31,7 @@ public class Concesionario {
         try {
             File file = new File("usuarios.json");
             file.createNewFile();
-            objectMapper.writeValue(file, jefeTaller);
+            objectMapper.writeValue(file, usuario);
         } catch (IOException e) {
            e.printStackTrace();
        }
@@ -41,11 +40,9 @@ public class Concesionario {
     public void read()  {
         try {
             File file = new File("usuarios.json");
-            
-            String json = "{\"userName\":\"infrative\",\"password\":\"12345gmt\",\"nombres\":\"Fredder\",\"apellidos\":\"Gudrow\",\"solicitudes\":[],\"certificaciones\":[]}";
 
             ObjectMapper objectMapper = new ObjectMapper();
-            JefeTaller jefeTaller = objectMapper.readValue(json, JefeTaller.class);
+            Usuario jefeTaller = objectMapper.readValue(file, Usuario.class);
             System.out.println(jefeTaller.getUserName());
         } catch (IOException e) {
             e.printStackTrace();

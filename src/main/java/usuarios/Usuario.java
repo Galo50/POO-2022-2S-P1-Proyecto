@@ -5,18 +5,29 @@
 package usuarios;
 import solicitudes.Solicitud;
 import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  *
  * @author USER
  */
-public abstract class Usuario {
+public class Usuario {
     protected String userName;
+    
     protected String password;
+    
     protected String nombres;
+    
     protected String apellidos;
+    
     protected ArrayList<Solicitud> solicitudes = new ArrayList<>();
 
-    public Usuario(String userName, String password, String nombres, String apellidos, ArrayList solicitudes) {
+    public Usuario(
+            @JsonProperty("userName") String userName,
+            @JsonProperty("password") String password,
+            @JsonProperty("nombres") String nombres,
+            @JsonProperty("apellidos") String apellidos,
+            @JsonProperty("solicitudes") ArrayList solicitudes
+    ) {
         this.userName = userName;
         this.password = password;
         this.nombres = nombres;
