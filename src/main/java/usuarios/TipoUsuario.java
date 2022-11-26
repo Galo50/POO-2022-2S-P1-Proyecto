@@ -8,6 +8,10 @@ package usuarios;
  *
  * @author USER
  */
-public class TipoUsuario {
-    
+public enum TipoUsuario {
+    CLIENTE,
+    JEFE_TALLER,
+    MECANICO,
+    SUPERVISOR,
+    VENDEDOR,
 }

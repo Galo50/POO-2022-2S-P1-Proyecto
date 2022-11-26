@@ -9,11 +9,12 @@ public class Concesionario {
     public static void main(String[] args) {
         Concesionario concesionario = new Concesionario();
         concesionario.write();
-        concesionario.read();
+        //concesionario.read();
     }
     
     public void write() {
         // TODO: Make generic
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ObjectMapper objectMapper = new ObjectMapper();
         
         ArrayList<String> certificaciones = new ArrayList<String>();
@@ -30,10 +31,12 @@ public class Concesionario {
                 solicitudes
         );
         
+        
+        usuarios.add(jefeTaller);
         try {
             File file = new File("usuarios.json");
             file.createNewFile();
-            objectMapper.writeValue(file, jefeTaller);
+            objectMapper.writeValue(file, usuarios);
         } catch (IOException e) {
            e.printStackTrace();
        }
