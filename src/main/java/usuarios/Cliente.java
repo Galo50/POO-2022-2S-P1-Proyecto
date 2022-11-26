@@ -52,6 +52,13 @@ public class Cliente extends Usuario {
         }
     }
     
+    public void drawVehicles(ArrayList<Vehiculo> carrosDisponibles) {
+        System.out.println("############ GRAFICACIÓN DE VEHÍCULOS EN STOCK ############");
+        for (Vehiculo i: carrosDisponibles) {
+            System.out
+        }
+    }
+    
     public void verCarrosCliente() {
         System.out.println("############ VEHÍCULOS DEL CLIENTE ############");
         for (Vehiculo i: this.carros) {

@@ -11,14 +11,14 @@ import java.util.ArrayList;
  */
 public abstract class Usuario {
     protected String userName;
-    protected String contraseña;
+    protected String password;
     protected String nombres;
     protected String apellidos;
     protected ArrayList<Solicitud> solicitudes = new ArrayList<>();
 
-    public Usuario(String userName, String contraseña, String nombres, String apellidos, ArrayList solicitudes) {
+    public Usuario(String userName, String password, String nombres, String apellidos, ArrayList solicitudes) {
         this.userName = userName;
-        this.contraseña = contraseña;
+        this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.solicitudes = solicitudes;
