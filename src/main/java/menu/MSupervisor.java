@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author USER
  */
 public class MSupervisor {
-    public static int menuCliente() {
+    public static int menuSupervisor() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
