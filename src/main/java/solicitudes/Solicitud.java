@@ -12,15 +12,18 @@ import usuarios.Usuario;
  * @author USER
  */
 public abstract class Solicitud {
+    protected final TipoSolicitud tipo;
     protected Usuario remitente;
     protected Usuario destinatario;
 
     public Solicitud(
             @JsonProperty("remitente") Usuario remitente, 
-            @JsonProperty("destinatario") Usuario destinatario 
+            @JsonProperty("destinatario") Usuario destinatario,
+            @JsonProperty("tipo") TipoSolicitud tipo
     ) {
         this.remitente = remitente;
         this.destinatario = destinatario;
+        this.tipo = tipo;
     }
 
     

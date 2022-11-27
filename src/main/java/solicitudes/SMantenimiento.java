@@ -26,7 +26,7 @@ public class SMantenimiento extends Solicitud{
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.MANTENIMIENTO);
         this.tramite = "Mantenimiento";
         this.tipoMantenimiento = tipoMantenimiento;
         this.carro = carro;

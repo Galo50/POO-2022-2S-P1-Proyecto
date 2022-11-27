@@ -20,7 +20,7 @@ public class SEstado extends Solicitud{
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.ESTADO);
         this.carro = carro;
     }
     

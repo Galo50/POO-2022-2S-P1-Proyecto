@@ -23,7 +23,7 @@ public class SRespuesta extends Solicitud{
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.RESPUESTA);
         this.tramite = tramite;
     }
     public SRespuesta(
@@ -32,7 +32,7 @@ public class SRespuesta extends Solicitud{
             @JsonProperty("destinatario") Usuario destinatario,
             @JsonProperty("precio") double precio
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.RESPUESTA);
         this.tramite = tramite;
         this.precio = precio;
     }
@@ -42,7 +42,7 @@ public class SRespuesta extends Solicitud{
             @JsonProperty("destinatario") Usuario destinatario,
             @JsonProperty("carro") Vehiculo carro
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.RESPUESTA);
         this.tramite = tramite;
         this.carro = carro;
     }

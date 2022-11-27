@@ -18,7 +18,7 @@ public class SCompra extends Solicitud  {
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.COMPRA);
         this.carro = carro;
         this.tramite = "compra";
     }

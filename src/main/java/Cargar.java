@@ -53,6 +53,7 @@ public class Cargar {
         
     public static ArrayList<Solicitud> solicitudes() {
         ArrayList<Solicitud> solicitudes = new ArrayList();
+        
         return solicitudes;
     }
     

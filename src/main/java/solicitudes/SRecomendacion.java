@@ -22,7 +22,7 @@ public class SRecomendacion extends Solicitud{
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.RECOMENDACION);
         this.carro = carro;
         this.posicionVehiculo = posicionVehiculo;
     }

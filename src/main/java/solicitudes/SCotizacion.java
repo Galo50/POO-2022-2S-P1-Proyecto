@@ -23,7 +23,7 @@ public class SCotizacion extends Solicitud{
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Vendedor destinatario) 
     {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.COTIZACION);
         this.carro = carro;
         this.tramite = "cotizacion";
     }

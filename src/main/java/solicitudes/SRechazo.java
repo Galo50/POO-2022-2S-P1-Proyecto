@@ -21,7 +21,7 @@ public class SRechazo extends Solicitud {
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
-        super(remitente, destinatario);
+        super(remitente, destinatario, TipoSolicitud.RECHAZO);
         this.justificacion = justificacion;
         this.tramiteRechazado = tramite;
     }
