@@ -11,9 +11,11 @@ import usuarios.Supervisor;
 import usuarios.TipoUsuario;
 import usuarios.Usuario;
 import usuarios.Vendedor;
+import solicitudes.*;
+import vehiculos.*;
 
 public class Cargar {
-        public static ArrayList<Usuario> usuarios() throws IOException  {
+    public static ArrayList<Usuario> usuarios() throws IOException  {
         ArrayList<Usuario> usuarios = new ArrayList();
         File file = new File("usuarios.json");
 
@@ -48,4 +50,15 @@ public class Cargar {
 
         return usuarios;
     }
+        
+    public static ArrayList<Solicitud> solicitudes() {
+        ArrayList<Solicitud> solicitudes = new ArrayList();
+        return solicitudes;
+    }
+    
+    public static ArrayList<Vehiculo> vehiculos() {
+        ArrayList<Vehiculo> vehiculos = new ArrayList();
+        return vehiculos;
+    }
+    
 }
