@@ -22,17 +22,16 @@ public class MBooleano {
         
         
         System.out.println("""
-                           ===============================================
-                                   DETERMINE LA ACCION A REALIZAR
-                           ===============================================
-                                             * Opciones *
-                           1. Aceptar
-                           2. Rechazar
-                           3. Salir al menu
+                           |===============================================|
+                           |        DETERMINE LA ACCION A REALIZAR         |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Aceptar                                     |
+                           |2. Rechazar                                    |
+                           |3. Salir al menu                               |
+                           |-----------------------------------------------|
                            
-                           Ingrese el número de la opción a elegir:
-                           """);
-    
+                              -Ingrese el número de la opción a elegir- """);
       optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
