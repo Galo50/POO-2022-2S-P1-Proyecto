@@ -1,7 +1,8 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import menu.MCliente;
-import usuarios.Usuario;
+//import usuarios.Usuario;
+import usuarios.*;
 import vehiculos.Vehiculo;
 import solicitudes.Solicitud;
 import menu.MIniciarSesion;
@@ -23,31 +24,42 @@ public class Main {
             Main.usuarios = Cargar.usuarios();
         }
         
-        
         ArrayList<String> userCredentials = MIniciarSesion.iniciarSesion();
+        ArrayList<Solicitud> u1 = new ArrayList<>();
+        ArrayList<String> uc1 = new ArrayList<>();
+        ArrayList<Vehiculo> uv1 = new ArrayList<>();
+        
+        Cliente cTester = new Cliente(0,"",0,"","","","",u1);
+        Vendedor vTester = new Vendedor("",0,"","","","",u1);
+        JefeTaller jTester = new JefeTaller(uc1, "", "", "", "", u1);
+        Mecanico mTester = new Mecanico("", "", "", "", u1, uv1);
         
         int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
         
         if (userIndex == -1) {
             Prints.usuarioNoEncontrado();
         }
-        // Si los datos concuerdan con un usuario.
+        
         if (userIndex != -1) {
             Usuario userLoggedIn = Main.usuarios.get(userIndex);
             Prints.darBienvenida(userLoggedIn);
-            //Mostrar el menú dependiendo del tipo de Usuario que se logueó
-            if (userLoggedIn.getTipo().equals("Cliente")) {
+            
+            if (userLoggedIn.getTipo().equals(cTester)) {
                 MCliente.menuCliente();
             }
-            else if (userLoggedIn.getTipo().equals("JefeTaller")){
+            
+            else if (userLoggedIn.getTipo().equals(jTester)){
                 MJefeTaller.menuJefeTaller();
             }
-            else if (userLoggedIn.getTipo().equals("Mecanico")) {
+            
+            else if (userLoggedIn.getTipo().equals(mTester)) {
                 MMecanico.menuMecanico();
             }
-            else if (userLoggedIn.getTipo().equals("Vendedor")) {
+            
+            else if (userLoggedIn.getTipo().equals(vTester)) {
                 MVendedor.menuVendedor();
             }
+            
             else {
                 MSupervisor.menuSupervisor();
             }
