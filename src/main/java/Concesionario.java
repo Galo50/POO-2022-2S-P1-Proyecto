@@ -53,6 +53,10 @@ public class Concesionario {
            e.printStackTrace();
        }
     }
+    
+    public static void guardarUsuarios() {
+        // TODO
+    }
 
     
     public static void cargarUsuarios() throws IOException  {
