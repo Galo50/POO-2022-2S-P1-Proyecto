@@ -7,15 +7,6 @@ import solicitudes.Solicitud;
 import usuarios.JefeTaller;
 import usuarios.Usuario;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author infrative
- */
 public class Guardar {
         public static void usuarios() {
         // TODO: Make generic

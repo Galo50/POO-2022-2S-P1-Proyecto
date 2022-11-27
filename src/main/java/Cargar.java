@@ -12,15 +12,6 @@ import usuarios.TipoUsuario;
 import usuarios.Usuario;
 import usuarios.Vendedor;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author infrative
- */
 public class Cargar {
         public static ArrayList<Usuario> usuarios() throws IOException  {
         ArrayList<Usuario> usuarios = new ArrayList();

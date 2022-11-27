@@ -174,9 +174,10 @@ public class MEditar {
             listaOpciones.add(5);
             listaOpciones.add(6);
             listaOpciones.add(7);
+            listaOpciones.add(8);
             int optionChose;
         
-        
+            
         System.out.println("""
                            |===============================================|
                            |       DETERMINE LA CARACTERISTICA A EDITAR    |
