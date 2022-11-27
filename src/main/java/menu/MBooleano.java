@@ -4,6 +4,7 @@
  */
 package menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -11,13 +12,18 @@ import java.util.Scanner;
  * @author USER
  */
 public class MBooleano {
-   public static int menuVendedor() {
+   public static int menuBooleano() {
+      ArrayList<Integer> listaOpciones;
+        listaOpciones = new ArrayList<>();
+        listaOpciones.add(1);
+        listaOpciones.add(2);
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
+        
         System.out.println("""
                            ===============================================
-                                  DETERMINE LA ACCION A REALIZAR
+                                   DETERMINE LA ACCION A REALIZAR
                            ===============================================
                                              * Opciones *
                            1. Aceptar
@@ -27,15 +33,11 @@ public class MBooleano {
                            Ingrese el número de la opción a elegir:
                            """);
     
-       int opcion;
-       opcion = inputJava.nextInt();
-       if ((0<opcion== false)){
-           if (opcion>4 == false){
-               opcion = 3;
-               System.out.println("Opcion invalida, volviendo al menu pricipal");
-           }
-       }   
-       
-       return opcion;
+      optionChose = inputJava.nextInt();
+        while (!(listaOpciones.contains(optionChose))) {
+                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
+                optionChose = inputJava.nextInt();
+        }
+        return optionChose;
    }     
 }
