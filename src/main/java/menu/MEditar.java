@@ -174,6 +174,7 @@ public class MEditar {
             listaOpciones.add(5);
             listaOpciones.add(6);
             listaOpciones.add(7);
+            listaOpciones.add(8);
             int optionChose;
         
         
@@ -188,7 +189,8 @@ public class MEditar {
                            4. Precio
                            5. Combustible
                            6. Carga
-                           7. Salir al menu
+                           7. llantas
+                           8. Salir al menu
                            
                            Ingrese el número de la opción a elegir:
                            """);
