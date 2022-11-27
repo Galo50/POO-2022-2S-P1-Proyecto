@@ -4,6 +4,7 @@
  */
 package menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,13 @@ import java.util.Scanner;
 public class MMantenimiento {
     public static int menuMantenimiento() {
         Scanner inputJava = new Scanner(System.in);
+        ArrayList<Integer> listaOpciones;
+        listaOpciones = new ArrayList<>();
+        listaOpciones.add(1);
+        listaOpciones.add(2);
+        listaOpciones.add(3);
+        int optionChose;
+               
         
         System.out.println("""
                            ===============================================
@@ -22,18 +30,16 @@ public class MMantenimiento {
                            1. Preventivo
                            2. Emergencia
                            3. Salir al menu principal
-                           Ingrese el número de la opción a elegir:
-                           """);
- 
-        int opcion;
-       opcion = inputJava.nextInt();
-       if ((0<opcion== false)){
-           if (opcion>4 == false){
-               opcion = 3;
-               System.out.println("Opcion invalida, volviendo al menu pricipal");
-           }
-       }   
+                           Ingrese el número de la opción a elegir:"""
+                           );
+
+    
+      optionChose = inputJava.nextInt();
+        while (!(listaOpciones.contains(optionChose))) {
+                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
+                optionChose = inputJava.nextInt();
+        }
+        return optionChose;
+    }
+}
        
-       return opcion;
-}
-}
