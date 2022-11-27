@@ -9,28 +9,26 @@ import java.util.Scanner;
 
 /**
  *
- * @author USER
+ * @author Todos xd
  */
-public class MMantenimiento {
-    public static int menuMantenimiento() {
-        Scanner inputJava = new Scanner(System.in);
+public class MMecanico {
+    public static int menuMecanico() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
         listaOpciones.add(3);
         int optionChose;
-               
+        Scanner inputJava = new Scanner(System.in);
         
         System.out.println("""
                            |===============================================|
-                           |       INGRESE EL TIPO DE MANTENIMIENTO        |
+                           |                  MENÚ MECÁNICO                |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Preventivo                                  |
-                           |2. Emergencia                                  |
-                           |3. Salir al menu principal                     |
-                           |Ingrese el número de la opción a elegir:       |
+                           |1. Consultar Vehículos a Disposición           |
+                           |2. Enviar Cambio de Estado                     |
+                           |3. Salir                                       |
                            |-----------------------------------------------|
                            
                                -Ingrese el número de la opción a elegir- """);
@@ -42,4 +40,3 @@ public class MMantenimiento {
         return optionChose;
     }
 }
-       
