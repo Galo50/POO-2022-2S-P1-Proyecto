@@ -17,6 +17,6 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         Guardar.usuarios();
-        Concesionario.usuarios = Cargar.usuarios();
+        Main.usuarios = Cargar.usuarios();
     }
 }
