@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
 import usuarios.*;
 import java.util.ArrayList;
 import solicitudes.Solicitud;
@@ -6,22 +7,22 @@ import java.io.File;
 import java.io.IOException;
 
 public class Concesionario {
-    public static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    public static ArrayList<Usuario> usuarios = new ArrayList();
     private Usuario usuario;
     
     public Concesionario(Usuario usuario) {
         this.usuario = usuario;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Concesionario concesionario = new Concesionario();
-        //concesionario.write();
-        //concesionario.read();
+        Concesionario.write();
+        Concesionario.readUsuarios();
     }
     
-    public void write() {
+    public static void write() {
         // TODO: Make generic
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        ArrayList<Usuario> usuarios = new ArrayList();
         ObjectMapper objectMapper = new ObjectMapper();
         
         ArrayList<String> certificaciones = new ArrayList<String>();
@@ -39,6 +40,10 @@ public class Concesionario {
         );
         
         
+        
+        
+        
+        
         usuarios.add(jefeTaller);
         try {
             File file = new File("usuarios.json");
@@ -48,21 +53,41 @@ public class Concesionario {
            e.printStackTrace();
        }
     }
+
     
-    public void read()  {
-        // TODO: Make generic
-        try {
-            File file = new File("usuarios.json");
-            
-            ObjectMapper objectMapper = new ObjectMapper();
-            JefeTaller jefeTaller = objectMapper.readValue(file, JefeTaller.class);
-            System.out.println(jefeTaller.getUserName());
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static void cargarUsuarios() throws IOException  {
+        ArrayList<Usuario> usuarios = new ArrayList();
+        File file = new File("usuarios.json");
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        JsonNode node = mapper.valueToTree(mapper.readValue(file, JsonNode.class));
+
+        for (int i = 0; i < node.size(); i++) {
+            JsonNode usuarioJson = node.get(i);
+            String tipo = usuarioJson.get("tipo").textValue();
+
+            if (tipo.equals(TipoUsuario.JEFE_TALLER.name())) {
+                usuarios.add(mapper.readValue(usuarioJson.toString(), JefeTaller.class));
+            }
+
+            if (tipo.equals(TipoUsuario.CLIENTE.name())) {
+                usuarios.add(mapper.readValue(usuarioJson.toString(), Cliente.class));
+            }
+
+            if (tipo.equals(TipoUsuario.MECANICO.name())) {
+                usuarios.add(mapper.readValue(usuarioJson.toString(), Mecanico.class));
+            }
+
+            if (tipo.equals(TipoUsuario.SUPERVISOR.name())) {
+                usuarios.add(mapper.readValue(usuarioJson.toString(), Supervisor.class));
+            }
+
+            if (tipo.equals(TipoUsuario.VENDEDOR.name())) {
+                usuarios.add(mapper.readValue(usuarioJson.toString(), Vendedor.class));
+            }
         }
-    }
-    
-    public static void cargarUsuarios() {
-        
+
+        Concesionario.usuarios = usuarios;
     }
 }

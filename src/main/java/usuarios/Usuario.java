@@ -22,7 +22,7 @@ public abstract class Usuario {
     
     protected ArrayList<Solicitud> solicitudes = new ArrayList<>();
    
-    protected TipoUsuario tipo;
+    protected final TipoUsuario tipo;
 
     public Usuario(
             @JsonProperty("userName") String userName,
@@ -80,6 +80,9 @@ public abstract class Usuario {
         this.password = password;
     }
     
+    public TipoUsuario getTipo() {
+        return this.tipo;
+    }
     
     
     //public void bandejaEntrada(Usuario usuario){
