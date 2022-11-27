@@ -16,6 +16,7 @@ public class Main {
     public static ArrayList<Usuario> usuarios = new ArrayList();
     
     public static void main(String[] args) throws IOException {
+        Guardar.usuarios();
         Concesionario.usuarios = Cargar.usuarios();
     }
 }
