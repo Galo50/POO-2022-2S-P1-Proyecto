@@ -16,6 +16,8 @@ public class MVendedor {
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
+        listaOpciones.add(3);
+        listaOpciones.add(4);
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
@@ -24,8 +26,10 @@ public class MVendedor {
                            |                 MENÚ VENDEDOR                 |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Consultar Vehículos                         |
-                           |2. Revisar solicitudes de cotización           |
+                           |1. Acceso a Stock                              |
+                           |2. Bandeja de Solicitudes                      |
+                           |3. Sugerir Modelos                             |
+                           |4. Salir                                       |
                            |-----------------------------------------------|
                            
                                -Ingrese el número de la opción a elegir- """);
