@@ -17,6 +17,7 @@ public abstract class Vehiculo {
     private double precio;
     protected VehiculoCombustible combustible;
     protected VehiculoEstado estado;
+    protected final TipoVehiculo tipo;
 
     public Vehiculo(
         int year, 
@@ -24,7 +25,8 @@ public abstract class Vehiculo {
         String modelo, 
         Double precio, 
         VehiculoCombustible combustible, 
-        VehiculoEstado estado
+        VehiculoEstado estado,
+        TipoVehiculo tipo
     ) {
        this.year = year;
        this.marca = marca;
@@ -32,6 +34,7 @@ public abstract class Vehiculo {
        this.precio = precio;
        this.estado = estado;
        this.combustible = combustible;
+       this.tipo = tipo;
     }
 
     public int getYear() {
@@ -89,4 +92,8 @@ public abstract class Vehiculo {
     public void setEstado(VehiculoEstado estado) {
         this.estado = estado;
     } 
+    
+    public TipoVehiculo getTipo() {
+        return this.tipo;
+    }
 }

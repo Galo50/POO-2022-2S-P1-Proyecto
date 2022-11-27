@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Motocicleta extends Vehiculo {
 
-    private TipoMoto tipo;
+    private TipoMoto tipoMoto;
 
     public Motocicleta(
-        @JsonProperty("tipo") TipoMoto tipo, 
+        @JsonProperty("tipo") TipoMoto tipoMoto, 
         @JsonProperty("year") int year, 
         @JsonProperty("marca") String marca, 
         @JsonProperty("combustible") VehiculoCombustible combustible, 
@@ -29,18 +29,19 @@ public class Motocicleta extends Vehiculo {
             modelo, 
             precio,
             combustible,
-            estado
+            estado,
+            TipoVehiculo.MOTOCICLETA
         );
-        this.tipo = tipo;
+        this.tipoMoto = tipoMoto;
         this.llantas = 2;
     }
 
-    public TipoMoto getTipo() {
-        return this.tipo;
+    public TipoMoto getTipoMoto() {
+        return this.tipoMoto;
     }
 
-    public void setTipo(TipoMoto tipo) {
-        this.tipo = tipo;
+    public void setTipo(TipoMoto tipoMoto) {
+        this.tipoMoto = tipoMoto;
     }
     
     

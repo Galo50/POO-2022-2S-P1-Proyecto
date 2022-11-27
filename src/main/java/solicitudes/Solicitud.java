@@ -34,4 +34,8 @@ public abstract class Solicitud {
         return "Remitente: " + remitente + "\nDestinatario: " + destinatario;
     }
     
+    public TipoSolicitud getTipo() {
+        return this.tipo;
+    }
+    
 }

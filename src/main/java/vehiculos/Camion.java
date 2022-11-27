@@ -24,7 +24,7 @@ public class Camion extends Vehiculo {
         @JsonProperty("precio") Double precio,
         @JsonProperty("estado") VehiculoEstado estado
     ) {
-        super(year, marca, modelo, precio, combustible, estado);
+        super(year, marca, modelo, precio, combustible, estado, TipoVehiculo.CAMION);
         this.carga = carga;
         this.llantas=llantas;
         this.ejes = llantas/2;

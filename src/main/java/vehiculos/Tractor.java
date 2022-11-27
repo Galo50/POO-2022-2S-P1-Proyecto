@@ -31,7 +31,8 @@ public class Tractor extends Vehiculo {
             modelo, 
             precio, 
             VehiculoCombustible.DIESEL, 
-            estado
+            estado,
+            TipoVehiculo.TRACTOR
         );
         this.agricola = agricola;
         this.transmision = transmision;

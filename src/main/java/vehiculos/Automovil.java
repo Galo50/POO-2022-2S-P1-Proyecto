@@ -28,7 +28,7 @@ public class Automovil extends Vehiculo {
         @JsonProperty("combustible") VehiculoCombustible combustible,
         @JsonProperty("estado") VehiculoEstado estado
     ) {
-        super(year, marca ,modelo, precio, combustible, estado);
+        super(year, marca ,modelo, precio, combustible, estado, TipoVehiculo.AUTOMOVIL);
         this.llantas = 4;
         this.asientos = asientos;
         this.convertible = convertible;
