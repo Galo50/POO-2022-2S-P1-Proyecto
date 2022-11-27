@@ -27,19 +27,19 @@ public class MEditar {
                
         
         System.out.println("""
-                           ===============================================
-                                    INGRESE EL TIPO DE VEHICULO
-                           ===============================================
-                                             * Opciones *
-                           1. Automovil
-                           2. Motocicleta
-                           3. Tractor
-                           4. Camion
-                           5. Salir al menu principal
-                           Ingrese el número de la opción a elegir:"""
-                           );
-
-    
+                           |===============================================|
+                           |         INGRESE EL TIPO DE VEHICULO           |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Automovil                                   |
+                           |2. Motocicleta                                 |
+                           |3. Tractor                                     |
+                           |4. Camion                                      |
+                           |5. Salir al menu principal                     |
+                           |Ingrese el número de la opción a elegir:       |
+                           |-----------------------------------------------|
+                           
+                              -Ingrese el número de la opción a elegir- """);
       optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
@@ -66,22 +66,22 @@ public class MEditar {
         
         
         System.out.println("""
-                           ===============================================
-                                  DETERMINE LA CARACTERISTICA A EDITAR
-                           ===============================================
-                                             * Opciones *
-                           1. Marca
-                           2. Modelo
-                           3. Año de fabricacion 
-                           4. Precio
-                           5. Combustible
-                           6. Cantidad de asientos
-                           7. Convertible
-                           8. Camara
-                           9. Salir al menu
+                           |===============================================|
+                           |       DETERMINE LA CARACTERISTICA A EDITAR    |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Marca                                       |
+                           |2. Modelo                                      |
+                           |3. Año de fabricacion                          |
+                           |4. Precio                                      |
+                           |5. Combustible                                 |
+                           |6. Cantidad de asientos                        |
+                           |7. Convertible                                 |
+                           |8. Camara                                      |
+                           |9. Salir al menu                               |
+                           |-----------------------------------------------|
                            
-                           Ingrese el número de la opción a elegir:
-                           """);
+                              -Ingrese el número de la opción a elegir- """);
         optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
@@ -104,20 +104,20 @@ public class MEditar {
         
         
         System.out.println("""
-                           ===============================================
-                                  DETERMINE LA CARACTERISTICA A EDITAR
-                           ===============================================
-                                             * Opciones *
-                           1. Marca
-                           2. Modelo
-                           3. Año de fabricacion 
-                           4. Precio
-                           5. Combustible
-                           6. Tipo de moto
-                           7. Salir al menu
+                           |===============================================|
+                           |       DETERMINE LA CARACTERISTICA A EDITAR    |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Marca                                       |
+                           |2. Modelo                                      |
+                           |3. Año de fabricacion                          |
+                           |4. Precio                                      |
+                           |5. Combustible                                 |
+                           |6. Tipo de moto                                |
+                           |7. Salir al menu                               |
+                           |-----------------------------------------------|
                            
-                           Ingrese el número de la opción a elegir:
-                           """);
+                               -Ingrese el número de la opción a elegir- """);
         optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
@@ -141,21 +141,21 @@ public class MEditar {
         
         
         System.out.println("""
-                           ===============================================
-                                  DETERMINE LA CARACTERISTICA A EDITAR
-                           ===============================================
-                                             * Opciones *
-                           1. Marca
-                           2. Modelo
-                           3. Año de fabricacion 
-                           4. Precio
-                           5. Combustible
-                           6. Agricola
-                           7. Transmision
-                           8. Salir al menu
+                           |===============================================|
+                           |       DETERMINE LA CARACTERISTICA A EDITAR    |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Marca                                       |
+                           |2. Modelo                                      |
+                           |3. Año de fabricacion                          |
+                           |4. Precio                                      |
+                           |5. Combustible                                 |
+                           |6. Agricola                                    |
+                           |7. Transmision                                 |
+                           |8. Salir al menu                               |
+                           |-----------------------------------------------|
                            
-                           Ingrese el número de la opción a elegir:
-                           """);
+                               -Ingrese el número de la opción a elegir- """);
         optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
@@ -177,23 +177,22 @@ public class MEditar {
             listaOpciones.add(8);
             int optionChose;
         
-        
+            
         System.out.println("""
-                           ===============================================
-                                  DETERMINE LA CARACTERISTICA A EDITAR
-                           ===============================================
-                                             * Opciones *
-                           1. Marca
-                           2. Modelo
-                           3. Año de fabricacion 
-                           4. Precio
-                           5. Combustible
-                           6. Carga
-                           7. llantas
-                           8. Salir al menu
+                           |===============================================|
+                           |       DETERMINE LA CARACTERISTICA A EDITAR    |
+                           |===============================================|
+                           |                  * Opciones *                 |
+                           |1. Marca                                       |
+                           |2. Modelo                                      |
+                           |3. Año de fabricacion                          |
+                           |4. Precio                                      |
+                           |5. Combustible                                 |
+                           |6. Carga                                       |
+                           |7. Salir al menu                               |
+                           |-----------------------------------------------|
                            
-                           Ingrese el número de la opción a elegir:
-                           """);
+                               -Ingrese el número de la opción a elegir- """);
         optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
@@ -201,4 +200,4 @@ public class MEditar {
         }
         return optionChose;
        }
-       }
+    }
