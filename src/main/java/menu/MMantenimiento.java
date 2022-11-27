@@ -23,18 +23,18 @@ public class MMantenimiento {
                
         
         System.out.println("""
-                           |===============================================|
-                           |       INGRESE EL TIPO DE MANTENIMIENTO        |
-                           |===============================================|
-                           |                  * Opciones *                 |
-                           |1. Preventivo                                  |
-                           |2. Emergencia                                  |
-                           |3. Salir al menu principal                     |
-                           |Ingrese el número de la opción a elegir:       |
-                           |-----------------------------------------------|
-                           
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
+                           ===============================================
+                                  INGRESE EL TIPO DE MANTENIMIENTO
+                           ===============================================
+                                             * Opciones *
+                           1. Preventivo
+                           2. Emergencia
+                           3. Salir al menu principal
+                           Ingrese el número de la opción a elegir:"""
+                           );
+
+    
+      optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
                 optionChose = inputJava.nextInt();

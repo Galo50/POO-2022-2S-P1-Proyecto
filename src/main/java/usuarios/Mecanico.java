@@ -38,11 +38,5 @@ public class Mecanico extends Usuario{
         this.carros = carros;
     }
    
-    public void verCarrosMecanico() {
-        System.out.println("############ VEHÍCULOS DEL MECÁNICO ############");
-        for (Vehiculo i: this.carros) {
-            System.out.println("Marca: " + i.getMarca() + "\nModelo: " + i.getModelo() + "\nAño de Fabricación: " + i.getYear() + "\n");
-        }
-    }
     
 }
