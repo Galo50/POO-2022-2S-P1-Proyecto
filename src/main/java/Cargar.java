@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
@@ -17,36 +18,42 @@ import vehiculos.*;
 public class Cargar {
     public static ArrayList<Usuario> usuarios() throws IOException  {
         ArrayList<Usuario> usuarios = new ArrayList();
-        File file = new File("usuarios.json");
+        
+        try {
+            File file = new File("usuarios.json");
 
-        ObjectMapper mapper = new ObjectMapper();
+            ObjectMapper mapper = new ObjectMapper();
 
-        JsonNode node = mapper.valueToTree(mapper.readValue(file, JsonNode.class));
+            JsonNode node = mapper.valueToTree(mapper.readValue(file, JsonNode.class));
 
-        for (int i = 0; i < node.size(); i++) {
-            JsonNode usuarioJson = node.get(i);
-            String tipo = usuarioJson.get("tipo").textValue();
+            for (int i = 0; i < node.size(); i++) {
+                JsonNode usuarioJson = node.get(i);
+                String tipo = usuarioJson.get("tipo").textValue();
 
-            if (tipo.equals(TipoUsuario.JEFE_TALLER.name())) {
-                usuarios.add(mapper.readValue(usuarioJson.toString(), JefeTaller.class));
+                if (tipo.equals(TipoUsuario.JEFE_TALLER.name())) {
+                    usuarios.add(mapper.readValue(usuarioJson.toString(), JefeTaller.class));
+                }
+
+                if (tipo.equals(TipoUsuario.CLIENTE.name())) {
+                    usuarios.add(mapper.readValue(usuarioJson.toString(), Cliente.class));
+                }
+
+                if (tipo.equals(TipoUsuario.MECANICO.name())) {
+                    usuarios.add(mapper.readValue(usuarioJson.toString(), Mecanico.class));
+                }
+
+                if (tipo.equals(TipoUsuario.SUPERVISOR.name())) {
+                    usuarios.add(mapper.readValue(usuarioJson.toString(), Supervisor.class));
+                }
+
+                if (tipo.equals(TipoUsuario.VENDEDOR.name())) {
+                    usuarios.add(mapper.readValue(usuarioJson.toString(), Vendedor.class));
+                }
             }
-
-            if (tipo.equals(TipoUsuario.CLIENTE.name())) {
-                usuarios.add(mapper.readValue(usuarioJson.toString(), Cliente.class));
-            }
-
-            if (tipo.equals(TipoUsuario.MECANICO.name())) {
-                usuarios.add(mapper.readValue(usuarioJson.toString(), Mecanico.class));
-            }
-
-            if (tipo.equals(TipoUsuario.SUPERVISOR.name())) {
-                usuarios.add(mapper.readValue(usuarioJson.toString(), Supervisor.class));
-            }
-
-            if (tipo.equals(TipoUsuario.VENDEDOR.name())) {
-                usuarios.add(mapper.readValue(usuarioJson.toString(), Vendedor.class));
-            }
+        } catch(FileNotFoundException e) {
+            Prints.ficheroNoEncontrado();
         }
+
 
         return usuarios;
     }
@@ -129,5 +136,4 @@ public class Cargar {
         
         return vehiculos;
     }
-    
 }

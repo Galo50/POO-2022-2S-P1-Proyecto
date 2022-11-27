@@ -3,42 +3,52 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import usuarios.*;
 import solicitudes.Solicitud;
-import usuarios.JefeTaller;
-import usuarios.Usuario;
+import vehiculos.Vehiculo;
 
 public class Guardar {
-        public static void usuarios() {
-        // TODO: Make generic
-        ArrayList<Usuario> usuarios = new ArrayList();
+    public static void usuarios(ArrayList<Usuario> usuarios) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
+
+        File file = new File("usuarios.json");
+        file.createNewFile();
         
-        ArrayList<String> certificaciones = new ArrayList<String>();
-        ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
+        objectMapper.writeValue(file, usuarios);
+
+    }
+    
+    public static void solicitudes(ArrayList<Solicitud> solicitudes) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        File file = new File("solicitudes.json");
+        file.createNewFile();
         
-        certificaciones.add("Hola mundo");
+        objectMapper.writeValue(file, solicitudes);
+    }  
+    
+    public static void vehiculos(ArrayList<Vehiculo> vehiculos) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        File file = new File("solicitudes.json");
+        file.createNewFile();
         
-        JefeTaller jefeTaller = new JefeTaller(
-                certificaciones,
-                "infrative",
-                "12345gmt",
-                "Fredder",
-                "Gudrow",
-                solicitudes
+        objectMapper.writeValue(file, vehiculos);
+    }
+    
+    public static void crearSupervisorPredeterminado() throws IOException {
+        Supervisor supervisorPredeterminado = new Supervisor(
+            new ArrayList(),
+            "admin",
+            "admin",
+            "Admin",
+            "Admin",
+            new ArrayList()
         );
         
+        ArrayList<Usuario> usuarios = new ArrayList();
+        usuarios.add(supervisorPredeterminado);
         
-        
-        
-        
-        
-        usuarios.add(jefeTaller);
-        try {
-            File file = new File("usuarios.json");
-            file.createNewFile();
-            objectMapper.writeValue(file, usuarios);
-        } catch (IOException e) {
-           e.printStackTrace();
-       }
+        Guardar.usuarios(usuarios);
     }
 }
