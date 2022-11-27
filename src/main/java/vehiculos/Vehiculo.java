@@ -14,19 +14,24 @@ public abstract class Vehiculo {
     private String marca; 
     private String modelo; 
     protected int llantas;
-    private String combustible;
     private double precio;
-    private String estado;
-    public enum combustible{GASOLINA,DIESEL};
-    public enum estado{ADMITIDO,REPARACION,PRUEBA,ENTREGADO};
+    protected VehiculoCombustible combustible;
+    protected VehiculoEstado estado;
 
-    public Vehiculo(int year, String marca, String combustible, String modelo, Double precio, String estado) {
+    public Vehiculo(
+        int year, 
+        String marca, 
+        String modelo, 
+        Double precio, 
+        VehiculoCombustible combustible, 
+        VehiculoEstado estado
+    ) {
        this.year = year;
        this.marca = marca;
+       this.modelo = modelo;
+       this.precio = precio;
+       this.estado = estado;
        this.combustible = combustible;
-       this.modelo=modelo;
-       this.precio=precio;
-       this.estado=estado;
     }
 
     public int getYear() {
@@ -61,11 +66,11 @@ public abstract class Vehiculo {
         this.llantas = llantas;
     }
 
-    public String getCombustible() {
+    public VehiculoCombustible getCombustible() {
         return combustible;
     }
 
-    public void setCombustible(String combustible) {
+    public void setCombustible(VehiculoCombustible combustible) {
         this.combustible = combustible;
     }
 
@@ -77,11 +82,11 @@ public abstract class Vehiculo {
         this.precio = precio;
     }
 
-    public String getEstado() {
+    public VehiculoEstado getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(VehiculoEstado estado) {
         this.estado = estado;
     } 
 }

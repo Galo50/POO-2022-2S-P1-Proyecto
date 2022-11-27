@@ -4,16 +4,27 @@
  */
 package vehiculos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author USER
  */
 public class Camion extends Vehiculo {
-     private int carga;
+    private int carga;
     private int ejes;
 
-    public Camion (int carga, int llantas, int year, String marca, String combustible, String modelo, Double precio,String estado) {
-        super(year, marca, combustible, modelo, precio, estado);
+    public Camion (
+        @JsonProperty("carga") int carga, 
+        @JsonProperty("llantas") int llantas, 
+        @JsonProperty("year") int year, 
+        @JsonProperty("marca") String marca, 
+        @JsonProperty("combustible") VehiculoCombustible combustible, 
+        @JsonProperty("modelo") String modelo, 
+        @JsonProperty("precio") Double precio,
+        @JsonProperty("estado") VehiculoEstado estado
+    ) {
+        super(year, marca, modelo, precio, combustible, estado);
         this.carga = carga;
         this.llantas=llantas;
         this.ejes = llantas/2;

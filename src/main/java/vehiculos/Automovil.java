@@ -4,6 +4,8 @@
  */
 package vehiculos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author USER
@@ -14,8 +16,19 @@ public class Automovil extends Vehiculo {
     private boolean convertible;
     private boolean camara;
 
-    public Automovil(int asientos, boolean convertible, boolean camara, int year, String marca, int llantas, String combustible,String modelo,Double precio,String estado) {
-        super(year, marca, combustible ,modelo, precio, estado);
+    public Automovil(
+        @JsonProperty("asientos") int asientos,
+        @JsonProperty("convertible") boolean convertible, 
+        @JsonProperty("camara") boolean camara, 
+        @JsonProperty("year") int year, 
+        @JsonProperty("marca") String marca, 
+        @JsonProperty("llantas") int llantas, 
+        @JsonProperty("modelo") String modelo,
+        @JsonProperty("precio") Double precio,
+        @JsonProperty("combustible") VehiculoCombustible combustible,
+        @JsonProperty("estado") VehiculoEstado estado
+    ) {
+        super(year, marca ,modelo, precio, combustible, estado);
         this.llantas = 4;
         this.asientos = asientos;
         this.convertible = convertible;
@@ -30,7 +43,7 @@ public class Automovil extends Vehiculo {
         this.asientos = asientos;
     }
 
-    public boolean isConvertible() {
+    public boolean getConvertible() {
         return convertible;
     }
 

@@ -4,6 +4,8 @@
  */
 package vehiculos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author USER
@@ -11,17 +13,32 @@ package vehiculos;
 public class Tractor extends Vehiculo {
     
     private boolean agricola;
-    private String transmision;
-    private enum transmision{HIDRAULICA,MECANICA};
+    private VehiculoTransmision transmision;
 
-    public Tractor(boolean agricola, String transmision, int year, String marca, String combustible, String modelo, Double precio,String estado) {
-        super(year, marca, combustible, modelo, precio, estado);
+    public Tractor(
+        @JsonProperty("agricola") boolean agricola, 
+        @JsonProperty("transmision") VehiculoTransmision transmision, 
+        @JsonProperty("year") int year, 
+        @JsonProperty("marca") String marca, 
+        @JsonProperty("combustible") VehiculoCombustible combustible, 
+        @JsonProperty("modelo") String modelo, 
+        @JsonProperty("precio") Double precio,
+        @JsonProperty("estado") VehiculoEstado estado
+    ) {
+        super(
+            year, 
+            marca,
+            modelo, 
+            precio, 
+            VehiculoCombustible.DIESEL, 
+            estado
+        );
         this.agricola = agricola;
         this.transmision = transmision;
         this.llantas = 4;
     }
 
-    public boolean isAgricola() {
+    public boolean getAgricola() {
         return agricola;
     }
 
@@ -29,11 +46,11 @@ public class Tractor extends Vehiculo {
         this.agricola = agricola;
     }
 
-    public String getTransmision() {
+    public VehiculoTransmision getTransmision() {
         return transmision;
     }
 
-    public void setTransmision(String transmision) {
+    public void setTransmision(VehiculoTransmision transmision) {
         this.transmision = transmision;
     }
 }
