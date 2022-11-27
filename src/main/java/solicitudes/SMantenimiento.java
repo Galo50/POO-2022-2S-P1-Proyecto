@@ -8,7 +8,7 @@ package solicitudes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import usuarios.Usuario;
-import vehiculos.Vehiculo;
+import vehiculos.*;
 
 /**
  *
@@ -38,7 +38,7 @@ public class SMantenimiento extends Solicitud{
     
     public void imprimir(ArrayList <Vehiculo> mantenimientos){
     System.out.println("Estimado "+destinatario+"\n Por medio de la presente se le pido el ingreso de mi vehiculo "+carro.getMarca()+" "+carro.getModelo() +" al taller para un matenimiento de tipo "+tipoMantenimiento);
-    carro.setEstado("Admitido");
+    carro.setEstado(VehiculoEstado.ADMITIDO);
     mantenimientos.add(carro);
     }
 }

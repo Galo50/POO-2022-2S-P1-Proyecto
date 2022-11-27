@@ -123,7 +123,7 @@ public class Cliente extends Usuario {
         jefeTaller.solicitudes.add(sm1);
     }
     
-    public String consultarEstado(Vehiculo carro) {
+    public VehiculoEstado consultarEstado(Vehiculo carro) {
         return carro.getEstado();
     }
 }

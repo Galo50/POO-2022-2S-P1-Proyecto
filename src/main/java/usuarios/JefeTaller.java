@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.Random;
 import solicitudes.*;
-import vehiculos.Vehiculo;
+import vehiculos.*;
 
 /**
  *
@@ -49,13 +49,13 @@ public class JefeTaller extends Usuario{
     }
     public  ArrayList <Vehiculo> darAlta (Vehiculo carro, ArrayList <Vehiculo> mantenimientos,Cliente cliente,JefeTaller jefe){
         mantenimientos.remove(carro);
-        carro.setEstado("ENTREGADO");
+        carro.setEstado(VehiculoEstado.ENTREGADO);
         SEntrega se1 = new SEntrega(carro,jefe,cliente);
         cliente.solicitudes.add(se1);
         return mantenimientos;   
     }
     public void AdministrarMantenimiento(Vehiculo carro){
-        carro.setEstado("PRUEBA");
+        carro.setEstado(VehiculoEstado.PRUEBA);
     }
     public void entrega(Cliente cliente,Vehiculo carro ,JefeTaller jefe){
         SEntrega se1 = new SEntrega(carro,jefe,cliente);
