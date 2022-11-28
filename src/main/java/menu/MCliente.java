@@ -23,6 +23,7 @@ public class MCliente {
         listaOpciones.add(6);
         listaOpciones.add(7);
         listaOpciones.add(8);
+        
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
