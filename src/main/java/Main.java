@@ -65,18 +65,21 @@ public class Main {
             //else if (userLoggedIn.getTipo().equals(mTester)) {
                 //Mecanico userMecanico = (Mecanico)userLoggedIn;
             int optionChose = MMecanico.menuMecanico();
-            if (optionChose == 1) {
-                userMecanico.verCarrosMecanico();
-                MMecanico.menuMecanico();
-            }
-            else {
-                System.out.println("Indique la posición del Vehículo:");
-                int position = inputJava.nextInt();
-                while (!(position == userMecanico.getCarros().size())) {
-                    System.out.println("Ingrese una posición existente!");
-                    position = inputJava.nextInt();
+            while (optionChose != 3) {
+                if(optionChose == 1) {
+                   userMecanico.verCarrosMecanico();
+                   optionChose = MMecanico.menuMecanico();
                 }
-              }
+                else {
+                    System.out.println("Indique la posición del Vehículo: ");
+                    int position = inputJava.nextInt();
+                    while (position > userMecanico.getCarros().size() || position == 0) {
+                        System.out.println("Ingrese una posición existente!");
+                                position = inputJava.nextInt();
+                    }
+                    optionChose = MMecanico.menuMecanico();
+                }
+            }
             }
             
             //else if (userLoggedIn.getTipo().equals(vTester)) {
