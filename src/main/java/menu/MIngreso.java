@@ -130,8 +130,7 @@ public class MIngreso {
             }
             if(opcionCamara==1){
             camara= true;
-            }else{camara= false;}  
-                
+            }else{camara= false;}                 
             boolean convertible;            
             System.out.println("""
                            |===============================================|
@@ -219,7 +218,7 @@ public class MIngreso {
             TipoMoto tipoMoto;   
              System.out.println("""
                            |===============================================|
-                           |      ESPECIFIQUE EL TIPO DE COMBUSTIBLE       |
+                           |      ESPECIFIQUE EL TIPO DE MOTOCICLETA       |
                            |===============================================|
                            |1. Deportiva                                   |
                            |2. Scooter                                     |

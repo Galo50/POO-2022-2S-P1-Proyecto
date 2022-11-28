@@ -40,7 +40,7 @@ public class Motocicleta extends Vehiculo {
         return this.tipoMoto;
     }
 
-    public void setTipo(TipoMoto tipoMoto) {
+    public void setTipoMoto(TipoMoto tipoMoto) {
         this.tipoMoto = tipoMoto;
     }
     
