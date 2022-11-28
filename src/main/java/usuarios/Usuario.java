@@ -84,25 +84,5 @@ public abstract class Usuario {
     public TipoUsuario getTipo() {
         return this.tipo;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && obj instanceof Usuario){
-            Usuario other = (Usuario) obj;
-            return tipo.equals(other.tipo);
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.tipo);
-        return hash;
-    }
-    
 }
 

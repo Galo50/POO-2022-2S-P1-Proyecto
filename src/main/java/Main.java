@@ -90,13 +90,14 @@ public class Main {
                                        torio.
                                        """);
                     int position = inputJava.nextInt();
-                    while (position > userCliente.getCarros().size() || position == 0) {
+                    while (position > uv1.size() || position == 0) {
                         System.out.println("Ingrese una posición existente!");
                         position = inputJava.nextInt();
                     }
                     System.out.println("""
                                        Generando solicitud...""");
-                    userCliente.solicitarCotizacion(ca1, userCliente, uvd1);
+                    userCliente.solicitarCotizacion(uv1.get(position), userCliente, uvd1);
+                    System.out.println("Solicitud enviada con éxito!");
                     optionChose = MCliente.menuCliente();
                 }
                 else if (optionChose == 6) {
@@ -135,6 +136,7 @@ public class Main {
             //            System.out.println("""
             //            Generando solicitud...""");
             //            userMecanico.enviarCambioEstado(position, userMecanico, sTester);
+            //            System.out.println("Solicitud enviada con éxito!);
             //            optionChose = MMecanico.menuMecanico();
             //        }
             //    }

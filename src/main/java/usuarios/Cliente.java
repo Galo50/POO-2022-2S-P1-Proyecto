@@ -55,10 +55,6 @@ public class Cliente extends Usuario {
         return ingresos;
     }
     
-    public ArrayList<Vehiculo> getCarros() {
-        return carros;
-    }
-    
     // MÉTODO USADO PARA TESTEAR! Eliminar luego de ser posible.
     public void setCarros(ArrayList<Vehiculo> carros) {
         this.carros = carros;
