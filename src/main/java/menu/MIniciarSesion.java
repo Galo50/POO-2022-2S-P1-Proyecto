@@ -4,6 +4,7 @@
  */
 package menu;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ import java.util.Scanner;
  * @author Todos :v
  */
 public class MIniciarSesion {
-    public static ArrayList<String> iniciarSesion() {
+    public static ArrayList<String> iniciarSesion() throws IOException {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();
         
@@ -42,6 +43,7 @@ public class MIniciarSesion {
         String passwordUser = inputJava.nextLine();
         credenciales.add(userName);
         credenciales.add(passwordUser);
+        Runtime.getRuntime().exec("cls");
         return credenciales;
     }
 }
