@@ -6,5 +6,6 @@ package vehiculos;
 
 public enum VehiculoCombustible {
     GASOLINA,
-    DIESEL
+    DIESEL,
+    ELECTRICO
 }
