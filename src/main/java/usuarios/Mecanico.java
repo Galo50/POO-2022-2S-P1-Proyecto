@@ -15,7 +15,7 @@ import solicitudes.*;
  */
 public class Mecanico extends Usuario{
 
-      private ArrayList<Vehiculo> carros;
+    private ArrayList<Vehiculo> carros;
 
     public ArrayList<Vehiculo> getCarros() {
         return carros;
@@ -45,4 +45,9 @@ public class Mecanico extends Usuario{
         }
     }
     
+    public void enviarCambioEstado(int position, Mecanico remitente, Supervisor destinatario) {
+        Vehiculo carroChose = this.carros.get(position);
+        SEstado se1 = new SEstado(carroChose, remitente, destinatario);
+        destinatario.solicitudes.add(se1);
+    }
 }

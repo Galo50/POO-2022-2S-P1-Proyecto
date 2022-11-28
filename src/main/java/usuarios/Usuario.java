@@ -7,6 +7,7 @@ package usuarios;
 import solicitudes.Solicitud;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
 /**
  *
  * @author USER
@@ -84,14 +85,24 @@ public abstract class Usuario {
         return this.tipo;
     }
     
-    
-    //public void bandejaEntrada(Usuario usuario){
-      //  Object mensaje = banEntrada.get(0);
-        
-    
-  
-    
-    //}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && obj instanceof Usuario){
+            Usuario other = (Usuario) obj;
+            return tipo.equals(other.tipo);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.tipo);
+        return hash;
+    }
     
 }
 
