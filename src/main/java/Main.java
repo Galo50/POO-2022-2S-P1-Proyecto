@@ -3,7 +3,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import menu.MCliente;
 import usuarios.*;
-import vehiculos.Vehiculo;
+//import vehiculos.Vehiculo;
+import vehiculos.*;
 import solicitudes.Solicitud;
 import menu.MIniciarSesion;
 import menu.MJefeTaller;
@@ -30,54 +31,62 @@ public class Main {
         ArrayList<String> uc1 = new ArrayList<>();
         ArrayList<Vehiculo> uv1 = new ArrayList<>();
         
+        Automovil av1 = new Automovil(4, false, true, 2011, "Hyundai", 4, "i10", 23456, VehiculoCombustible.GASOLINA, VehiculoEstado.ENTREGADO);
+        Camion ca1 = new Camion(2, 5, 2001, "HINO", VehiculoCombustible.DIESEL, "GTR-4500", 50000, VehiculoEstado.ENTREGADO);
+        uv1.add(av1);
+        uv1.add(ca1);
+        
         Cliente cTester = new Cliente(0,"",0,"","","","",u1);
         Vendedor vTester = new Vendedor("",0,"","","","",u1);
         JefeTaller jTester = new JefeTaller(uc1, "", "", "", "", u1);
         Mecanico mTester = new Mecanico("", "", "", "", u1, uv1);
         
-        int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
+        //int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
+        int userIndex = 1;
         
         if (userIndex == -1) {
             Prints.usuarioNoEncontrado();
         }
         
         if (userIndex != -1) {
-            Usuario userLoggedIn = Main.usuarios.get(userIndex);
-            Prints.darBienvenida(userLoggedIn);
-            
-            if (userLoggedIn.getTipo().equals(cTester)) {
-                Cliente userCliente = (Cliente)userLoggedIn;
-                MCliente.menuCliente();
+            //Usuario userLoggedIn = Main.usuarios.get(userIndex);
+            Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
+            //Prints.darBienvenida(userLoggedIn);
+            //
+            //if (userLoggedIn.getTipo().equals(cTester)) {
+            //    Cliente userCliente = (Cliente)userLoggedIn;
+            //    MCliente.menuCliente();
+            //}
+            //
+            //else if (userLoggedIn.getTipo().equals(jTester)){
+            //    MJefeTaller.menuJefeTaller();
+            //}
+            //
+            //else if (userLoggedIn.getTipo().equals(mTester)) {
+                //Mecanico userMecanico = (Mecanico)userLoggedIn;
+            int optionChose = MMecanico.menuMecanico();
+            if (optionChose == 1) {
+                userMecanico.verCarrosMecanico();
+                MMecanico.menuMecanico();
             }
-            
-            else if (userLoggedIn.getTipo().equals(jTester)){
-                MJefeTaller.menuJefeTaller();
-            }
-            
-            else if (userLoggedIn.getTipo().equals(mTester)) {
-                Mecanico userMecanico = (Mecanico)userLoggedIn;
-                int optionChose = MMecanico.menuMecanico();
-                if (optionChose == 1) {
-                    userMecanico.verCarrosMecanico();
-                }
-                else {
-                    System.out.println("Indique la posición del Vehículo:");
-                    int position = inputJava.nextInt();
-                    while (!(position == userMecanico.getCarros().size())) {
-                        System.out.println("Ingrese una posición existente!");
-                        position = inputJava.nextInt();
-                    }
-                }
-            }
-            
-            else if (userLoggedIn.getTipo().equals(vTester)) {
-                MVendedor.menuVendedor();
-            }
-            
             else {
-                MSupervisor.menuSupervisor();
+                System.out.println("Indique la posición del Vehículo:");
+                int position = inputJava.nextInt();
+                while (!(position == userMecanico.getCarros().size())) {
+                    System.out.println("Ingrese una posición existente!");
+                    position = inputJava.nextInt();
+                }
+              }
             }
-        }
+            
+            //else if (userLoggedIn.getTipo().equals(vTester)) {
+            //    MVendedor.menuVendedor();
+            //}
+            //
+            //else {
+            //    MSupervisor.menuSupervisor();
+            //}
+        //}
     }
     
     public static int getUserIndexByCredentials(String userName, String password, ArrayList<Usuario> usuarios) {

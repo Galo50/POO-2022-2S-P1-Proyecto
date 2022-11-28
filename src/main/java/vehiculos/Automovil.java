@@ -24,7 +24,7 @@ public class Automovil extends Vehiculo {
         @JsonProperty("marca") String marca, 
         @JsonProperty("llantas") int llantas, 
         @JsonProperty("modelo") String modelo,
-        @JsonProperty("precio") Double precio,
+        @JsonProperty("precio") double precio,
         @JsonProperty("combustible") VehiculoCombustible combustible,
         @JsonProperty("estado") VehiculoEstado estado
     ) {
