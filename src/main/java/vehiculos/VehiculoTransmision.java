@@ -9,5 +9,7 @@ package vehiculos;
  * @author infrative
  */
 public enum VehiculoTransmision {
+    MECANICA,
+    HIDRAULICA
     
 }

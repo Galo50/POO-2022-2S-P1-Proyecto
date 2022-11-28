@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author USER
  */
 public class MEditar {
-       public static int menuEditar() {
+    public static int menuEditar() {
            
         Scanner inputJava = new Scanner(System.in);
         ArrayList<Integer> listaOpciones;
@@ -200,4 +200,4 @@ public class MEditar {
         }
         return optionChose;
        }
-    }
+}
