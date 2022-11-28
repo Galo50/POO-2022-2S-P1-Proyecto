@@ -414,7 +414,7 @@ public class MEditar {
         
             tractor.setAgricola(agricola);
         }
-        public static void E(Tractor tractor){
+        public static void ETransmision(Tractor tractor){
         Scanner inputJava = new Scanner(System.in);
         VehiculoTransmision transmision;
          System.out.println("""
