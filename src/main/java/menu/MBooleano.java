@@ -17,6 +17,7 @@ public class MBooleano {
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
+        listaOpciones.add(3);
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
