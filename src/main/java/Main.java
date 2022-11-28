@@ -87,11 +87,8 @@ public class Main {
                 else if (optionChose == 5) {
                     System.out.println("""
                                        ############ SOLICITAR COTIZACIÓN ############
-                                       Indique la posición del Vehículo en la Lista
-                                       Stock del cual desea generar una solicitud de
-                                       cotización para enviarla a un Vendedor alea-
-                                       torio.
-                                       """);
+                                       Indique la pagina del catalogo en la cual se
+                                       encuentra el vehiculo que desea cotizar. """);
                     int position = inputJava.nextInt();
                     while (position > uv1.size() || position == 0) {
                         System.out.println("Ingrese una posición existente!");
