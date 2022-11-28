@@ -45,4 +45,9 @@ public class Mecanico extends Usuario{
         }
     }
     
+    public void enviarCambioEstado(int position, Mecanico remitente, Supervisor destinatario) {
+        Vehiculo carroChose = this.carros.get(position);
+        SEstado se1 = new SEstado(carroChose, remitente, destinatario);
+        destinatario.solicitudes.add(se1);
+    }
 }

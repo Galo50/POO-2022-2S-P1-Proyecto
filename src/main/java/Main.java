@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import menu.MCliente;
-//import usuarios.Usuario;
 import usuarios.*;
 import vehiculos.Vehiculo;
 import solicitudes.Solicitud;
@@ -17,6 +17,7 @@ public class Main {
     public static ArrayList<Vehiculo> vehiculos = new ArrayList();
     
     public static void main(String[] args) throws IOException {
+        Scanner inputJava = new Scanner(System.in);
         Main.usuarios = Cargar.usuarios();
         
         if (Main.usuarios.isEmpty()) {
@@ -45,6 +46,7 @@ public class Main {
             Prints.darBienvenida(userLoggedIn);
             
             if (userLoggedIn.getTipo().equals(cTester)) {
+                Cliente userCliente = (Cliente)userLoggedIn;
                 MCliente.menuCliente();
             }
             
@@ -53,7 +55,19 @@ public class Main {
             }
             
             else if (userLoggedIn.getTipo().equals(mTester)) {
-                MMecanico.menuMecanico();
+                Mecanico userMecanico = (Mecanico)userLoggedIn;
+                int optionChose = MMecanico.menuMecanico();
+                if (optionChose == 1) {
+                    userMecanico.verCarrosMecanico();
+                }
+                else {
+                    System.out.println("Indique la posición del Vehículo:");
+                    int position = inputJava.nextInt();
+                    while (!(position == userMecanico.getCarros().size())) {
+                        System.out.println("Ingrese una posición existente!");
+                        position = inputJava.nextInt();
+                    }
+                }
             }
             
             else if (userLoggedIn.getTipo().equals(vTester)) {
