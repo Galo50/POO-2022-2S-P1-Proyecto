@@ -56,6 +56,9 @@ public class Main {
         
         // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
         if (userIndex != -1) {
+            //Limpiar pantalla
+            
+            
             //Usuario userLoggedIn = Main.usuarios.get(userIndex);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
             Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
