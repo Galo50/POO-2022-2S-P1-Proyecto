@@ -52,19 +52,19 @@ public class Main {
         }
         
         if (userIndex != -1) {
-            Usuario userLoggedIn = Main.usuarios.get(userIndex);
+            //Usuario userLoggedIn = Main.usuarios.get(userIndex);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
-            Prints.darBienvenida(userLoggedIn);
+            //Prints.darBienvenida(userLoggedIn);
             
-            if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-                MCliente.menuCliente();
-            }
+            //if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
+            //    MCliente.menuCliente();
+            //}
             
-            else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
-                MJefeTaller.menuJefeTaller();
-            }
+            //else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
+            //    MJefeTaller.menuJefeTaller();
+            //}
             
-            else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
+            //else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
                 int optionChose = MMecanico.menuMecanico();
                 while (optionChose != 3) {
                     if(optionChose == 1) {
@@ -81,15 +81,16 @@ public class Main {
                         optionChose = MMecanico.menuMecanico();
                     }
                 }
-            }
+                Prints.brindarDespedida();
+            //}
             
-            else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-                MVendedor.menuVendedor();
-            }
+            //else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
+            //    MVendedor.menuVendedor();
+            //}
             
-            else {
-                MSupervisor.menuSupervisor();
-            }
+            //else {
+            //    MSupervisor.menuSupervisor();
+            //}
         }
     }
     

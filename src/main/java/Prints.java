@@ -12,4 +12,17 @@ public class Prints {
     public static void ficheroNoEncontrado() {
         System.out.println("Fichero no encontrado, se creará uno automáticamente.");
     }
+    
+    public static void brindarDespedida() {
+        System.out.println("""
+                           
+                           |----------------------------------------|
+                           |              EXIT PROGRAM              |
+                           |----------------------------------------|
+                           |                                        |
+                           |Gracias por emplear nuestros servicios! |
+                           |Nos vemos pronto!                       |
+                           |----------------------------------------|
+                           """);
+    }
 }
