@@ -53,7 +53,16 @@ public class Cliente extends Usuario {
 
     public double getIngresos() {
         return ingresos;
-    }   
+    }
+    
+    public ArrayList<Vehiculo> getCarros() {
+        return carros;
+    }
+    
+    // MÉTODO USADO PARA TESTEAR! Eliminar luego de ser posible.
+    public void setCarros(ArrayList<Vehiculo> carros) {
+        this.carros = carros;
+    }
     
     public void consultarStock(ArrayList<Vehiculo> carrosDisponibles) {
         System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
