@@ -48,7 +48,8 @@ public class Vendedor extends Usuario{
     public void solicitudesVendedor() {
         System.out.println("############ LISTA DE SOLICITUDES ############");
         for (Solicitud i: this.solicitudes) {
-            System.out.println(i);
+            i.imprimir();
+            solicitudes.remove(i);
         }
     }
     
