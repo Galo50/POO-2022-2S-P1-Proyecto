@@ -25,10 +25,9 @@ public class Main {
             Guardar.crearSupervisorPredeterminado();
             Main.usuarios = Cargar.usuarios();
         }
-        
         ArrayList<String> userCredentials = MIniciarSesion.iniciarSesion();
         
-        // VARIABLES USADAS PARA TESTEAR -----------
+        // VARIABLES USADAS PARA TESTEAR (NO LAS BORRES PLOX, LAS USO PARA VERIFICAR EL FUNCIONAMIENTO XD) -----------
         ArrayList<Solicitud> u1 = new ArrayList<>();
         ArrayList<String> uc1 = new ArrayList<>();
         ArrayList<Vehiculo> uv1 = new ArrayList<>();
@@ -38,10 +37,11 @@ public class Main {
         uv1.add(av1);
         uv1.add(ca1);
         
-        Cliente cTester = new Cliente(0,"",0,"","","","",u1);
+        Cliente cTester = new Cliente("","",0,"","","","",u1);
         Vendedor vTester = new Vendedor("",0,"","","","",u1);
         JefeTaller jTester = new JefeTaller(uc1, "", "", "", "", u1);
         Mecanico mTester = new Mecanico("", "", "", "", u1, uv1);
+        Supervisor sTester = new Supervisor(uc1, "", "", "", "", u1);
         // HASTA AQUÍ TERMINAN DICHAS VARIABLES -----------
         
         //int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
@@ -51,46 +51,79 @@ public class Main {
             Prints.usuarioNoEncontrado();
         }
         
+        // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
         if (userIndex != -1) {
-            //Usuario userLoggedIn = Main.usuarios.get(userIndex);
+            Usuario userLoggedIn = Main.usuarios.get(userIndex);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
-            //Prints.darBienvenida(userLoggedIn);
+            Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
+            Prints.darBienvenida(userLoggedIn);
             
-            //if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-            //    MCliente.menuCliente();
-            //}
+            if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
+                MCliente.menuCliente();
+                int optionChose = MCliente.menuCliente();
+                while (optionChose != 8) {
+                    if (optionChose == 1) {
+                        
+                    }
+                    else if (optionChose == 2) {
+                        
+                    }
+                    else if (optionChose == 3) {
+                        
+                    }
+                    else if (optionChose == 4) {
+                        
+                    }
+                    else if (optionChose == 5) {
+                        
+                    }
+                    else if (optionChose == 6) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }
+            }
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
-            //    MJefeTaller.menuJefeTaller();
-            //}
+            else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
+                MJefeTaller.menuJefeTaller();
+            }
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
+            else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
                 int optionChose = MMecanico.menuMecanico();
                 while (optionChose != 3) {
-                    if(optionChose == 1) {
+                    if (optionChose == 1) {
                         userMecanico.verCarrosMecanico();
                         optionChose = MMecanico.menuMecanico();
                     }
                     else {
-                        System.out.println("Indique la posición del Vehículo: ");
+                        System.out.println("""
+                        ############ ENVIAR S. CAMBIO DE ESTADO ############
+                        Indique la Posición del Vehículo en su Lista al cual
+                        desea generarle una solicitud de cambio de estado.       
+                        """);
                         int position = inputJava.nextInt();
                         while (position > userMecanico.getCarros().size() || position == 0) {
                             System.out.println("Ingrese una posición existente!");
                             position = inputJava.nextInt();
                         }
+                        System.out.println("""
+                        Generando solicitud...""");
+                        userMecanico.enviarCambioEstado(position, userMecanico, sTester);
                         optionChose = MMecanico.menuMecanico();
                     }
                 }
                 Prints.brindarDespedida();
-            //}
+            }
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-            //    MVendedor.menuVendedor();
-            //}
+            else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
+                MVendedor.menuVendedor();
+            }
             
-            //else {
-            //    MSupervisor.menuSupervisor();
-            //}
+            else {
+                MSupervisor.menuSupervisor();
+            }
         }
     }
     

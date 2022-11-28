@@ -49,5 +49,6 @@ public class Mecanico extends Usuario{
         Vehiculo carroChose = this.carros.get(position);
         SEstado se1 = new SEstado(carroChose, remitente, destinatario);
         destinatario.solicitudes.add(se1);
+        System.out.println("Solicitud enviada con éxito!");
     }
 }

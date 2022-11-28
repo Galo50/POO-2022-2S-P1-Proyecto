@@ -15,13 +15,13 @@ import java.util.Random;
  * @author USER
  */
 public class Cliente extends Usuario {
-    private final int cedula;
+    private final String cedula;
     private final String ocupacion;
     private final double ingresos;
     private ArrayList<Vehiculo> carros;
 
     public Cliente(
-            @JsonProperty("cedula") int cedula, 
+            @JsonProperty("cedula") String cedula, 
             @JsonProperty("ocupacion") String ocupacion, 
             @JsonProperty("ingresos") double ingresos, 
             @JsonProperty("userName") String userName, 
@@ -43,7 +43,7 @@ public class Cliente extends Usuario {
         listaVendedores.get(randomPosition).solicitudes.add(sc1);
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
