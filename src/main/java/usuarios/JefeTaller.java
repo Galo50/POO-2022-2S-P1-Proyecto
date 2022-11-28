@@ -65,7 +65,8 @@ public class JefeTaller extends Usuario{
     public void solicitudesJefeTaller() {
         System.out.println("############ LISTA DE SOLICITUDES ############");
         for (Solicitud i: solicitudes) {
-            System.out.println(i);
+            i.imprimir();
+            solicitudes.remove(i);
         }
     }
 

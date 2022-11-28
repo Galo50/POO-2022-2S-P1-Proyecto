@@ -123,7 +123,8 @@ public class Cliente extends Usuario {
     public void solicitudesCliente() {
         System.out.println("############ LISTA DE SOLICITUDES ############");
         for(Solicitud i: this.solicitudes) {
-            System.out.println(i);
+            i.imprimir();
+            solicitudes.remove(i);
         }
     }
     
