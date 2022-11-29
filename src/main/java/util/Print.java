@@ -150,4 +150,17 @@ public class Print {
 
        """);
     }
+    
+    public static void opcionesDeMecanico() {
+        System.out.println("""
+            |===============================================|
+            |                  MENÚ MECÁNICO                |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Consultar vehículos en etapa de prueba      |
+            |2. Salir                                       |
+            |-----------------------------------------------|
+
+        """);
+    }
 }
