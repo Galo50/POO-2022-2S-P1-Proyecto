@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
+import usuarios.Cliente;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
@@ -51,7 +52,13 @@ public class MenuCliente {
         }
     }
     
-    public static void consultarVehiculosAquiridos() {
+    public static void consultarVehiculosAquiridos(Cliente cliente) {
+        // TODO
+        System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
+        for (Vehiculo i: cliente.getCarros())
+    }
+    
+    public static void visualizarVehiculosAdquiridos() {
         // TODO
     }
     

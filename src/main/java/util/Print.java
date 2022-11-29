@@ -148,10 +148,13 @@ public class Print {
             |                  * Opciones *                 |
             |1. Consultar stock                             |
             |2. Consultar vehículos adquiridos              |
-            |3. Consultar cotizaciones                      |
-            |4. Consultar mantenimientos                    |
-            |5. Solicitar mantenimiento                     |
-            |6. Salir                                       |
+            |3. Visualizar vehiculos adquiridos             |
+            |4. Consultar cotizaciones                      |
+            |5. Consultar mantenimientos                    |
+            |6. Solicitar mantenimiento                     |
+            |7. Solicitar mantenimiento                     |
+            |                                               |
+            |8. Salir                                       |
             |-----------------------------------------------|
 
         """);
