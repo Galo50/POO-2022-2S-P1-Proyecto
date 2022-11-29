@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class MSupervisor {
+public class MenuSupervisor {
     public static int menuSupervisor() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();

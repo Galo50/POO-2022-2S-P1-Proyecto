@@ -58,18 +58,18 @@ public class Menu {
 
                 if (opcionEsCliente == 1) {
                     Print.iniciarSesion();
-                    usuarioAutenticado = Autenticar.iniciarSesion(scanner, usuarios);
+                    usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
                 }
 
                  if (opcionEsCliente == 2) {
                      Print.seCrearaCliente();
-                     usuarioAutenticado = Autenticar.crearCliente(scanner);
+                     usuarioAutenticado = MenuAutenticar.crearCliente(scanner);
                  }
             }
 
             if (tipoDeUsuario != 1) {
                 Print.iniciarSesion();
-                usuarioAutenticado = Autenticar.iniciarSesion(scanner, usuarios);
+                usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
             }
         }
         

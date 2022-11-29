@@ -11,33 +11,35 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class MBooleano {
-   public static int menuBooleano() {
-      ArrayList<Integer> listaOpciones;
+public class MenuMantenimiento {
+    public static int menuMantenimiento() {
+        Scanner inputJava = new Scanner(System.in);
+        ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
         listaOpciones.add(3);
         int optionChose;
-        Scanner inputJava = new Scanner(System.in);
-        
+               
         
         System.out.println("""
                            |===============================================|
-                           |        DETERMINE LA ACCION A REALIZAR         |
+                           |       INGRESE EL TIPO DE MANTENIMIENTO        |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Aceptar                                     |
-                           |2. Rechazar                                    |
-                           |3. Salir al menu                               |
+                           |1. Preventivo                                  |
+                           |2. Emergencia                                  |
+                           |3. Salir al menu principal                     |
+                           |Ingrese el número de la opción a elegir:       |
                            |-----------------------------------------------|
                            
-                              -Ingrese el número de la opción a elegir- """);
-      optionChose = inputJava.nextInt();
+                               -Ingrese el número de la opción a elegir- """);
+        optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
                 optionChose = inputJava.nextInt();
         }
         return optionChose;
-   }     
+    }
 }
+       

@@ -4,14 +4,14 @@ import util.Cargar;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import menu.MCliente;
+import menu.MenuCliente;
 import usuarios.*;
 import vehiculos.*;
 import solicitudes.Solicitud;
-import menu.MJefeTaller;
-import menu.MMecanico;
-import menu.MSupervisor;
-import menu.MVendedor;
+import menu.MenuJefeTaller;
+import menu.MenuMecanico;
+import menu.MenuSupervisor;
+import menu.MenuVendedor;
 import menu.Menu;
 
 public class Main {
@@ -61,23 +61,23 @@ public class Main {
             Print.darBienvenidaUsuario(userLoggedIn);
             
             if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-                int optionChose = MCliente.menuCliente();
+                int optionChose = MenuCliente.menuCliente();
                 while (optionChose != 8) {
                     if (optionChose == 1) {
                         userCliente.consultarStock(uv1);
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 2) {
                         userCliente.verCarrosCliente();
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 3) {
                         userCliente.solicitudesCliente();
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 4) {
                         userCliente.drawVehicles(uv1);
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 5) {
                         System.out.println("""
@@ -96,7 +96,7 @@ public class Main {
                                        Generando solicitud...""");
                         userCliente.solicitarCotizacion(uv1.get(position), userCliente, uvd1);
                         System.out.println("Solicitud enviada con éxito!");
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 6) {
                         System.out.println("""
@@ -116,7 +116,7 @@ public class Main {
                                        Generando solicitud...""");
                         userCliente.solicitarMantenimiento(userCliente.getCarros().get(position), "Limpieza profunda, Colgate 12 horas de acción", userCliente, userJFTaller);
                         System.out.println("Solicitud enviada con éxito!");
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                     else if (optionChose == 7) {
                         System.out.println("""
@@ -131,21 +131,21 @@ public class Main {
                         }
                         System.out.println("El estado del Vehículo es: " + 
                             userCliente.consultarEstado(userCliente.getCarros().get(position)));
-                        optionChose = MCliente.menuCliente();
+                        optionChose = MenuCliente.menuCliente();
                     }
                 }
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
-                MJefeTaller.menuJefeTaller();
+                MenuJefeTaller.menuJefeTaller();
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
-                int optionChose = MMecanico.menuMecanico();
+                int optionChose = MenuMecanico.menuMecanico();
                 while (optionChose != 3) {
                     if (optionChose == 1) {
                         userMecanico.verCarrosMecanico();
-                        optionChose = MMecanico.menuMecanico();
+                        optionChose = MenuMecanico.menuMecanico();
                     }
                     else {
                         System.out.println("""
@@ -162,25 +162,25 @@ public class Main {
                         Generando solicitud...""");
                         userMecanico.enviarCambioEstado(position, userMecanico, sTester);
                         System.out.println("Solicitud enviada con éxito!");
-                        optionChose = MMecanico.menuMecanico();
+                        optionChose = MenuMecanico.menuMecanico();
                     }
                 }
                 Print.brindarDespedida();
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-                MVendedor.menuVendedor();
+                MenuVendedor.menuVendedor();
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR){
-                int optionChose = MSupervisor.menuSupervisor();
+                int optionChose = MenuSupervisor.menuSupervisor();
                 while (optionChose != 5) {
                     if (optionChose == 1) {
                         
-                        optionChose = MSupervisor.menuSupervisor();
+                        optionChose = MenuSupervisor.menuSupervisor();
                     }
                     else if (optionChose == 4) {
-                        int userTypeChose = MSupervisor.submenuUsuarioSupervisor();
+                        int userTypeChose = MenuSupervisor.submenuUsuarioSupervisor();
                         if (userTypeChose == 1) { // CLIENTE
                             System.out.println("Ingrese la cédula: ");
                             String cCedula = inputJava.nextLine();
@@ -211,7 +211,7 @@ public class Main {
                                                Usuario creado y guardado con éxito!
                                                """);
                         }
-                        optionChose = MSupervisor.menuSupervisor();
+                        optionChose = MenuSupervisor.menuSupervisor();
                     }
                 }
             }

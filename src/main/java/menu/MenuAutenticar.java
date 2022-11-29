@@ -14,7 +14,7 @@ import usuarios.*;
  *
  * @author Todos :v
  */
-public class Autenticar {
+public class MenuAutenticar {
     public static ArrayList<String> iniciarSesion() throws IOException {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();

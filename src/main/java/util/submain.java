@@ -17,8 +17,8 @@ public class submain {
     public void submain(){
      Usuario userLoggedIn;
      if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
-                MCliente.menuCliente();
-                int optionChose = MSupervisor.menuSupervisor();
+                MenuCliente.menuCliente();
+                int optionChose = MenuSupervisor.menuSupervisor();
                 while (optionChose != 8) {
                     if (optionChose == 1) {
                         

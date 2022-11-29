@@ -6,30 +6,29 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  *
- * @author Todos :v
+ * @author Todos xd
  */
-public class MVendedor {
-    public static int menuVendedor() {
+public class MenuMecanico {
+    public static int menuMecanico() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
         listaOpciones.add(3);
-        listaOpciones.add(4);
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
         System.out.println("""
                            |===============================================|
-                           |                 MENÚ VENDEDOR                 |
+                           |                  MENÚ MECÁNICO                |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Acceso a Stock                              |
-                           |2. Bandeja de Solicitudes                      |
-                           |3. Sugerir Modelos                             |
-                           |4. Salir                                       |
+                           |1. Consultar Vehículos a Disposición           |
+                           |2. Enviar Cambio de Estado                     |
+                           |3. Salir                                       |
                            |-----------------------------------------------|
                            
                                -Ingrese el número de la opción a elegir- """);

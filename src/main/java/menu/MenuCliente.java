@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Todos :v
  */
-public class MCliente {
+public class MenuCliente {
     public static int menuCliente() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();

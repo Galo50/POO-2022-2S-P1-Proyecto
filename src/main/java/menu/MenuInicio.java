@@ -12,7 +12,7 @@ import util.Print;
  *
  * @author USER
  */
-public class MInicio {
+public class MenuInicio {
     public static boolean menuInicio(){
     Scanner inputJava = new Scanner(System.in);
         boolean registrado;                       
