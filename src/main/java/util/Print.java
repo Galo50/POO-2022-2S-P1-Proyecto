@@ -47,7 +47,7 @@ public class Print {
     }
     
     public static void solicitarIniciarSesion() {
-        System.out.print("Necesita iniciar sesion para usar el programa.");
+        System.out.print("Necesita iniciar sesion para usar el programa.\n");
     }
     
     public static void ingresarOpcion() {
