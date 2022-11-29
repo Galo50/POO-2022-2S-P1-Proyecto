@@ -6,6 +6,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
 
 /**
  *
@@ -13,34 +14,23 @@ import java.util.Scanner;
  */
 public class MenuMecanico {
     public static void show(Scanner scanner) {
-        // TODO
+        boolean usuarioDeseaSalir = false;
+        
+        while (!usuarioDeseaSalir) {
+            Print.opcionesDeMecanico();
+            
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 2);
+            
+            if (opcion == 1) {
+                
+            }
+            
+            usuarioDeseaSalir = opcion == 2;
+        }
     }
     
-    public static int menuMecanico() {
-        ArrayList<Integer> listaOpciones;
-        listaOpciones = new ArrayList<>();
-        listaOpciones.add(1);
-        listaOpciones.add(2);
-        listaOpciones.add(3);
-        int optionChose;
-        Scanner inputJava = new Scanner(System.in);
-        
-        System.out.println("""
-                           |===============================================|
-                           |                  MENÚ MECÁNICO                |
-                           |===============================================|
-                           |                  * Opciones *                 |
-                           |1. Consultar Vehículos a Disposición           |
-                           |2. Enviar Cambio de Estado                     |
-                           |3. Salir                                       |
-                           |-----------------------------------------------|
-                           
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
-        while (!(listaOpciones.contains(optionChose))) {
-                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
-                optionChose = inputJava.nextInt();
-        }
-        return optionChose;
+    public static void consultarVehiculosEnEtapaDePrueba() {
+        // TODO
     }
+
 }
