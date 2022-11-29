@@ -150,4 +150,35 @@ public class Print {
 
        """);
     }
+    
+    public static void opcionesDeSupervisor() {
+        System.out.println("""
+            |===============================================|
+            |                MENÚ SUPERVISOR                |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Consultar Vendedores                        |
+            |2. Ingresar Nuevos Vehiculos                   |
+            |3. Bandeja de Solicitudes                      |
+            |4. Ingresar Usuario Nuevo                      |
+            |5. Salir                                       |
+            |-----------------------------------------------|
+                           
+       """);
+    }
+    
+    public static void opcionesDeVendedor() {
+        System.out.println("""
+            |===============================================|
+            |                 MENÚ VENDEDOR                 |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Acceso a Stock                              |
+            |2. Bandeja de Solicitudes                      |
+            |3. Sugerir Modelos                             |
+            |4. Salir                                       |
+            |-----------------------------------------------|
+                           
+       """);
+    }
 }
