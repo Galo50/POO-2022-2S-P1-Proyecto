@@ -4,6 +4,7 @@
  */
 package menu;
 
+import util.Print;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,19 +18,7 @@ public class MIniciarSesion {
         ArrayList<String> credenciales;
         credenciales = new ArrayList<>();
         
-        System.out.println("""
-                           -----------------------------------------------
-                           |Bienvenido a la Concesionaria 'AMLO'         |
-                           |                                             |
-                           |El siguiente sistema le otorgará la capacidad|
-                           |de aprobar solicitudes de crédito para la    |
-                           |compra de vehículos, receptar pagos, emitir, | 
-                           |cotizaciones entre otros aspectos.           |
-                           |                                             |
-                           |Para ingresar al programa, siga los pasos    |
-                           |indicados en la parte inferior...            |
-                           -----------------------------------------------
-                           """);
+        Print.darBienvenidaPrograma();
         System.out.println("""
                            ===============================================
                                      I N I C I A R  S E S I Ó N

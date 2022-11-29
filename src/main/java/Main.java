@@ -1,3 +1,6 @@
+import util.Guardar;
+import util.Print;
+import util.Cargar;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -52,7 +55,7 @@ public class Main {
         int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
         
         if (userIndex == -1) {
-            Prints.usuarioNoEncontrado();
+            Print.usuarioNoEncontrado();
         }
         
         // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
@@ -63,7 +66,7 @@ public class Main {
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
             Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
             userCliente.setCarros(uv1);
-            Prints.darBienvenida(userLoggedIn);
+            Print.darBienvenidaUsuario(userLoggedIn);
             
             if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
                 int optionChose = MCliente.menuCliente();
@@ -170,7 +173,7 @@ public class Main {
                         optionChose = MMecanico.menuMecanico();
                     }
                 }
-                Prints.brindarDespedida();
+                Print.brindarDespedida();
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {

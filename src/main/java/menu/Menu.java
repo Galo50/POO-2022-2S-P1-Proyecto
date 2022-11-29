@@ -1,6 +1,7 @@
 package menu;
 
 import usuarios.*;
+import util.Print;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -46,7 +47,7 @@ public class Menu {
                 numero = scanner.nextFloat();
 
             } catch (InputMismatchException e) {
-                System.out.println("No se puede procesar el valor ingresado, intenta de nuevo.");
+                Print.valorNoProcesable();
                 scanner.next();
             }
         }
