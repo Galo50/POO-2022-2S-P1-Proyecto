@@ -34,7 +34,7 @@ public class Main {
                 Print.darBienvenidaUsuario(userLoggedIn);
 
                 if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-                    MenuCliente.show(scanner);
+                    MenuCliente.show(scanner, vehiculos);
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
