@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class MIngreso {
+public class MenuIngreso {
        public static int menuIngreso() {
            
         Scanner inputJava = new Scanner(System.in);

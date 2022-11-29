@@ -12,7 +12,7 @@ import vehiculos.*;
  *
  * @author USER
  */
-public class MEditar {
+public class MenuEditar {
     public static int menuEditar() {
            
         Scanner inputJava = new Scanner(System.in);

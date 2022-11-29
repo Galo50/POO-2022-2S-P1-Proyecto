@@ -6,38 +6,42 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  *
- * @author USER
+ * @author Todos :v
  */
-public class MBooleano {
-   public static int menuBooleano() {
-      ArrayList<Integer> listaOpciones;
+public class MenuVendedor {
+    public static void show(Scanner scanner) {
+        // TODO
+    }
+    
+    public static int menuVendedor() {
+        ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
         listaOpciones.add(3);
+        listaOpciones.add(4);
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
-        
         System.out.println("""
                            |===============================================|
-                           |        DETERMINE LA ACCION A REALIZAR         |
+                           |                 MENÚ VENDEDOR                 |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Aceptar                                     |
-                           |2. Rechazar                                    |
-                           |3. Salir al menu                               |
+                           |1. Acceso a Stock                              |
+                           |2. Bandeja de Solicitudes                      |
+                           |3. Sugerir Modelos                             |
+                           |4. Salir                                       |
                            |-----------------------------------------------|
                            
-                              -Ingrese el número de la opción a elegir- """);
-      optionChose = inputJava.nextInt();
+                               -Ingrese el número de la opción a elegir- """);
+        optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
                 optionChose = inputJava.nextInt();
         }
         return optionChose;
-   }     
+    }
 }

@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 /**
  *
- * @author Todos xd
+ * @author USER
  */
-public class MMecanico {
-    public static int menuMecanico() {
-        ArrayList<Integer> listaOpciones;
+public class MenuBooleano {
+   public static int menuBooleano() {
+      ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
         listaOpciones.add(1);
         listaOpciones.add(2);
@@ -21,22 +21,23 @@ public class MMecanico {
         int optionChose;
         Scanner inputJava = new Scanner(System.in);
         
+        
         System.out.println("""
                            |===============================================|
-                           |                  MENÚ MECÁNICO                |
+                           |        DETERMINE LA ACCION A REALIZAR         |
                            |===============================================|
                            |                  * Opciones *                 |
-                           |1. Consultar Vehículos a Disposición           |
-                           |2. Enviar Cambio de Estado                     |
-                           |3. Salir                                       |
+                           |1. Aceptar                                     |
+                           |2. Rechazar                                    |
+                           |3. Salir al menu                               |
                            |-----------------------------------------------|
                            
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
+                              -Ingrese el número de la opción a elegir- """);
+      optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
                 System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
                 optionChose = inputJava.nextInt();
         }
         return optionChose;
-    }
+   }     
 }

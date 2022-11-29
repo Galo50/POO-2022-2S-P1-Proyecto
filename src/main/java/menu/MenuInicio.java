@@ -6,22 +6,17 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
 
 /**
  *
  * @author USER
  */
-public class MInicio {
+public class MenuInicio {
     public static boolean menuInicio(){
     Scanner inputJava = new Scanner(System.in);
         boolean registrado;                       
-            System.out.println("""
-                           |===============================================|
-                           |          ¿USTED ES CLIENTE NUEVO?             |
-                           |===============================================|
-                           |1. Si                                          |
-                           |2. No                                          |    
-                           |-----------------------------------------------|    """);
+            Print.preguntaSiEsCliente();
             int opcionRegistrado =inputJava.nextInt();
             ArrayList<Integer> listaOpcionesRegistrado;
             listaOpcionesRegistrado = new ArrayList<>();
