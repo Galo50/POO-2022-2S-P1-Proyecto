@@ -39,8 +39,42 @@ public class MSupervisor {
                                -Ingrese el número de la opción a elegir- """);
         optionChose = inputJava.nextInt();
         while (!(listaOpciones.contains(optionChose))) {
-                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
-                optionChose = inputJava.nextInt();
+            System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
+            optionChose = inputJava.nextInt();
+        }
+        return optionChose;
+    }
+    
+    public static int submenuUsuarioSupervisor() {
+        ArrayList<Integer> listaOpciones;
+        listaOpciones = new ArrayList<>();
+        listaOpciones.add(1);
+        listaOpciones.add(2);
+        listaOpciones.add(3);
+        listaOpciones.add(4);
+        listaOpciones.add(5);
+        
+        int optionChose;
+        Scanner inputJava = new Scanner(System.in);
+        
+        System.out.println("""
+                           |===============================================|
+                           |                MENÚ SUPERVISOR                |
+                           |         - OPCIÓN: INGRESAR USUARIO -          |
+                           |===============================================|
+                           |     Seleccione el tipo de Usuario a crear     |
+                           |1. Cliente                                     |
+                           |2. Jefe de Taller                              |
+                           |3. Mecánico                                    |
+                           |4. Vendedor                                    |
+                           |                                               |
+                           |5. Regresar                                    |
+                           |-----------------------------------------------|
+                           """);
+        optionChose = inputJava.nextInt();
+        while (!(listaOpciones.contains(optionChose))) {
+            System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
+            optionChose = inputJava.nextInt();
         }
         return optionChose;
     }
