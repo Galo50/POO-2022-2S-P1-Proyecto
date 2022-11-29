@@ -47,12 +47,13 @@ public class Menu {
         
         Print.darBienvenidaPrograma();
         Print.solicitarIniciarSesion();
+        boolean usuarioDeseaSalir = false;
         
-        while (usuarioAutenticado == null) {
+        while (!usuarioDeseaSalir) {
             Print.tiposDeUsuario();
-            Float tipoDeUsuario = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 6);
+            Float opcion = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 6);
 
-            if (tipoDeUsuario == 1) {
+            if (opcion == 1) { // SI ES CLIENTE
                 Print.preguntaSiEsCliente();
                 Float opcionEsCliente = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1,2);
 
@@ -67,28 +68,29 @@ public class Menu {
                  }
             }
 
-            else if (tipoDeUsuario == 2) {
+            if (opcion == 2) { // SI ES JEFETALLER
                 Print.iniciarSesion();
                 usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
             }
             
-            else if (tipoDeUsuario == 3) {
+            if (opcion == 3) { // SI ES MECÁNICO
                 
             }
             
-            else if (tipoDeUsuario == 4) {
+            if (opcion == 4) { // SI ES SUPERVISOR
                 
             }
             
-            else if (tipoDeUsuario == 5) {
+            if (opcion == 5) { // SI ES VENDEDOR
                 
             }
             
-            else if (tipoDeUsuario == 6) {
+            if (opcion == 6) {
                 Print.brindarDespedida();
+                usuarioDeseaSalir = opcion == 6;
             }
         }
         
         return usuarioAutenticado;
-    }
+        }
 }
