@@ -6,14 +6,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import menu.MCliente;
 import usuarios.*;
-//import vehiculos.Vehiculo;
 import vehiculos.*;
 import solicitudes.Solicitud;
-import menu.MIniciarSesion;
 import menu.MJefeTaller;
 import menu.MMecanico;
 import menu.MSupervisor;
 import menu.MVendedor;
+import menu.Menu;
 
 public class Main {
     public static ArrayList<Usuario> usuarios = new ArrayList();
@@ -30,7 +29,8 @@ public class Main {
             Guardar.crearSupervisorPredeterminado();
             Main.usuarios = Cargar.usuarios();
         }
-        ArrayList<String> userCredentials = MIniciarSesion.iniciarSesion();
+
+        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios);
         
         // VARIABLES USADAS PARA TESTEAR (NO LAS BORRES PLOX, LAS USO PARA VERIFICAR EL FUNCIONAMIENTO XD) -----------
         ArrayList<Solicitud> u1 = new ArrayList<>();
@@ -52,16 +52,8 @@ public class Main {
         uvd1.add(vTester);
         // HASTA AQUÍ TERMINAN DICHAS VARIABLES -----------
         
-        int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
-        
-        if (userIndex == -1) {
-            Print.usuarioNoEncontrado();
-        }
-        
         // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
-        if (userIndex != -1) {
-            
-            Usuario userLoggedIn = Main.usuarios.get(userIndex);
+        if (true) {
             JefeTaller userJFTaller = new JefeTaller(uc1, "AMLO", "AMLO2001", "Manuel", "Lopez", u1);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
             Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
@@ -224,19 +216,5 @@ public class Main {
                 }
             }
         }
-    }
-    
-    public static int getUserIndexByCredentials(String userName, String password, ArrayList<Usuario> usuarios) {
-        int userIndex = -1;
-        
-        for (int i = 0; i < usuarios.size(); i++) {
-            Usuario usuario = usuarios.get(i);
-            
-            if (userName.equalsIgnoreCase(usuario.getUserName()) && password.equalsIgnoreCase(usuario.getPassword())) {
-                userIndex = i;
-            }
-        }
-        
-        return userIndex;
     }
 }

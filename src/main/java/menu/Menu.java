@@ -7,40 +7,10 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class Menu {
-    public static Cliente crearCliente(Scanner scanner) {
-        String cedula;
-        String ocupacion;
-        float ingresos;
-        String username;
-        String password;
-        String nombre;
-        String apellido;
-        
-        System.out.print("Ingresar cédula: ");
-        cedula = scanner.nextLine();
-        
-        System.out.print("Ingresar ocupación: ");
-        ocupacion = scanner.nextLine();
-        
-        ingresos = Menu.solicitarNumero(scanner, "Ingresar ingresos: ");
-        
-        System.out.print("Ingresar nombre de usuario: ");
-        username = scanner.nextLine();
-        
-        System.out.print("Ingresar contraseña: ");
-        password =scanner.nextLine();
-        
-        System.out.print("Ingresar nombres: ");
-        nombre = scanner.nextLine();
-        
-        System.out.print("Ingresar apellidos: ");
-        apellido = scanner.nextLine();
-        
-        return new Cliente(cedula, ocupacion, ingresos, username, password, nombre, apellido, new ArrayList());
-    }
     
     public static Float solicitarNumero(Scanner scanner, String mensaje) {
         Float numero = Float.NaN;
+        
         while (numero.isNaN()) {
             try {
                 System.out.print(mensaje);
@@ -56,9 +26,53 @@ public class Menu {
         return numero;
     }
     
+    public static Float solicitarNumero(Scanner scanner, String mensaje, int min, int max) {
+        Float numero = Float.NaN;
         
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Menu.crearCliente(scanner);
+        while (numero.isNaN()) {
+            Float numeroIngresado = Menu.solicitarNumero(scanner, mensaje);
+            
+            if (numeroIngresado >= min && numeroIngresado <= max) {
+                numero = numeroIngresado;
+            } else {
+                Print.valorFueraDeRango();
+            }
+        }
+        
+        return numero;
+    }
+    
+    public static Usuario autenticar(Scanner scanner, ArrayList<Usuario> usuarios) {
+        Usuario usuarioAutenticado = null;
+        
+        Print.darBienvenidaPrograma();
+        Print.solicitarIniciarSesion();
+        
+        while (usuarioAutenticado == null) {
+            Print.tiposDeUsuario();
+            Float tipoDeUsuario = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 5);
+
+            if (tipoDeUsuario == 1) {
+                Print.preguntaSiEsCliente();
+                Float opcionEsCliente = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1,2);
+
+                if (opcionEsCliente == 1) {
+                    Print.iniciarSesion();
+                    usuarioAutenticado = Autenticar.iniciarSesion(scanner, usuarios);
+                }
+
+                 if (opcionEsCliente == 2) {
+                     Print.seCrearaCliente();
+                     usuarioAutenticado = Autenticar.crearCliente(scanner);
+                 }
+            }
+
+            if (tipoDeUsuario != 1) {
+                Print.iniciarSesion();
+                usuarioAutenticado = Autenticar.iniciarSesion(scanner, usuarios);
+            }
+        }
+        
+        return usuarioAutenticado;
     }
 }

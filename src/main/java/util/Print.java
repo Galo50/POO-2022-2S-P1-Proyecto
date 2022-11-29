@@ -3,6 +3,9 @@ package util;
 import usuarios.Usuario;
 
 public class Print {
+    public static String ingresarOpcion = "Ingrese su opción: ";
+    public static String seCrearaCliente = "Va a crear un cliente, rellene los datos a continuación.";
+    
     public static void darBienvenidaUsuario(Usuario usuario) {
         System.out.println("Bienvenido " + usuario.getNombres() + " " + usuario.getApellidos() + "!");
     }
@@ -21,6 +24,38 @@ public class Print {
     
     public static void ingresarUsername() {
         System.out.print("Ingrese su nombre de usuario: ");
+    }
+    
+    public static void ingresarPassword() {
+        System.out.print("Ingrese su contraseña: ");
+    }
+    
+    public static String ingresarTipoDeUsuario(boolean print) {
+        String mensaje = "Ingrese el tipo de usuario: ";
+        if (print) {
+            System.out.print(mensaje);
+        }
+        return mensaje;
+    }
+    
+    public static void seCrearaCliente() {
+        System.out.println(Print.seCrearaCliente);
+    }
+    
+    public static void valorFueraDeRango() {
+        System.out.print("El valor ingresado está fuera del rango.");
+    }
+    
+    public static void solicitarIniciarSesion() {
+        System.out.print("Necesita iniciar sesion para usar el programa.");
+    }
+    
+    public static void ingresarOpcion() {
+        System.out.print(Print.ingresarOpcion);
+    }
+    
+    public static void inicioDeSesionFallido() {
+        System.out.println("Credenciales incorrectas o usuario inexistente.");
     }
     
     public static void brindarDespedida() {
@@ -72,5 +107,15 @@ public class Print {
             | 5. Vendedor                                   |   
             |-----------------------------------------------|                 
         """);
+    }
+    
+    public static void preguntaSiEsCliente() {
+        System.out.println("""
+            |===============================================|
+            |          ¿USTED ES CLIENTE NUEVO?             |
+            |===============================================|
+            |1. Si                                          |
+            |2. No                                          |    
+            |-----------------------------------------------|    """);
     }
 }
