@@ -135,4 +135,19 @@ public class Print {
 
         """);
     }
+    
+    public static void opcionesDeJefeTaller() {
+        System.out.println("""
+            |===============================================|
+            |               MENÚ JEFE TALLER                |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Entregar vehículos                          |
+            |2. Consultar mantenimientos                    |
+            |3. Consultar solicitudes de mantenimiento      |
+            |4. Salir                                       |
+            |-----------------------------------------------|
+
+       """);
+    }
 }

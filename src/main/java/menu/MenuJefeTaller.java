@@ -1,56 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
+import vehiculos.Vehiculo;
 
-/**
- *
- * @author USER
- */
 public class MenuJefeTaller {
-    public static void show(Scanner scanner) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos) {
+        boolean usuarioDeseaSalir = false;
+        
+        while (!usuarioDeseaSalir) {
+            Print.opcionesDeJefeTaller();
+            
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            
+            if (opcion == 1) {
+                entregarVehiculos(scanner, vehiculos);
+            }
+            
+            if (opcion == 2) {
+                consultarMantenimientos();
+            }
+            
+            if (opcion == 3) {
+                consultarSolicitudesDeMantenimiento();
+            }
+            
+            usuarioDeseaSalir = opcion == 4;
+        }
+    }
+    
+    public static void entregarVehiculos(Scanner scanner, ArrayList<Vehiculo> vehiculosParaEntregar) {
         // TODO
     }
     
-    public static int menuJefeTaller() {
-        ArrayList<Integer> listaOpciones;
-        listaOpciones = new ArrayList<>();
-        listaOpciones.add(1);
-        listaOpciones.add(2);
-        listaOpciones.add(3);
-        listaOpciones.add(4);
-        listaOpciones.add(5);
-        listaOpciones.add(6);
-        listaOpciones.add(7);
-        listaOpciones.add(8);
-        int optionChose;
-        Scanner inputJava = new Scanner(System.in);
-        
-        System.out.println("""
-                           |===============================================|
-                           |               MENÚ JEFE TALLER                |
-                           |===============================================|
-                           |                  * Opciones *                 |
-                           |1. Dar de Alta un Vehiculo                     |
-                           |2. Consultar Vehículos en Taller               |
-                           |3. Bandeja de Solicitudes                      |
-                           |4. Asignar un Vehiculo                         |
-                           |5. Realizar una Entrega                        |
-                           |6. Administrar Estados                         |
-                           |7. Salir                                       |
-                           |-----------------------------------------------|
-                           
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
-        while (!(listaOpciones.contains(optionChose))) {
-                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
-                optionChose = inputJava.nextInt();
-        }
-        return optionChose;
+    public static void consultarMantenimientos() {
+        // TODO
     }
     
+    public static void consultarSolicitudesDeMantenimiento() {
+        // TODO
+    }
 }
