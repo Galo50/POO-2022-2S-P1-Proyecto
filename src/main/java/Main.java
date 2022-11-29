@@ -8,10 +8,7 @@ import menu.MenuCliente;
 import usuarios.*;
 import vehiculos.*;
 import solicitudes.Solicitud;
-import menu.MenuJefeTaller;
-import menu.MenuMecanico;
-import menu.MenuSupervisor;
-import menu.Menu;   
+import menu.*;  
 
 public class Main {
     public static ArrayList<Usuario> usuarios = new ArrayList();
@@ -75,11 +72,11 @@ public class Main {
         }
         
         if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
-            MenuSupervisor.show(scanner);
+            MenuSupervisor.show(scanner, usuarios);
         }
         
         if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-            MenuSupervisor.show(scanner);
+            MenuVendedor.show(scanner);
         }
             
             /*

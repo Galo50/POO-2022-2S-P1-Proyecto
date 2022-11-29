@@ -58,6 +58,10 @@ public class Print {
         System.out.println("Credenciales incorrectas o usuario inexistente.");
     }
     
+    public static void seHaCreadoUnNuevoUsuario() {
+        System.out.println("Se ha añadido un nuevo usuario a la lista.");
+    }
+    
     public static void brindarDespedida() {
         System.out.println("""
 

@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
 import usuarios.*;
-import util.Guardar;
 import vehiculos.*;
 
-/**
- *
- * @author USER
- */
 public class MenuSupervisor {
     public static void show(Scanner scanner, ArrayList<Usuario> usuarios) {
         boolean usuarioDeseaSalir = false;
@@ -29,13 +20,12 @@ public class MenuSupervisor {
             }
             
             if (opcion == 2) {
-                Usuario usuarioCreado = crearUsuario(scanner);
-                usuarios.add(usuarioCreado);
-                Guardar.usuarios(usuarios);
+
             }
             
             if (opcion == 3) {
-                
+                Usuario usuarioCreado = crearUsuario(scanner);
+                usuarios.add(usuarioCreado);
             }
             
             usuarioDeseaSalir = opcion == 4;
@@ -46,11 +36,11 @@ public class MenuSupervisor {
         
     }
     
-    public static Vehiculo crearVehiculo(Scanner scanner) {
+    public static void crearVehiculo(Scanner scanner) {
         boolean usuarioDeseaSalir = false;
         Vehiculo vehiculoCreado = null;
         
-        while (!usuarioDeseaSalir && vehiculoCreado != null) {
+        while (!usuarioDeseaSalir && vehiculoCreado == null) {
             Print.tiposDeVehiculo();
             
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
@@ -79,7 +69,7 @@ public class MenuSupervisor {
         boolean usuarioDeseaSalir = false;
         Usuario usuarioCreado = null;
         
-        while (!usuarioDeseaSalir && usuarioCreado != null) {
+        while (!usuarioDeseaSalir && usuarioCreado == null) {
             Print.tiposDeUsuario();
             
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 6);
@@ -93,7 +83,7 @@ public class MenuSupervisor {
             }
             
             if (opcion == 3) {
-                usuarioCreado = MenuUsuario.crearMecanico();
+                usuarioCreado = MenuUsuario.crearMecanico(scanner);
             }
             
             if (opcion == 4) {
@@ -101,10 +91,14 @@ public class MenuSupervisor {
             }
             
             if (opcion == 5) {
-                usuarioCreado = MenuUsuario.crearVendedor();
+                usuarioCreado = MenuUsuario.crearVendedor(scanner);
             }
             
             usuarioDeseaSalir = opcion == 6;
+            
+            if (usuarioCreado != null) {
+                
+            }
         }
         
         return usuarioCreado;
