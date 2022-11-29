@@ -189,8 +189,6 @@ public class Main {
                             String cCedula = inputJava.nextLine();
                             System.out.println("Ingrese la ocupación: ");
                             String cOcupacion = inputJava.nextLine();
-                            System.out.println("Digite el ingreso monetario: ");
-                            double cMoneyIncome = inputJava.nextDouble();
                             System.out.println("Ingrese el nombre de usuario: ");
                             String cUsername = inputJava.nextLine();
                             System.out.println("Ingrese el password: ");
@@ -199,6 +197,8 @@ public class Main {
                             String cNombre = inputJava.nextLine();
                             System.out.println("Ingrese el apellido: ");
                             String cApellido = inputJava.nextLine();
+                            System.out.println("Digite el ingreso monetario: ");
+                            double cMoneyIncome = inputJava.nextDouble();
                             Cliente uCliente = new Cliente(
                                     cCedula, 
                                     cOcupacion, 

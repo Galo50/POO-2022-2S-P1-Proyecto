@@ -34,6 +34,7 @@ public class Cliente extends Usuario {
         this.cedula = cedula;
         this.ocupacion = ocupacion;
         this.ingresos = ingresos;
+        this.carros = new ArrayList();
     }
     
     public void solicitarCotizacion(Vehiculo carro, Usuario remitente, ArrayList<Vendedor> listaVendedores) {
