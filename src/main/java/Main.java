@@ -60,6 +60,7 @@ public class Main {
             
             
             //Usuario userLoggedIn = Main.usuarios.get(userIndex);
+            JefeTaller userJFTaller = new JefeTaller(uc1, "AMLO", "AMLO2001", "Manuel", "Lopez", u1);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
             Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
             userCliente.setCarros(uv1);
@@ -104,11 +105,38 @@ public class Main {
                     optionChose = MCliente.menuCliente();
                 }
                 else if (optionChose == 6) {
-                        
+                    System.out.println("""
+                                       ############ SOLICITUD DE MANTENIMIENTO ############
+                                       Indique la posición del Vehículo dentro de su Lista
+                                       de Carros disponibles o que tiene a su disposición,
+                                       de igual forma, escriba el tipo de mantenimiento
+                                       que desea con la finalidad de generar la solicitud
+                                       de Mantenimiento correspondiente.
+                                       """);
+                    int position = inputJava.nextInt();
+                    while (position > userCliente.getCarros().size() || position == 0) {
+                        System.out.println("Ingrese una posición existente!");
+                        position = inputJava.nextInt();
+                    }
+                    System.out.println("""
+                                       Generando solicitud...""");
+                    userCliente.solicitarMantenimiento(userCliente.getCarros().get(position), "Limpieza profunda, Colgate 12 horas de acción", userCliente, userJFTaller);
+                    System.out.println("Solicitud enviada con éxito!");
                     optionChose = MCliente.menuCliente();
                 }
                 else if (optionChose == 7) {
-                        
+                    System.out.println("""
+                                      ############ CONSULTAR ESTADO DEL VEHÍCULO ############
+                                      Indique la posición del Vehículo al cual desea compro-
+                                      bar su estado actual.
+                                      """);
+                    int position = inputJava.nextInt();
+                    while (position > userCliente.getCarros().size() || position == 0) {
+                        System.out.println("Ingrese una posición existente!");
+                        position = inputJava.nextInt();
+                    }
+                    System.out.println("El estado del Vehículo es: " + 
+                            userCliente.consultarEstado(userCliente.getCarros().get(position)));
                     optionChose = MCliente.menuCliente();
                 }
             }

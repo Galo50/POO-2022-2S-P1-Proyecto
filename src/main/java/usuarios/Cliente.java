@@ -60,6 +60,10 @@ public class Cliente extends Usuario {
         this.carros = carros;
     }
     
+    public ArrayList<Vehiculo> getCarros() {
+        return carros;
+    }
+    
     public void consultarStock(ArrayList<Vehiculo> carrosDisponibles) {
         System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
         for (Vehiculo i: carrosDisponibles) {
