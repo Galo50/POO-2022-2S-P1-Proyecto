@@ -63,7 +63,7 @@ public class Menu {
 
                  if (opcionEsCliente == 2) {
                      Print.seCrearaCliente();
-                     usuarioAutenticado = MenuAutenticar.crearCliente(scanner);
+                     usuarioAutenticado = MenuUsuario.crearCliente(scanner);
                  }
             }
 

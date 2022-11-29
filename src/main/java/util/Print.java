@@ -104,7 +104,24 @@ public class Print {
             | 2. Jefe de taller                             |  
             | 3. Mecánico                                   |  
             | 4. Supervisor                                 |  
-            | 5. Vendedor                                   |   
+            | 5. Vendedor                                   |
+            |                                               |
+            | 6. Salir                                      | 
+            |-----------------------------------------------|                 
+        """);
+    }
+    
+    public static void tiposDeVehiculo() {
+        System.out.println("""
+            |===============================================|
+            | TIPOS DE VEHICULO                             |
+            |===============================================|
+            | 1. Automovil                                  |
+            | 2. Camion                                     |  
+            | 3. Motocicleta                                |  
+            | 4. Tractor                                    |  
+            |                                               |  
+            | 5. Salir                                      |   
             |-----------------------------------------------|                 
         """);
     }
