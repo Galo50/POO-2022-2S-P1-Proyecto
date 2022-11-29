@@ -53,7 +53,7 @@ public class Menu {
             Print.tiposDeUsuario();
             Float opcion = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 6);
 
-            if (opcion == 1) { // SI ES CLIENTE
+            if (opcion == 1) {
                 Print.preguntaSiEsCliente();
                 Float opcionEsCliente = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1,2);
 
