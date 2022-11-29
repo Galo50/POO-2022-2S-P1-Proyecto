@@ -1,10 +1,13 @@
 package menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
+import vehiculos.Vehiculo;
+import vehiculos.VehiculoEstado;
 
 public class MenuCliente {
-    public static void show(Scanner scanner) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -13,7 +16,7 @@ public class MenuCliente {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 6);
             
             if (opcion == 1) {
-                consultarStock();
+                consultarStock(vehiculosMain);
             }
             
             if (opcion == 2) {
@@ -36,8 +39,16 @@ public class MenuCliente {
         }
     }
     
-    public static void consultarStock() {
+    public static void consultarStock(ArrayList<Vehiculo> vehiculosMain) {
         // TODO
+        System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
+        for (Vehiculo i: vehiculosMain) {
+            if (i.getEstado() == VehiculoEstado.INVENTARIO) {
+                System.out.println("Marca: " + i.getMarca()
+                        + "\nModelo: " + i.getModelo()
+                        + "\nAño de Fabricación: " + i.getYear() + "\n");
+            }
+        }
     }
     
     public static void consultarVehiculosAquiridos() {
