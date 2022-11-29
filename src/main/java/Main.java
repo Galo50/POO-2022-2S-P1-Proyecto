@@ -176,7 +176,47 @@ public class Main {
             }
             
             else if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR){
-                MSupervisor.menuSupervisor();
+                int optionChose = MSupervisor.menuSupervisor();
+                while (optionChose != 5) {
+                    if (optionChose == 1) {
+                        
+                        optionChose = MSupervisor.menuSupervisor();
+                    }
+                    else if (optionChose == 4) {
+                        int userTypeChose = MSupervisor.submenuUsuarioSupervisor();
+                        if (userTypeChose == 1) { // CLIENTE
+                            System.out.println("Ingrese la cédula: ");
+                            String cCedula = inputJava.nextLine();
+                            System.out.println("Ingrese la ocupación: ");
+                            String cOcupacion = inputJava.nextLine();
+                            System.out.println("Digite el ingreso monetario: ");
+                            double cMoneyIncome = inputJava.nextDouble();
+                            System.out.println("Ingrese el nombre de usuario: ");
+                            String cUsername = inputJava.nextLine();
+                            System.out.println("Ingrese el password: ");
+                            String cPassword = inputJava.nextLine();
+                            System.out.println("Ingrese el nombre: ");
+                            String cNombre = inputJava.nextLine();
+                            System.out.println("Ingrese el apellido: ");
+                            String cApellido = inputJava.nextLine();
+                            Cliente uCliente = new Cliente(
+                                    cCedula, 
+                                    cOcupacion, 
+                                    cMoneyIncome, 
+                                    cUsername, 
+                                    cPassword, 
+                                    cNombre, 
+                                    cApellido, 
+                                    solicitudes);
+                            usuarios.add(uCliente);
+                            Guardar.usuarios(usuarios);
+                            System.out.println("""
+                                               Usuario creado y guardado con éxito!
+                                               """);
+                        }
+                        optionChose = MSupervisor.menuSupervisor();
+                    }
+                }
             }
         }
     }
