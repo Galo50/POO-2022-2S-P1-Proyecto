@@ -39,14 +39,42 @@ public class MenuUsuario {
     }
     
     public static JefeTaller crearJefeTaller(Scanner scanner) {
-        ArrayList<String> certificacionTecnica;
-        String userName;
+        ArrayList<String> certificaciones = new ArrayList();
+        String username;
         String password;
-        String nombres;
-        String apellidos; 
+        String nombre;
+        String apellido; 
         ArrayList<Solicitud> solicitudes = new ArrayList();
         
         System.out.print("Ingresar certificación técnica: ");
-        certificacionTecnica.add
+        String certificacion = scanner.nextLine();
+        
+        certificaciones.add(certificacion);
+        
+        System.out.print("Ingresar nombre de usuario: ");
+        username = scanner.nextLine();
+        
+        System.out.print("Ingresar contraseña: ");
+        password =scanner.nextLine();
+        
+        System.out.print("Ingresar nombres: ");
+        nombre = scanner.nextLine();
+        
+        System.out.print("Ingresar apellidos: ");
+        apellido = scanner.nextLine();
+        
+        return new JefeTaller(certificaciones, username, password, nombre, apellido, solicitudes);
+    }
+    
+    public static Supervisor crearSupervisor() {
+        
+    }
+    
+    public static Mecanico crearMecanico() {
+        
+    }
+    
+    public static Vendedor crearVendedor() {
+        
     }
 }
