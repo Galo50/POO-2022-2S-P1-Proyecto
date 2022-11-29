@@ -50,7 +50,7 @@ public class Menu {
         
         while (usuarioAutenticado == null) {
             Print.tiposDeUsuario();
-            Float tipoDeUsuario = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 5);
+            Float tipoDeUsuario = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 6);
 
             if (tipoDeUsuario == 1) {
                 Print.preguntaSiEsCliente();
@@ -67,9 +67,25 @@ public class Menu {
                  }
             }
 
-            if (tipoDeUsuario != 1) {
+            else if (tipoDeUsuario == 2) {
                 Print.iniciarSesion();
                 usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
+            }
+            
+            else if (tipoDeUsuario == 3) {
+                
+            }
+            
+            else if (tipoDeUsuario == 4) {
+                
+            }
+            
+            else if (tipoDeUsuario == 5) {
+                
+            }
+            
+            else if (tipoDeUsuario == 6) {
+                Print.brindarDespedida();
             }
         }
         

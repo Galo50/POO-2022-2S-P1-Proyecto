@@ -25,7 +25,7 @@ public class Main {
             Main.usuarios = Cargar.usuarios();
         }
 
-        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida
+        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
         
         Print.darBienvenidaUsuario(userLoggedIn);
 
