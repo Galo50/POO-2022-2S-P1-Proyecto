@@ -19,11 +19,9 @@ public class MIniciarSesion {
         credenciales = new ArrayList<>();
         
         Print.darBienvenidaPrograma();
-        System.out.println("""
-                           ===============================================
-                                     I N I C I A R  S E S I Ó N
-                           ===============================================
-                           Ingrese su nombre de usuario:""");
+        Print.iniciarSesion();
+        
+        Print.ingresarUsername();
         Scanner inputJava = new Scanner(System.in);
         String userName = inputJava.nextLine();
         System.out.println(

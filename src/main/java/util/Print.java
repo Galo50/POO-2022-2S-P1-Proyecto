@@ -19,6 +19,10 @@ public class Print {
         System.out.println("No se puede procesar el valor ingresado, intenta de nuevo.");
     }
     
+    public static void ingresarUsername() {
+        System.out.print("Ingrese su nombre de usuario: ");
+    }
+    
     public static void brindarDespedida() {
         System.out.println("""
 
@@ -45,6 +49,28 @@ public class Print {
             |Para ingresar al programa, siga los pasos    |
             |indicados en la parte inferior...            |
             -----------------------------------------------
+        """);
+    }
+    
+    public static void iniciarSesion() {
+        System.out.println("""
+            ===============================================
+                      I N I C I A R  S E S I Ó N
+            ===============================================
+        """);
+    }
+    
+    public static void tiposDeUsuario() {
+        System.out.println("""
+            |===============================================|
+            | TIPOS DE USUARIO                              |
+            |===============================================|
+            | 1. Cliente                                    |
+            | 2. Jefe de taller                             |  
+            | 3. Mecánico                                   |  
+            | 4. Supervisor                                 |  
+            | 5. Vendedor                                   |   
+            |-----------------------------------------------|                 
         """);
     }
 }
