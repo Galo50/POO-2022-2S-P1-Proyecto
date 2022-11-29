@@ -154,14 +154,13 @@ public class Print {
     public static void opcionesDeSupervisor() {
         System.out.println("""
             |===============================================|
-            |                MENÚ SUPERVISOR                |
+            |                 MENÚ SUPERVISOR               |
             |===============================================|
             |                  * Opciones *                 |
-            |1. Consultar Vendedores                        |
-            |2. Ingresar Nuevos Vehiculos                   |
-            |3. Bandeja de Solicitudes                      |
-            |4. Ingresar Usuario Nuevo                      |
-            |5. Salir                                       |
+            |1. Consultar solicitudes de compra             |
+            |2. Añadir vehículos                            |
+            |3. Añadir usuarios                             |
+            |4. Salir                                       |
             |-----------------------------------------------|
                            
        """);

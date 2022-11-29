@@ -6,6 +6,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
 
 /**
  *
@@ -13,7 +14,27 @@ import java.util.Scanner;
  */
 public class MenuSupervisor {
     public static void show(Scanner scanner) {
-        // TODO
+        boolean usuarioDeseaSalir = false;
+        
+        while (!usuarioDeseaSalir) {
+            Print.opcionesDeSupervisor();
+            
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            
+            if (opcion == 1) {
+                
+            }
+            
+            if (opcion == 2) {
+                
+            }
+            
+            if (opcion == 3) {
+                
+            }
+            
+            usuarioDeseaSalir = opcion == 4;
+        }
     }
     
     public static int menuSupervisor() {
