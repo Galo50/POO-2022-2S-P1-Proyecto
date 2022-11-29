@@ -43,7 +43,7 @@ public class Print {
     }
     
     public static void valorFueraDeRango() {
-        System.out.print("El valor ingresado está fuera del rango.");
+        System.out.print("El valor ingresado está fuera del rango.\n");
     }
     
     public static void solicitarIniciarSesion() {

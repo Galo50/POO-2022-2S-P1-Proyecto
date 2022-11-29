@@ -25,37 +25,7 @@ public class Main {
             Main.usuarios = Cargar.usuarios();
         }
 
-        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios);
-        
-        // VARIABLES USADAS PARA TESTEAR (NO LAS BORRES PLOX, LAS USO PARA VERIFICAR EL FUNCIONAMIENTO XD) -----------
-        ArrayList<Solicitud> u1 = new ArrayList<>();
-        ArrayList<String> uc1 = new ArrayList<>();
-        ArrayList<Vehiculo> uv1 = new ArrayList<>();
-        ArrayList<Vendedor> uvd1 = new ArrayList<>();
-        
-        Automovil av1 = new Automovil(4, false, true, 2011, "Hyundai", 4, "i10", 23456, VehiculoCombustible.GASOLINA, VehiculoEstado.ENTREGADO);
-        Camion ca1 = new Camion(2, 5, 2001, "HINO", VehiculoCombustible.DIESEL, "GTR-4500", 50000, VehiculoEstado.ENTREGADO);
-        uv1.add(av1);
-        uv1.add(ca1);
-        
-        Cliente cTester = new Cliente("","",0,"","","","",u1);
-        Vendedor vTester = new Vendedor("",0,"","","","",u1);
-        JefeTaller jTester = new JefeTaller(uc1, "", "", "", "", u1);
-        Mecanico mTester = new Mecanico("", "", "", "", u1, uv1);
-        Supervisor sTester = new Supervisor(uc1, "", "", "", "", u1);
-        
-        uvd1.add(vTester);
-        // HASTA AQUÍ TERMINAN DICHAS VARIABLES -----------
-        
-        // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
-        // Galo modificó, yo lo vi.
-        
-        /*** Tus variables just in case
-        JefeTaller userJFTaller = new JefeTaller(uc1, "AMLO", "AMLO2001", "Manuel", "Lopez", u1);
-        Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
-        Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
-        userCliente.setCarros(uv1);
-        ***/
+        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida
         
         Print.darBienvenidaUsuario(userLoggedIn);
 
