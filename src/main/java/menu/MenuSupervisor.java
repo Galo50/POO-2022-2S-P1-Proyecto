@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
 import usuarios.*;
+import util.Guardar;
 import vehiculos.*;
 
 /**
@@ -15,7 +16,7 @@ import vehiculos.*;
  * @author USER
  */
 public class MenuSupervisor {
-    public static void show(Scanner scanner) {
+    public static void show(Scanner scanner, ArrayList<Usuario> usuarios) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -28,7 +29,9 @@ public class MenuSupervisor {
             }
             
             if (opcion == 2) {
-                
+                Usuario usuarioCreado = crearUsuario(scanner);
+                usuarios.add(usuarioCreado);
+                Guardar.usuarios(usuarios);
             }
             
             if (opcion == 3) {
@@ -94,7 +97,7 @@ public class MenuSupervisor {
             }
             
             if (opcion == 4) {
-                usuarioCreado = MenuUsuario.crearSupervisor();
+                usuarioCreado = MenuUsuario.crearSupervisor(scanner);
             }
             
             if (opcion == 5) {

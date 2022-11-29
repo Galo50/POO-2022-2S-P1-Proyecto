@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import usuarios.*;
 import solicitudes.Solicitud;
+import vehiculos.Vehiculo;
 
 public class MenuUsuario {
     public static Cliente crearCliente(Scanner scanner) {
@@ -66,15 +67,70 @@ public class MenuUsuario {
         return new JefeTaller(certificaciones, username, password, nombre, apellido, solicitudes);
     }
     
-    public static Supervisor crearSupervisor() {
+    public static Supervisor crearSupervisor(Scanner scanner) {
+        ArrayList<String> certificaciones = new ArrayList();
+        ArrayList<Solicitud> solicitudes = new ArrayList();
         
+        System.out.print("Ingresar certificación académica: ");
+        String certificacion = scanner.nextLine();
+        
+        certificaciones.add(certificacion);
+        
+        System.out.print("Ingresar nombre de usuario: ");
+        String username = scanner.nextLine();
+        
+        System.out.print("Ingresar contraseña: ");
+        String password =scanner.nextLine();
+        
+        System.out.print("Ingresar nombres: ");
+        String nombre = scanner.nextLine();
+        
+        System.out.print("Ingresar apellidos: ");
+        String apellido = scanner.nextLine();
+        
+        return new Supervisor(certificaciones, username, password, nombre, apellido, solicitudes);
     }
     
-    public static Mecanico crearMecanico() {
+    public static Mecanico crearMecanico(Scanner scanner) {        
+        System.out.print("Ingresar nombre de usuario: ");
+        String username = scanner.nextLine();
         
+        System.out.print("Ingresar contraseña: ");
+        String password =scanner.nextLine();
+        
+        System.out.print("Ingresar nombres: ");
+        String nombre = scanner.nextLine();
+        
+        System.out.print("Ingresar apellidos: ");
+        String apellido = scanner.nextLine();
+        
+        ArrayList<Solicitud> solicitudes = new ArrayList();
+        ArrayList<Vehiculo> vehiculos = new ArrayList();
+        
+        return new Mecanico(username, password, nombre, apellido, solicitudes, vehiculos);
     }
     
-    public static Vendedor crearVendedor() {
+    public static Vendedor crearVendedor(Scanner scanner) {
+        System.out.print("Ingresar id de usuario: ");
+        String id = scanner.nextLine();
         
+        System.out.print("Ingresar cantidad de vehiculos vendidos");
+        int ventas = scanner.nextInt();
+        
+        System.out.print("Ingresar nombre de usuario: ");
+        String username = scanner.nextLine();
+        
+        System.out.print("Ingresar contraseña: ");
+        String password =scanner.nextLine();
+        
+        System.out.print("Ingresar nombres: ");
+        String nombre = scanner.nextLine();
+        
+        System.out.print("Ingresar apellidos: ");
+        String apellido = scanner.nextLine();
+        
+        ArrayList<Solicitud> solicitudes = new ArrayList();
+        
+        return new Vendedor(id, ventas, username, password, nombre, apellido, solicitudes);
     }
 }
