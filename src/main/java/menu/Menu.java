@@ -68,26 +68,14 @@ public class Menu {
                  }
             }
 
-            if (opcion == 2) { // SI ES JEFETALLER
-                Print.iniciarSesion();
-                usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
-            }
-            
-            if (opcion == 3) { // SI ES MECÁNICO
-                
-            }
-            
-            if (opcion == 4) { // SI ES SUPERVISOR
-                
-            }
-            
-            if (opcion == 5) { // SI ES VENDEDOR
-                
-            }
-            
             if (opcion == 6) {
                 Print.brindarDespedida();
                 usuarioDeseaSalir = opcion == 6;
+            }
+            
+            if (opcion != 1 && opcion != 6) {
+                Print.iniciarSesion();
+                usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
             }
         }
         
