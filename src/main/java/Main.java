@@ -24,31 +24,36 @@ public class Main {
             Guardar.crearSupervisorPredeterminado();
             Main.usuarios = Cargar.usuarios();
         }
-
-        Usuario userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
         
-        Print.darBienvenidaUsuario(userLoggedIn);
-
-        if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-            MenuCliente.show(scanner);
-        }
+        Usuario userLoggedIn = null;
         
-        if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
-            MenuJefeTaller.show(scanner, vehiculos);
-        } 
-        
-        if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
-            MenuMecanico.show(scanner);
-        }
-        
-        if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
-            MenuSupervisor.show(scanner, usuarios);
-        }
-        
-        if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-            MenuVendedor.show(scanner);
-        }
+        while(userLoggedIn == null) {
+            userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
             
+            if (userLoggedIn != null) {
+                Print.darBienvenidaUsuario(userLoggedIn);
+
+                if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
+                    MenuCliente.show(scanner);
+                }
+
+                if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
+                    MenuJefeTaller.show(scanner, vehiculos);
+                } 
+
+                if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
+                    MenuMecanico.show(scanner);
+                }
+
+                if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
+                    MenuSupervisor.show(scanner, usuarios);
+                }
+
+                if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
+                    MenuVendedor.show(scanner);
+                }
+            }
+        }
             /*
             int optionChose = MenuCliente.menuCliente();
             while (optionChose != 8) {

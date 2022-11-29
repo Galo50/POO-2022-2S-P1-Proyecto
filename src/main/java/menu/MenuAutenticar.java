@@ -15,44 +15,24 @@ import usuarios.*;
  * @author Todos :v
  */
 public class MenuAutenticar {
-    public static ArrayList<String> iniciarSesion() throws IOException {
-        ArrayList<String> credenciales;
-        credenciales = new ArrayList<>();
-        
-        Print.darBienvenidaPrograma();
-        Print.iniciarSesion();
-        
-        Print.ingresarUsername();
-        Scanner inputJava = new Scanner(System.in);
-        String userName = inputJava.nextLine();
-        System.out.println(
-                "Ingrese su contraseña: "
-        );
-        String passwordUser = inputJava.nextLine();
-        credenciales.add(userName);
-        credenciales.add(passwordUser);
-        return credenciales;
-    }
     
     public static Usuario iniciarSesion(Scanner scanner, ArrayList<Usuario> usuarios) {
         Usuario usuarioEncontrado = null;
         
-        while (usuarioEncontrado == null) {
-            Print.ingresarUsername();
-            String username = scanner.nextLine();
+        Print.ingresarUsername();
+        String username = scanner.nextLine();
 
-            Print.ingresarPassword();
-            String password = scanner.nextLine();   
-            
-            for(Usuario usuario : usuarios) {
-                if (username.equalsIgnoreCase(usuario.getUserName()) && password.equalsIgnoreCase(usuario.getPassword())) {
-                    usuarioEncontrado = usuario;
-                }
+        Print.ingresarPassword();
+        String password = scanner.nextLine();   
+
+        for(Usuario usuario : usuarios) {
+            if (username.equalsIgnoreCase(usuario.getUserName()) && password.equalsIgnoreCase(usuario.getPassword())) {
+                usuarioEncontrado = usuario;
             }
-            
-            if (usuarioEncontrado == null) {
-                Print.inicioDeSesionFallido();
-            }
+        }
+
+        if (usuarioEncontrado == null) {
+            Print.inicioDeSesionFallido();
         }
         
         return usuarioEncontrado;
