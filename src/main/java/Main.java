@@ -47,8 +47,7 @@ public class Main {
         uvd1.add(vTester);
         // HASTA AQUÍ TERMINAN DICHAS VARIABLES -----------
         
-        //int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
-        int userIndex = 1;
+        int userIndex = Main.getUserIndexByCredentials(userCredentials.get(0), userCredentials.get(1), Main.usuarios);
         
         if (userIndex == -1) {
             Prints.usuarioNoEncontrado();
@@ -56,131 +55,129 @@ public class Main {
         
         // NO TOCAR ESTA PARTE DE AQUÍ POR AHORA CHRIS!!! TE LO ADVIERTO >:v
         if (userIndex != -1) {
-            //Limpiar pantalla
             
-            
-            //Usuario userLoggedIn = Main.usuarios.get(userIndex);
+            Usuario userLoggedIn = Main.usuarios.get(userIndex);
             JefeTaller userJFTaller = new JefeTaller(uc1, "AMLO", "AMLO2001", "Manuel", "Lopez", u1);
             Mecanico userMecanico = new Mecanico("Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1, uv1);
             Cliente userCliente = new Cliente("0952957967", "Free-Lancer", 2500, "Lighty51015", "Shestillinsidemymemories", "Joan", "Mendoza", u1);
             userCliente.setCarros(uv1);
-            //Prints.darBienvenida(userLoggedIn);
+            Prints.darBienvenida(userLoggedIn);
             
-            //if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-            int optionChose = MCliente.menuCliente();
-            while (optionChose != 8) {
-                if (optionChose == 1) {
-                    userCliente.consultarStock(uv1);
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 2) {
-                    userCliente.verCarrosCliente();
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 3) {
-                    userCliente.solicitudesCliente();
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 4) {
-                    userCliente.drawVehicles(uv1);
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 5) {
-                    System.out.println("""
-                                       ############ SOLICITAR COTIZACIÓN ############
-                                       Indique la posición del Vehículo en la Lista
-                                       Stock del cual desea generar una solicitud de
-                                       cotización para enviarla a un Vendedor alea-
-                                       torio.
-                                       """);
-                    int position = inputJava.nextInt();
-                    while (position > uv1.size() || position == 0) {
-                        System.out.println("Ingrese una posición existente!");
-                        position = inputJava.nextInt();
+            if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
+                int optionChose = MCliente.menuCliente();
+                while (optionChose != 8) {
+                    if (optionChose == 1) {
+                        userCliente.consultarStock(uv1);
+                        optionChose = MCliente.menuCliente();
                     }
-                    System.out.println("""
+                    else if (optionChose == 2) {
+                        userCliente.verCarrosCliente();
+                        optionChose = MCliente.menuCliente();
+                    }
+                    else if (optionChose == 3) {
+                        userCliente.solicitudesCliente();
+                        optionChose = MCliente.menuCliente();
+                    }
+                    else if (optionChose == 4) {
+                        userCliente.drawVehicles(uv1);
+                        optionChose = MCliente.menuCliente();
+                    }
+                    else if (optionChose == 5) {
+                        System.out.println("""
+                                            ############ SOLICITAR COTIZACIÓN ############
+                                            Indique la posición del Vehículo en la Lista
+                                            Stock del cual desea generar una solicitud de
+                                            cotización para enviarla a un Vendedor alea-
+                                            torio.
+                                            """);
+                        int position = inputJava.nextInt();
+                        while (position > uv1.size() || position == 0) {
+                            System.out.println("Ingrese una posición existente!");
+                            position = inputJava.nextInt();
+                        }
+                        System.out.println("""
                                        Generando solicitud...""");
-                    userCliente.solicitarCotizacion(uv1.get(position), userCliente, uvd1);
-                    System.out.println("Solicitud enviada con éxito!");
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 6) {
-                    System.out.println("""
-                                       ############ SOLICITUD DE MANTENIMIENTO ############
-                                       Indique la posición del Vehículo dentro de su Lista
-                                       de Carros disponibles o que tiene a su disposición,
-                                       de igual forma, escriba el tipo de mantenimiento
-                                       que desea con la finalidad de generar la solicitud
-                                       de Mantenimiento correspondiente.
-                                       """);
-                    int position = inputJava.nextInt();
-                    while (position > userCliente.getCarros().size() || position == 0) {
-                        System.out.println("Ingrese una posición existente!");
-                        position = inputJava.nextInt();
+                        userCliente.solicitarCotizacion(uv1.get(position), userCliente, uvd1);
+                        System.out.println("Solicitud enviada con éxito!");
+                        optionChose = MCliente.menuCliente();
                     }
-                    System.out.println("""
+                    else if (optionChose == 6) {
+                        System.out.println("""
+                                            ############ SOLICITUD DE MANTENIMIENTO ############
+                                            Indique la posición del Vehículo dentro de su Lista
+                                            de Carros disponibles o que tiene a su disposición,
+                                            de igual forma, escriba el tipo de mantenimiento
+                                            que desea con la finalidad de generar la solicitud
+                                            de Mantenimiento correspondiente.
+                                            """);
+                        int position = inputJava.nextInt();
+                        while (position > userCliente.getCarros().size() || position == 0) {
+                            System.out.println("Ingrese una posición existente!");
+                            position = inputJava.nextInt();
+                        }
+                        System.out.println("""
                                        Generando solicitud...""");
-                    userCliente.solicitarMantenimiento(userCliente.getCarros().get(position), "Limpieza profunda, Colgate 12 horas de acción", userCliente, userJFTaller);
-                    System.out.println("Solicitud enviada con éxito!");
-                    optionChose = MCliente.menuCliente();
-                }
-                else if (optionChose == 7) {
-                    System.out.println("""
-                                      ############ CONSULTAR ESTADO DEL VEHÍCULO ############
-                                      Indique la posición del Vehículo al cual desea compro-
-                                      bar su estado actual.
-                                      """);
-                    int position = inputJava.nextInt();
-                    while (position > userCliente.getCarros().size() || position == 0) {
-                        System.out.println("Ingrese una posición existente!");
-                        position = inputJava.nextInt();
+                        userCliente.solicitarMantenimiento(userCliente.getCarros().get(position), "Limpieza profunda, Colgate 12 horas de acción", userCliente, userJFTaller);
+                        System.out.println("Solicitud enviada con éxito!");
+                        optionChose = MCliente.menuCliente();
                     }
-                    System.out.println("El estado del Vehículo es: " + 
+                    else if (optionChose == 7) {
+                        System.out.println("""
+                                            ############ CONSULTAR ESTADO DEL VEHÍCULO ############
+                                            Indique la posición del Vehículo al cual desea compro-
+                                            bar su estado actual.
+                                            """);
+                        int position = inputJava.nextInt();
+                        while (position > userCliente.getCarros().size() || position == 0) {
+                            System.out.println("Ingrese una posición existente!");
+                            position = inputJava.nextInt();
+                        }
+                        System.out.println("El estado del Vehículo es: " + 
                             userCliente.consultarEstado(userCliente.getCarros().get(position)));
-                    optionChose = MCliente.menuCliente();
+                        optionChose = MCliente.menuCliente();
+                    }
                 }
             }
-            //}
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
-            //    MJefeTaller.menuJefeTaller();
-            //}
+            else if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER){
+                MJefeTaller.menuJefeTaller();
+            }
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
-            //    int optionChose = MMecanico.menuMecanico();
-            //    while (optionChose != 3) {
-            //        if (optionChose == 1) {
-            //            userMecanico.verCarrosMecanico();
-            //            optionChose = MMecanico.menuMecanico();
-            //        }
-            //        else {
-            //            System.out.println("""
-            //            ############ ENVIAR S. CAMBIO DE ESTADO ############
-            //            Indique la Posición del Vehículo en su Lista al cual
-            //            desea generarle una solicitud de cambio de estado.       
-            //            """);
-            //            int position = inputJava.nextInt();
-            //            while (position > userMecanico.getCarros().size() || position == 0) {
-            //                System.out.println("Ingrese una posición existente!");
-            //                position = inputJava.nextInt();
-            //            }
-            //            System.out.println("""
-            //            Generando solicitud...""");
-            //            userMecanico.enviarCambioEstado(position, userMecanico, sTester);
-            //            System.out.println("Solicitud enviada con éxito!);
-            //            optionChose = MMecanico.menuMecanico();
-            //        }
-            //    }
-            //    Prints.brindarDespedida();
-            //}
+            else if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
+                int optionChose = MMecanico.menuMecanico();
+                while (optionChose != 3) {
+                    if (optionChose == 1) {
+                        userMecanico.verCarrosMecanico();
+                        optionChose = MMecanico.menuMecanico();
+                    }
+                    else {
+                        System.out.println("""
+                        ############ ENVIAR S. CAMBIO DE ESTADO ############
+                        Indique la Posición del Vehículo en su Lista al cual
+                        desea generarle una solicitud de cambio de estado.       
+                        """);
+                        int position = inputJava.nextInt();
+                        while (position > userMecanico.getCarros().size() || position == 0) {
+                            System.out.println("Ingrese una posición existente!");
+                            position = inputJava.nextInt();
+                        }
+                        System.out.println("""
+                        Generando solicitud...""");
+                        userMecanico.enviarCambioEstado(position, userMecanico, sTester);
+                        System.out.println("Solicitud enviada con éxito!");
+                        optionChose = MMecanico.menuMecanico();
+                    }
+                }
+                Prints.brindarDespedida();
+            }
             
-            //else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-            //    MVendedor.menuVendedor();
-            //}
-            //
-            //else {
-            //    MSupervisor.menuSupervisor();
-            //}
+            else if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
+                MVendedor.menuVendedor();
+            }
+            
+            else if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR){
+                MSupervisor.menuSupervisor();
+            }
         }
     }
     
