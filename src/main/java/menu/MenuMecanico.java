@@ -12,6 +12,10 @@ import java.util.Scanner;
  * @author Todos xd
  */
 public class MenuMecanico {
+    public static void show(Scanner scanner) {
+        // TODO
+    }
+    
     public static int menuMecanico() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();

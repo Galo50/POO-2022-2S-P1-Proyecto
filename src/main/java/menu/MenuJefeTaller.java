@@ -12,6 +12,10 @@ import java.util.Scanner;
  * @author USER
  */
 public class MenuJefeTaller {
+    public static void show(Scanner scanner) {
+        // TODO
+    }
+    
     public static int menuJefeTaller() {
         ArrayList<Integer> listaOpciones;
         listaOpciones = new ArrayList<>();
