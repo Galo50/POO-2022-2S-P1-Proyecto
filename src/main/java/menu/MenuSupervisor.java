@@ -97,7 +97,7 @@ public class MenuSupervisor {
             usuarioDeseaSalir = opcion == 6;
             
             if (usuarioCreado != null) {
-                
+                Print.seHaCreadoUnNuevoUsuario();
             }
         }
         
