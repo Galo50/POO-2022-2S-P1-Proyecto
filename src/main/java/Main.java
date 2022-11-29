@@ -17,6 +17,8 @@ public class Main {
     public static ArrayList<Solicitud> solicitudes = new ArrayList();
     public static ArrayList<Vehiculo> vehiculos = new ArrayList();
     
+    public static Scanner scanner = new Scanner(System.in);
+    
     public static void main(String[] args) throws IOException {
         Scanner inputJava = new Scanner(System.in);
         Main.usuarios = Cargar.usuarios();

@@ -43,7 +43,6 @@ public class MIniciarSesion {
         String passwordUser = inputJava.nextLine();
         credenciales.add(userName);
         credenciales.add(passwordUser);
-        Runtime.getRuntime().exec("cmd cls");
         return credenciales;
     }
 }
