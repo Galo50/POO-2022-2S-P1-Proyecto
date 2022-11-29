@@ -118,4 +118,21 @@ public class Print {
             |2. No                                          |    
             |-----------------------------------------------|    """);
     }
+    
+    public static void opcionesDeCliente() {
+        System.out.println("""
+            |===============================================|
+            |                  MENÚ CLIENTE                 |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Consultar stock                             |
+            |2. Consultar vehículos adquiridos              |
+            |3. Consultar cotizaciones                      |
+            |4. Consultar mantenimientos                    |
+            |5. Solicitar mantenimiento                     |
+            |6. Salir                                       |
+            |-----------------------------------------------|
+
+        """);
+    }
 }

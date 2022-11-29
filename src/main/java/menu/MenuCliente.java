@@ -1,53 +1,59 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package menu;
 
-import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
 
-/**
- *
- * @author Todos :v
- */
 public class MenuCliente {
-    public static int menuCliente() {
-        ArrayList<Integer> listaOpciones;
-        listaOpciones = new ArrayList<>();
-        listaOpciones.add(1);
-        listaOpciones.add(2);
-        listaOpciones.add(3);
-        listaOpciones.add(4);
-        listaOpciones.add(5);
-        listaOpciones.add(6);
-        listaOpciones.add(7);
-        listaOpciones.add(8);
+    public static void show(Scanner scanner) {
+        boolean usuarioDeseaSalir = false;
         
-        int optionChose;
-        Scanner inputJava = new Scanner(System.in);
-        
-        System.out.println("""
-                           |===============================================|
-                           |                  MENÚ CLIENTE                 |
-                           |===============================================|
-                           |                  * Opciones *                 |
-                           |1. Consultar Stock                             |
-                           |2. Consultar Vehículos Adquiridos              |
-                           |3. Bandeja de Solicitudes                      |
-                           |4. Graficar Vehículos de Stock                 |
-                           |5. Solicitar Cotización                        |
-                           |6. Solicitar Mantenimiento                     |
-                           |7. Soliticar Estado del Vehículo               |
-                           |8. Salir                                       |
-                           |-----------------------------------------------|
-                           
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
-        while (!(listaOpciones.contains(optionChose))) {
-                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
-                optionChose = inputJava.nextInt();
+        while (!usuarioDeseaSalir) {
+            Print.opcionesDeCliente();
+            
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 6);
+            
+            if (opcion == 1) {
+                consultarStock();
+            }
+            
+            if (opcion == 2) {
+                consultarVehiculosAquiridos();
+            }
+            
+            if (opcion == 3) {
+                consultarCotizaciones();
+            }
+            
+            if (opcion == 4) {
+                consultarMantenimientos();
+            }
+            
+            if (opcion == 5) {
+                solicitarMantenimiento();
+            }
+            
+            usuarioDeseaSalir = opcion == 6;
         }
-        return optionChose;
     }
+    
+    public static void consultarStock() {
+        // TODO
+    }
+    
+    public static void consultarVehiculosAquiridos() {
+        // TODO
+    }
+    
+    public static void consultarCotizaciones() {
+        // TODO
+    }
+    
+    public static void consultarMantenimientos() {
+        // TODO
+    }
+    
+    public static void solicitarMantenimiento() {
+        // TODO
+    }
+    
 }
