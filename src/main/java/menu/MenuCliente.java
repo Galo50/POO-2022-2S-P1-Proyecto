@@ -74,7 +74,7 @@ public class MenuCliente {
         // TODO
     }
     
-    public static void consultarCotizaciones() {
+    public static void solicitarCotizaciones() {
         // TODO
     }
     
