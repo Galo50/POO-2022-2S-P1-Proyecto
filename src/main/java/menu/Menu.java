@@ -1,7 +1,9 @@
 package menu;
 
+import java.io.IOException;
 import usuarios.*;
 import util.Print;
+import util.Guardar;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -42,7 +44,7 @@ public class Menu {
         return numero;
     }
     
-    public static Usuario autenticar(Scanner scanner, ArrayList<Usuario> usuarios) {
+    public static Usuario autenticar(Scanner scanner, ArrayList<Usuario> usuarios) throws IOException {
         Usuario usuarioAutenticado = null;
         
         Print.darBienvenidaPrograma();
@@ -58,19 +60,24 @@ public class Menu {
                 Float opcionEsCliente = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1,2);
 
                 if (opcionEsCliente == 1) {
-                    Print.iniciarSesion();
-                    usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
+                    Print.seCrearaCliente();
+                     usuarioAutenticado = MenuUsuario.crearCliente(scanner);
+                     
+                     usuarios.add(usuarioAutenticado);
+                     Guardar.usuarios(usuarios);
+                     usuarioDeseaSalir = true;
                 }
 
                  if (opcionEsCliente == 2) {
-                     Print.seCrearaCliente();
-                     usuarioAutenticado = MenuUsuario.crearCliente(scanner);
+                    Print.iniciarSesion();
+                    usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
+                    usuarioDeseaSalir = true;
                  }
             }
 
             if (opcion == 6) {
                 Print.brindarDespedida();
-                usuarioDeseaSalir = opcion == 6;
+                usuarioDeseaSalir = true;
             }
             
             if (opcion != 1 && opcion != 6) {

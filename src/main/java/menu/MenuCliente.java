@@ -3,40 +3,44 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
-import usuarios.Cliente;
+import usuarios.*;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
 public class MenuCliente {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
             Print.opcionesDeCliente();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 6);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 7);
             
             if (opcion == 1) {
                 consultarStock(vehiculosMain);
             }
             
             if (opcion == 2) {
-                consultarVehiculosAquiridos();
+                consultarVehiculosAquiridos(userLoggedIn);
             }
             
             if (opcion == 3) {
-                consultarCotizaciones();
+                visualizarVehiculosAdquiridos();
             }
             
             if (opcion == 4) {
-                consultarMantenimientos();
+                consultarCotizaciones();
             }
             
             if (opcion == 5) {
+                consultarMantenimientos();
+            }
+            
+            if (opcion == 6) {
                 solicitarMantenimiento();
             }
             
-            usuarioDeseaSalir = opcion == 6;
+            usuarioDeseaSalir = opcion == 7;
         }
     }
     
@@ -52,10 +56,18 @@ public class MenuCliente {
         }
     }
     
-    public static void consultarVehiculosAquiridos(Cliente cliente) {
+    public static void consultarVehiculosAquiridos(Usuario userLoggedIn) {
         // TODO
-        System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
-        for (Vehiculo i: cliente.getCarros())
+        Cliente clienteLoggedIn = (Cliente)userLoggedIn;
+        System.out.println("############ CATÁLOGO DE VEHÍCULOS ADQUIRIDOS ############");
+        for (Vehiculo i: clienteLoggedIn.getCarros()) {
+            System.out.println("Marca: " + i.getMarca() +
+                    "\nModelo: " + i.getModelo() +
+                    "\nAño de Fabricación: " + i.getYear() +
+                    "\nEstado del Vehículo: " + i.getEstado() +
+                    "\nCombustible: " + i.getCombustible() +
+                    "\nTipo de Vehículo: " + i.getTipo());
+        }
     }
     
     public static void visualizarVehiculosAdquiridos() {

@@ -60,13 +60,6 @@ public class Cliente extends Usuario {
         return carros;
     }
     
-    public void consultarStock(ArrayList<Vehiculo> carrosDisponibles) {
-        System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
-        for (Vehiculo i: carrosDisponibles) {
-            System.out.println("Marca: " + i.getMarca() + "\nModelo: " + i.getModelo() + "\nAño de Fabricación: " + i.getYear() + "\n");
-        }
-    }
-    
     public void drawVehicles(ArrayList<Vehiculo> carrosDisponibles) {
         System.out.println("############ GRAFICACIÓN DE VEHÍCULOS EN STOCK ############");
         for (Vehiculo i: carrosDisponibles) {
@@ -106,13 +99,6 @@ public class Cliente extends Usuario {
                                               \\__/````\\_/  \\ """);
                 System.out.println("\n");
             }
-        }
-    }
-    
-    public void verCarrosCliente() {
-        System.out.println("############ VEHÍCULOS DEL CLIENTE ############");
-        for (Vehiculo i: this.carros) {
-            System.out.println("Marca: " + i.getMarca() + "\nModelo: " + i.getModelo() + "\nAño de Fabricación: " + i.getYear() + "\n");
         }
     }
     

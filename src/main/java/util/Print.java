@@ -149,14 +149,12 @@ public class Print {
             |1. Consultar stock                             |
             |2. Consultar vehículos adquiridos              |
             |3. Visualizar vehiculos adquiridos             |
-            |4. Consultar cotizaciones                      |
+            |4. Solicitar cotizaciones                      |
             |5. Consultar mantenimientos                    |
             |6. Solicitar mantenimiento                     |
-            |7. Solicitar mantenimiento                     |
             |                                               |
-            |8. Salir                                       |
+            |7. Salir                                       |
             |-----------------------------------------------|
-
         """);
     }
     
