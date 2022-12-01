@@ -6,6 +6,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import store.AppState;
 import solicitudes.*;
 import usuarios.*;
 import util.Print;
@@ -40,7 +41,10 @@ public class MenuVendedor {
                 
             }
             
-            usuarioDeseaSalir = opcion == 5;
+            if (opcion == 5) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     

@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import store.AppState;
 import solicitudes.*;
 import util.Print;
 import usuarios.*;
@@ -41,10 +42,15 @@ public class MenuCliente {
             if (opcion == 6) {
                 solicitarMantenimiento();
             }
+            
             if (opcion == 7) {
                 revisarSolicitudes();
             }
-            usuarioDeseaSalir = opcion == 7;
+            
+            if (opcion == 8) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     

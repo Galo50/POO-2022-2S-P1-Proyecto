@@ -47,7 +47,7 @@ public class Print {
     }
     
     public static void solicitarIniciarSesion() {
-        System.out.print("Necesita iniciar sesion para usar el programa.\n");
+        System.out.print("Por favor, inicie sesión.\n\n");
     }
     
     public static void ingresarOpcion() {
@@ -55,7 +55,7 @@ public class Print {
     }
     
     public static void inicioDeSesionFallido() {
-        System.out.println("Credenciales incorrectas o usuario inexistente.");
+        System.out.println("\nCredenciales incorrectas o usuario inexistente.\n\n");
     }
     
     public static void seHaCreadoUnNuevoUsuario() {

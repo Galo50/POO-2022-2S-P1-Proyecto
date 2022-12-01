@@ -4,8 +4,8 @@
  */
 package menu;
 
-import java.util.ArrayList;
 import java.util.Scanner;
+import store.AppState;
 import usuarios.*;
 import util.Print;
 import vehiculos.Vehiculo;
@@ -27,7 +27,10 @@ public class MenuMecanico {
 
             }
             
-            usuarioDeseaSalir = opcion == 2;
+            if (opcion == 2) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     

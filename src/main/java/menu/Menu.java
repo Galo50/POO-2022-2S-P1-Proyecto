@@ -7,6 +7,7 @@ import util.Guardar;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import store.AppState;
 
 public class Menu {
     
@@ -44,13 +45,12 @@ public class Menu {
         return numero;
     }
     
-    public static Usuario autenticar(Scanner scanner, ArrayList<Usuario> usuarios) throws IOException {
+    public static void autenticar(Scanner scanner, ArrayList<Usuario> usuarios) throws IOException {
         Usuario usuarioAutenticado = null;
         
-        Print.solicitarIniciarSesion();
-        boolean usuarioDeseaSalir = false;
+        boolean terminarAutenticacion = false;
         
-        while (!usuarioDeseaSalir) {
+        while (!terminarAutenticacion) {
             Print.tiposDeUsuario();
             Float opcion = Menu.solicitarNumero(scanner, Print.ingresarTipoDeUsuario(false), 1, 6);
 
@@ -64,28 +64,29 @@ public class Menu {
                      
                      usuarios.add(usuarioAutenticado);
                      Guardar.usuarios(usuarios);
-                     usuarioDeseaSalir = true;
+                     terminarAutenticacion = true;
                 }
 
                  if (opcionEsCliente == 2) {
                     Print.iniciarSesion();
                     usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
-                    usuarioDeseaSalir = true;
+                    terminarAutenticacion = true;
                  }
-            }
-
-            if (opcion == 6) {
-                Print.brindarDespedida();
-                usuarioDeseaSalir = true;
             }
             
             if (opcion != 1 && opcion != 6) {
                 Print.iniciarSesion();
                 usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
-                usuarioDeseaSalir = true;
+                terminarAutenticacion = true;
+            }
+
+            if (opcion == 6) {
+                terminarAutenticacion = true;
+                AppState.setRunApp(false);
             }
         }
         
-        return usuarioAutenticado;
+        AppState.setUserLoggedIn(usuarioAutenticado);
+        
         }
 }
