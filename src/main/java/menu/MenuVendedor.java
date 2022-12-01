@@ -7,6 +7,8 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import store.AppState;
+import solicitudes.*;
+import usuarios.*;
 import util.Print;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
@@ -15,20 +17,20 @@ import vehiculos.VehiculoEstado;
  * @author Todos :v
  */
 public class MenuVendedor {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
             Print.opcionesDeVendedor();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
                 accesoStock(vehiculosMain);
             }
             
             if (opcion == 2) {
-                
+                bandejaDeEntrada(userLoggedIn);
             }
             
             if (opcion == 3) {
@@ -36,6 +38,10 @@ public class MenuVendedor {
             }
             
             if (opcion == 4) {
+                
+            }
+            
+            if (opcion == 5) {
                 usuarioDeseaSalir = true;
                 AppState.setUserLoggedIn(null);
             }
@@ -52,5 +58,16 @@ public class MenuVendedor {
                         + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
             }
         }
+    }
+    
+    public static void bandejaDeEntrada(Usuario userLoggedIn) {
+        System.out.println("############ BANDEJA DE ENTRADA ############");
+        ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
+        for (Solicitud i: bandejaEntrada) {
+            System.out.println("PARÁMETRO DE i: " + i.getDestinatario());
+            i.imprimir();
+            bandejaEntrada.remove(i);
+        }
+        userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }

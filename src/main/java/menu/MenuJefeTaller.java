@@ -11,17 +11,17 @@ import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
 public class MenuJefeTaller {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Vehiculo> carrosMantenimiento,JefeTaller jefe) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Vehiculo> carrosMantenimiento, JefeTaller jefeMain) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
             Print.opcionesDeJefeTaller();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
                 
-                entregarVehiculos(scanner, vehiculos,jefe);
+                entregarVehiculos(vehiculos,jefeMain);
             }
             
             if (opcion == 2) {
@@ -29,11 +29,11 @@ public class MenuJefeTaller {
             }
             
             if (opcion == 3) {
-                consultarSolicitudesDeMantenimiento( jefe);
+                consultarSolicitudesDeMantenimiento( jefeMain);
             }
             
             if (opcion == 4) {
-                darAlta(carrosMantenimiento, jefe);
+                darAlta(carrosMantenimiento, jefeMain);
             }
             
             usuarioDeseaSalir = opcion == 5;
@@ -41,7 +41,7 @@ public class MenuJefeTaller {
     }
     
     
-    public static void entregarVehiculos(Scanner scanner, ArrayList<Vehiculo> vehiculosParaEntregar,JefeTaller jefe) {
+    public static void entregarVehiculos(ArrayList<Vehiculo> vehiculosParaEntregar,JefeTaller jefe) {
         ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
         for (Solicitud i : jefeSolicitudes){
             if(i instanceof SRespuesta == true ){

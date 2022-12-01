@@ -65,7 +65,7 @@ public abstract class Usuario {
         this.apellidos = apellidos;
     }
 
-    public ArrayList getSolicitudes() {
+    public ArrayList<Solicitud> getSolicitudes() {
         return solicitudes;
     }
 
