@@ -16,7 +16,7 @@ import vehiculos.VehiculoEstado;
  * @author Todos :v
  */
 public class MenuVendedor {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -29,7 +29,7 @@ public class MenuVendedor {
             }
             
             if (opcion == 2) {
-                
+                bandejaDeEntrada(userLoggedIn);
             }
             
             if (opcion == 3) {
@@ -54,8 +54,11 @@ public class MenuVendedor {
     
     public static void bandejaDeEntrada(Usuario userLoggedIn) {
         System.out.println("############ BANDEJA DE ENTRADA ############");
-        for (Solicitud i: userLoggedIn.getSolicitudes()) {
-            
+        ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
+        for (Solicitud i: bandejaEntrada) {
+            i.imprimir();
+            bandejaEntrada.remove(i);
         }
+        userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }
