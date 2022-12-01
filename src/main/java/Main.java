@@ -68,9 +68,6 @@ public class Main {
             if (!AppState.getRunApp()) {
                 Print.brindarDespedida();
             }
-            
-            Guardar.usuarios(usuarios);
-            Guardar.vehiculos(vehiculos);
         }
     }
 }
