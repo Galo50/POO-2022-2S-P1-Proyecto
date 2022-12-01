@@ -1,14 +1,16 @@
 package menu;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
+import solicitudes.*;
 import util.Print;
 import usuarios.*;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
 public class MenuCliente {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn, ArrayList<Usuario> usuariosMain) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -29,7 +31,7 @@ public class MenuCliente {
             }
             
             if (opcion == 4) {
-                solicitarCotizaciones(scanner, vehiculosMain);
+                solicitarCotizaciones(scanner, vehiculosMain, userLoggedIn, usuariosMain);
             }
             
             if (opcion == 5) {
@@ -75,7 +77,7 @@ public class MenuCliente {
         // TODO
     }
     
-    public static void solicitarCotizaciones(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+    public static void solicitarCotizaciones(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn, ArrayList<Usuario> usuariosMain) {
         // TODO
         System.out.print("""
                          ############ SOLICITUD COTIZACIÓN ############
@@ -89,8 +91,24 @@ public class MenuCliente {
             }
             else {
                 int opcionVehiculo = scanner.nextInt();
-                if (opcionVehiculo >= 0 && opcionVehiculo <= vehiculosMain.size()) {
-                    System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo));
+                if (opcionVehiculo >= 0 && opcionVehiculo < vehiculosMain.size()) {
+                    ArrayList<Vendedor> vendedores = new ArrayList<>();
+                    for (Usuario i : usuariosMain) {
+                        if (i.getTipo() == TipoUsuario.VENDEDOR) {
+                            Vendedor vUser = (Vendedor)i;
+                            vendedores.add(vUser);
+                        }
+                    }
+                    System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo).getModelo());
+                    Random rand = new Random();
+                    int randomPosition = rand.nextInt(vendedores.size());
+                    Vendedor destinatario = vendedores.get(randomPosition);
+                    System.out.println("Encontró al vendedor: " + destinatario);
+                    Cliente remitente = (Cliente)userLoggedIn;
+                    SCotizacion sc1 = new SCotizacion(vehiculosMain.get(opcionVehiculo), remitente, destinatario);
+                    ArrayList<Solicitud> solicitudes = destinatario.getSolicitudes();
+                    solicitudes.add(sc1);
+                    destinatario.setSolicitudes(solicitudes);
                     pagVehiculo = true;
                 }
                 else {

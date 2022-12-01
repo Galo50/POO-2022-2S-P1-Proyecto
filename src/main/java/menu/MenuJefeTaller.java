@@ -11,7 +11,7 @@ import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
 public class MenuJefeTaller {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Vehiculo> carrosMantenimiento,JefeTaller jefe) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Vehiculo> carrosMantenimiento, JefeTaller jefeMain) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -21,7 +21,7 @@ public class MenuJefeTaller {
             
             if (opcion == 1) {
                 
-                entregarVehiculos(vehiculos,jefe);
+                entregarVehiculos(vehiculos,jefeMain);
             }
             
             if (opcion == 2) {
@@ -29,11 +29,11 @@ public class MenuJefeTaller {
             }
             
             if (opcion == 3) {
-                consultarSolicitudesDeMantenimiento( jefe);
+                consultarSolicitudesDeMantenimiento( jefeMain);
             }
             
             if (opcion == 4) {
-                darAlta(carrosMantenimiento, jefe);
+                darAlta(carrosMantenimiento, jefeMain);
             }
             
             usuarioDeseaSalir = opcion == 5;

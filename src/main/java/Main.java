@@ -37,11 +37,12 @@ public class Main {
                 Print.darBienvenidaUsuario(userLoggedIn);
 
                 if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
-                    MenuCliente.show(scanner, vehiculos, userLoggedIn);
+                    MenuCliente.show(scanner, vehiculos, userLoggedIn, usuarios);
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
-                    //MenuJefeTaller.show(scanner, vehiculos);
+                    JefeTaller jefeMain = (JefeTaller)userLoggedIn;
+                    MenuJefeTaller.show(scanner, vehiculos, jefeMain.getCarrosMantenimiento(), jefeMain);
                 } 
 
                 if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
