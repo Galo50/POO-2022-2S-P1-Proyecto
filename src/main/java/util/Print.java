@@ -152,8 +152,9 @@ public class Print {
             |4. Solicitar cotizaciones                      |
             |5. Consultar mantenimientos                    |
             |6. Solicitar mantenimiento                     |
-            |                                               |
-            |7. Salir                                       |
+            |7. Bandeja de entrada                           |  
+            |                                               |       |
+            |8. Salir                                       |
             |-----------------------------------------------|
         """);
     }
@@ -166,8 +167,9 @@ public class Print {
             |                  * Opciones *                 |
             |1. Entregar vehículos                          |
             |2. Consultar mantenimientos                    |
-            |3. Consultar solicitudes de mantenimiento      |
-            |4. Salir                                       |
+            |3. Consultar solicitudes de mantenimiento      
+            |4. Dar de alta vehículos
+            |5. Salir                                       |
             |-----------------------------------------------|
 
        """);
@@ -180,7 +182,7 @@ public class Print {
             |===============================================|
             |                  * Opciones *                 |
             |1. Consultar solicitudes de compra             |
-            |2. Consultar Vendidos                          |
+            |2. Consultar Vendidos                           |
             |3. Añadir vehículos                            |
             |4. Añadir usuarios                             |
             |5. Salir                                       |
@@ -213,7 +215,8 @@ public class Print {
             |===============================================|
             |                  * Opciones *                 |
             |1. Consultar vehículos en etapa de prueba      |
-            |2. Salir                                       |
+            |2. Enviar Cambio de Estado
+             3. Salir                                       |
             |-----------------------------------------------|
 
        """);

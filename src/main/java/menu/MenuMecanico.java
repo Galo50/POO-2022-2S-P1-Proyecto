@@ -33,7 +33,7 @@ public class MenuMecanico {
     
     public static void consultarVehiculosEnEtapaDePrueba(Usuario userLoggedIn) {
         Mecanico mecanicoLoggedIn = (Mecanico)userLoggedIn;
-        System.out.println("############ CATÁLOGO DE VEHÍCULOS ADQUIRIDOS ############");
+        System.out.println("############ CATÁLOGO DE VEHÍCULOS ASIGNADOS ############");
         for (Vehiculo i: mecanicoLoggedIn.getCarros()) {
             System.out.println("Marca: " + i.getMarca() +
                     "\nModelo: " + i.getModelo() +

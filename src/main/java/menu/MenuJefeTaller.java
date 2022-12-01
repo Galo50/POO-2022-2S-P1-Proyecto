@@ -17,7 +17,7 @@ public class MenuJefeTaller {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeJefeTaller();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 7);
             
             if (opcion == 1) {
                 
@@ -35,8 +35,14 @@ public class MenuJefeTaller {
             if (opcion == 4) {
                 darAlta(carrosMantenimiento, jefeMain);
             }
+            if (opcion == 5){
             
-            usuarioDeseaSalir = opcion == 5;
+            }
+            if (opcion == 6 ){
+            
+            }
+            
+            usuarioDeseaSalir = opcion == 7;
         }
     }
     

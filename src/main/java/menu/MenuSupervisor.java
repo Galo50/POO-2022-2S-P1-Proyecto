@@ -59,6 +59,9 @@ public class MenuSupervisor {
             }
             
             if (opcion == 2) {
+                vehiculoCreado = MenuIngreso.iCamion();
+                vehiculosMain.add(vehiculoCreado);
+                Guardar.vehiculos(vehiculosMain);
                 
             }
             

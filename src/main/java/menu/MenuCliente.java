@@ -41,7 +41,9 @@ public class MenuCliente {
             if (opcion == 6) {
                 solicitarMantenimiento();
             }
-            
+            if (opcion == 7) {
+                revisarSolicitudes();
+            }
             usuarioDeseaSalir = opcion == 7;
         }
     }
@@ -126,5 +128,7 @@ public class MenuCliente {
     public static void solicitarMantenimiento() {
         // TODO
     }
-    
+    public static void revisarSolicitudes() {
+        // TODO
+    }
 }

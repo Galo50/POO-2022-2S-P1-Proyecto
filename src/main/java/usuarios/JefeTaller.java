@@ -87,8 +87,6 @@ public class JefeTaller extends Usuario{
             solicitudes.remove(i);
         }
     }
-    
-
 }
     
 
