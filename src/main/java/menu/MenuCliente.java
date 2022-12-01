@@ -103,7 +103,7 @@ public class MenuCliente {
                     Random rand = new Random();
                     int randomPosition = rand.nextInt(vendedores.size());
                     Vendedor destinatario = vendedores.get(randomPosition);
-                    System.out.println("Encontró al vendedor: " + destinatario);
+                    System.out.println("Encontró al vendedor: " + destinatario.getNombres());
                     Cliente remitente = (Cliente)userLoggedIn;
                     SCotizacion sc1 = new SCotizacion(vehiculosMain.get(opcionVehiculo), remitente, destinatario);
                     ArrayList<Solicitud> solicitudes = destinatario.getSolicitudes();

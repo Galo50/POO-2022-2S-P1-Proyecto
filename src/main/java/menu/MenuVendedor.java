@@ -6,6 +6,8 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import solicitudes.*;
+import usuarios.*;
 import util.Print;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
@@ -47,6 +49,13 @@ public class MenuVendedor {
                         + "\nAño de Fabricación: " + i.getYear()
                         + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
             }
+        }
+    }
+    
+    public static void bandejaDeEntrada(Usuario userLoggedIn) {
+        System.out.println("############ BANDEJA DE ENTRADA ############");
+        for (Solicitud i: userLoggedIn.getSolicitudes()) {
+            
         }
     }
 }
