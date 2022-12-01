@@ -1,1 +1,1 @@
-[{"asientos":4,"convertible":false,"camara":true,"year":2011,"marca":"Hyundai","llantas":4,"modelo":"i10","precio":11000.0,"combustible":"GASOLINA","estado":"INVENTARIO","tipo":"AUTOMOVIL"}]
+[{"asientos":4,"convertible":false,"camara":true,"year":2011,"marca":"Hyundai","llantas":4,"modelo":"i10","precio":11000.0,"combustible":"GASOLINA","estado":"INVENTARIO","tipo":"AUTOMOVIL"},{"asientos":4,"convertible":false,"camara":false,"year":2009,"marca":"Huyndai","llantas":4,"modelo":"Logan","precio":13000.0,"combustible":"GASOLINA","estado":"INVENTARIO","tipo":"AUTOMOVIL"}]

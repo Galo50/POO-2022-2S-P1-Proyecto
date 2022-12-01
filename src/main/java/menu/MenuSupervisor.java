@@ -15,7 +15,7 @@ public class MenuSupervisor {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeSupervisor();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
                 consultarSolicitudesDeCompra();
@@ -32,6 +32,7 @@ public class MenuSupervisor {
             if (opcion == 4) {
                 Usuario usuarioCreado = crearUsuario(scanner);
                 usuarios.add(usuarioCreado);
+                Guardar.usuarios(usuarios);
             }
             
             usuarioDeseaSalir = opcion == 5;

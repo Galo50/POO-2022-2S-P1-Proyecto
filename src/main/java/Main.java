@@ -30,7 +30,6 @@ public class Main {
         
         while(userLoggedIn == null) {
             userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
-            System.out.println("EL USERLOGGEDIN ES EL WE: " + userLoggedIn.getTipo());
             
             if (userLoggedIn != null) {
                 Print.darBienvenidaUsuario(userLoggedIn);

@@ -111,23 +111,30 @@ public class MenuUsuario {
     }
     
     public static Vendedor crearVendedor(Scanner scanner) {
-        System.out.print("Ingresar id de usuario: ");
-        String id = scanner.nextLine();
+        String id;
+        String username;
+        String password;
+        String nombre;
+        String apellido;
+        int ventas;
         
-        System.out.print("Ingresar cantidad de vehiculos vendidos");
-        int ventas = scanner.nextInt();
+        System.out.print("Ingresar id de usuario: ");
+        id = scanner.nextLine();
         
         System.out.print("Ingresar nombre de usuario: ");
-        String username = scanner.nextLine();
+        username = scanner.nextLine();
         
         System.out.print("Ingresar contraseña: ");
-        String password =scanner.nextLine();
+        password =scanner.nextLine();
         
         System.out.print("Ingresar nombres: ");
-        String nombre = scanner.nextLine();
+        nombre = scanner.nextLine();
         
         System.out.print("Ingresar apellidos: ");
-        String apellido = scanner.nextLine();
+        apellido = scanner.nextLine();
+        
+        System.out.print("Ingresar cantidad de vehículos vendidos: ");
+        ventas = scanner.nextInt();
         
         ArrayList<Solicitud> solicitudes = new ArrayList();
         

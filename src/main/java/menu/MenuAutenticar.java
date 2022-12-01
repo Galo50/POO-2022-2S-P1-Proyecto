@@ -28,8 +28,6 @@ public class MenuAutenticar {
         for(Usuario usuario : usuarios) {
             if (username.equalsIgnoreCase(usuario.getUserName()) && password.equalsIgnoreCase(usuario.getPassword())) {
                 usuarioEncontrado = usuario;
-                System.out.println("EL USUARIO ENCONTRADO ES: " + usuarioEncontrado);
-                System.out.println("EL TIPO DE USUARIO ENCONTRADO ES: " + usuarioEncontrado.getTipo());
             }
         }
 
