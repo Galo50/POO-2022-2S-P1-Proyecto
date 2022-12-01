@@ -198,7 +198,8 @@ public class Print {
             |1. Acceso a Stock                              |
             |2. Bandeja de Solicitudes                      |
             |3. Sugerir Modelos                             |
-            |4. Salir                                       |
+            |4. Editar Modelos                              |
+            |5. Salir                                       |
             |-----------------------------------------------|
                            
        """);

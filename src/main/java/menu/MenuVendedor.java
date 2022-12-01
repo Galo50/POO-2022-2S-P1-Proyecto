@@ -22,7 +22,7 @@ public class MenuVendedor {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeVendedor();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
                 accesoStock(vehiculosMain);
@@ -36,7 +36,11 @@ public class MenuVendedor {
                 
             }
             
-            usuarioDeseaSalir = opcion == 4;
+            if (opcion == 4) {
+                
+            }
+            
+            usuarioDeseaSalir = opcion == 5;
         }
     }
     
@@ -56,6 +60,7 @@ public class MenuVendedor {
         System.out.println("############ BANDEJA DE ENTRADA ############");
         ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
         for (Solicitud i: bandejaEntrada) {
+            System.out.println("PARÁMETRO DE i: " + i.getDestinatario());
             i.imprimir();
             bandejaEntrada.remove(i);
         }
