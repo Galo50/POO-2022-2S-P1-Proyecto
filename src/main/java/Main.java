@@ -9,6 +9,7 @@ import usuarios.*;
 import vehiculos.*;
 import solicitudes.Solicitud;
 import menu.*;  
+import store.AppState;
 
 public class Main {
     public static ArrayList<Usuario> usuarios = new ArrayList();
@@ -28,10 +29,12 @@ public class Main {
         
         Print.darBienvenidaPrograma();
         
-        Usuario userLoggedIn = null;
-        
-        while(userLoggedIn == null) {
-            userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
+        while(AppState.getUserLoggedIn() == null && AppState.getRunApp()) {
+            Print.solicitarIniciarSesion();
+            
+            Menu.autenticar(scanner, usuarios);
+            
+            Usuario userLoggedIn = AppState.getUserLoggedIn();
             
             if (userLoggedIn != null) {
                 Print.darBienvenidaUsuario(userLoggedIn);
@@ -56,6 +59,17 @@ public class Main {
                     MenuVendedor.show(scanner, vehiculos);
                 }
             }
+            
+            if (userLoggedIn == null && AppState.getRunApp()) {
+                Print.inicioDeSesionFallido();
+            }
+            
+            if (!AppState.getRunApp()) {
+                Print.brindarDespedida();
+            }
+            
+            Guardar.usuarios(usuarios);
+            Guardar.vehiculos(vehiculos);
         }
     }
 }

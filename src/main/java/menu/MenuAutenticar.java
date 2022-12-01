@@ -30,10 +30,6 @@ public class MenuAutenticar {
                 usuarioEncontrado = usuario;
             }
         }
-
-        if (usuarioEncontrado == null) {
-            Print.inicioDeSesionFallido();
-        }
         
         return usuarioEncontrado;
         

@@ -2,6 +2,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import store.AppState;
 import util.Print;
 import usuarios.*;
 import vehiculos.Vehiculo;
@@ -40,7 +41,10 @@ public class MenuCliente {
                 solicitarMantenimiento();
             }
             
-            usuarioDeseaSalir = opcion == 7;
+            if (opcion == 7) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     

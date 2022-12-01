@@ -6,6 +6,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import store.AppState;
 import util.Print;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
@@ -34,7 +35,10 @@ public class MenuVendedor {
                 
             }
             
-            usuarioDeseaSalir = opcion == 4;
+            if (opcion == 4) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     

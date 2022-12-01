@@ -3,6 +3,7 @@ package menu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import store.AppState;
 import util.Print;
 import util.Guardar;
 import usuarios.*;
@@ -35,7 +36,10 @@ public class MenuSupervisor {
                 Guardar.usuarios(usuarios);
             }
             
-            usuarioDeseaSalir = opcion == 5;
+            if (opcion == 5) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
         }
     }
     
