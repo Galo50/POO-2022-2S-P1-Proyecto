@@ -17,11 +17,11 @@ public class MenuJefeTaller {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeJefeTaller();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
                 
-                entregarVehiculos(scanner, vehiculos,jefe);
+                entregarVehiculos(vehiculos,jefe);
             }
             
             if (opcion == 2) {
@@ -41,7 +41,7 @@ public class MenuJefeTaller {
     }
     
     
-    public static void entregarVehiculos(Scanner scanner, ArrayList<Vehiculo> vehiculosParaEntregar,JefeTaller jefe) {
+    public static void entregarVehiculos(ArrayList<Vehiculo> vehiculosParaEntregar,JefeTaller jefe) {
         ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
         for (Solicitud i : jefeSolicitudes){
             if(i instanceof SRespuesta == true ){
