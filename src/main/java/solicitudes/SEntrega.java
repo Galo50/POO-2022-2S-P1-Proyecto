@@ -6,27 +6,27 @@ package solicitudes;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
-import vehiculos.Vehiculo;
+
 
 /**
  *
  * @author USER
  */
 public class SEntrega extends Solicitud{
-     private Vehiculo carro;
+     
 
     public SEntrega(
-            @JsonProperty("carro") Vehiculo carro, 
+           
             @JsonProperty("remitente") Usuario remitente, 
             @JsonProperty("destinatario") Usuario destinatario
     ) {
         super(remitente, destinatario, TipoSolicitud.ENTREGA);
-        this.carro = carro;
+        
     }
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le informo que el vehiculo "+carro.getMarca()+" "+carro.getModelo() +" puede ser retirado a partir del dia de mañana en nuestro local");
+    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le informo que su vehiculo puede ser retirado a partir del dia de mañana en nuestro local");
     
     }
 }

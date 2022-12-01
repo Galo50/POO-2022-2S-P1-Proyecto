@@ -16,6 +16,8 @@ import vehiculos.*;
  */
 public class JefeTaller extends Usuario{
     private ArrayList<String> certificacionTecnica;
+    private ArrayList<Vehiculo> carrosMantenimiento;
+    private ArrayList<Vehiculo> carrosEntregar;
 
     public JefeTaller(
             @JsonProperty("certificacionTecnica") ArrayList<String> certificacionTecnica,
@@ -27,6 +29,22 @@ public class JefeTaller extends Usuario{
     ) {
         super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.JEFE_TALLER);
         this.certificacionTecnica = certificacionTecnica;
+    }
+
+    public ArrayList<Vehiculo> getCarrosMantenimiento() {
+        return carrosMantenimiento;
+    }
+
+    public void setCarrosMantenimiento(ArrayList<Vehiculo> carrosMantenimiento) {
+        this.carrosMantenimiento = carrosMantenimiento;
+    }
+
+    public ArrayList<Vehiculo> getCarrosEntregar() {
+        return carrosEntregar;
+    }
+
+    public void setCarrosEntregar(ArrayList<Vehiculo> carrosEntregar) {
+        this.carrosEntregar = carrosEntregar;
     }
     
     public ArrayList<String> getCertificaciones() {
@@ -50,7 +68,7 @@ public class JefeTaller extends Usuario{
     public  ArrayList <Vehiculo> darAlta (Vehiculo carro, ArrayList <Vehiculo> mantenimientos,Cliente cliente,JefeTaller jefe){
         mantenimientos.remove(carro);
         carro.setEstado(VehiculoEstado.ENTREGADO);
-        SEntrega se1 = new SEntrega(carro,jefe,cliente);
+        SEntrega se1 = new SEntrega(jefe,cliente);
         cliente.solicitudes.add(se1);
         return mantenimientos;   
     }
@@ -58,7 +76,7 @@ public class JefeTaller extends Usuario{
         carro.setEstado(VehiculoEstado.PRUEBA);
     }
     public void entrega(Cliente cliente,Vehiculo carro ,JefeTaller jefe){
-        SEntrega se1 = new SEntrega(carro,jefe,cliente);
+        SEntrega se1 = new SEntrega(jefe,cliente);
         cliente.solicitudes.add(se1);
     }
         
@@ -69,6 +87,7 @@ public class JefeTaller extends Usuario{
             solicitudes.remove(i);
         }
     }
+    
 
 }
     
