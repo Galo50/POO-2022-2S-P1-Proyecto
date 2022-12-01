@@ -7,6 +7,7 @@ import solicitudes.SRespuesta;
 import solicitudes.Solicitud;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
+import usuarios.Usuario;
 import util.Print;
 import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
@@ -33,7 +34,11 @@ public class MenuJefeTaller {
                 consultarSolicitudesDeMantenimiento( jefe);
             }
             
-            usuarioDeseaSalir = opcion == 4;
+            if (opcion == 4) {
+                darAlta(carrosMantenimiento, jefe);
+            }
+            
+            usuarioDeseaSalir = opcion == 5;
         }
     }
     
@@ -43,16 +48,13 @@ public class MenuJefeTaller {
         for (Solicitud i : jefeSolicitudes){
             if(i instanceof SRespuesta == true ){
                 Usuario cliente = i.getDestinatario();
-                    
-                    
-                    }        
-        }
-      
+                SEntrega se1 = new SEntrega(jefe,cliente);
+                ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
+                solicitudesCliente.add(se1);
+                cliente.setSolicitudes(solicitudesCliente);
+            }        
+        }       
         
-        SEntrega se1 = new SEntrega(jefe,cliente);
-        ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
-        solicitudesCliente.add(se1);
-        cliente.setSolicitudes(solicitudesCliente);
     }
      
     
@@ -69,15 +71,20 @@ public class MenuJefeTaller {
         }
        jefe.setSolicitudes(solicitudesJefe); 
     }
-    public  ArrayList <Vehiculo> darAlta (Vehiculo carro, ArrayList <Vehiculo> mantenimientos,Cliente cliente,JefeTaller jefe){
-        mantenimientos.remove(carro);
-        carro.setEstado(VehiculoEstado.ENTREGADO);
-        SEntrega se1 = new SEntrega(carro,jefe,cliente);
-        ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
-        solicitudesCliente.add(se1);
-        cliente.setSolicitudes(solicitudesCliente);
-        return mantenimientos;   
-    }
+    public  void darAlta ( ArrayList <Vehiculo> mantenimientos,JefeTaller jefe){
+        ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
+        for (Solicitud i : jefeSolicitudes){
+            if(i instanceof SEntrega == true ){
+            mantenimientos.remove(carro);
+            carro.setEstado(VehiculoEstado.ENTREGADO);
+            SEntrega se1 = new SEntrega(jefe,cliente);
+            ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
+            solicitudesCliente.add(se1);
+            cliente.setSolicitudes(solicitudesCliente);
+              
+            }
+        }
+    }    
     public void AdministrarMantenimiento(Vehiculo carro){
         carro.setEstado(VehiculoEstado.PRUEBA);
     }
