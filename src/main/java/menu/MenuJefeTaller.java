@@ -2,9 +2,7 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import solicitudes.SEntrega;
-import solicitudes.SRespuesta;
-import solicitudes.Solicitud;
+import solicitudes.*;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
 import usuarios.Usuario;
@@ -74,13 +72,14 @@ public class MenuJefeTaller {
     public  void darAlta ( ArrayList <Vehiculo> mantenimientos,JefeTaller jefe){
         ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
         for (Solicitud i : jefeSolicitudes){
-            if(i instanceof SEntrega == true ){
-            mantenimientos.remove(carro);
-            carro.setEstado(VehiculoEstado.ENTREGADO);
-            SEntrega se1 = new SEntrega(jefe,cliente);
-            ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
-            solicitudesCliente.add(se1);
-            cliente.setSolicitudes(solicitudesCliente);
+            if(i instanceof SMantenimiento == true ){
+                Vehiculo carro = i.getCarro();
+                mantenimientos.remove(carro);
+                carro.setEstado(VehiculoEstado.ENTREGADO);
+                SEntrega se1 = new SEntrega(jefe,cliente);
+                ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
+                solicitudesCliente.add(se1);
+                cliente.setSolicitudes(solicitudesCliente);
               
             }
         }

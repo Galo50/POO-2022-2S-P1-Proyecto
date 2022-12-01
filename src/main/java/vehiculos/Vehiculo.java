@@ -4,6 +4,9 @@
  */
 package vehiculos;
 
+import usuarios.Cliente;
+
+
 /**
  *
  * @author USER
@@ -18,6 +21,7 @@ public abstract class Vehiculo {
     protected VehiculoCombustible combustible;
     protected VehiculoEstado estado;
     protected final TipoVehiculo tipo;
+    protected Cliente propietario;
 
     public Vehiculo(
         int year, 
@@ -37,6 +41,25 @@ public abstract class Vehiculo {
        this.tipo = tipo;
     }
 
+    public Vehiculo(
+        int year, 
+        String marca, 
+        String modelo, 
+        Double precio, 
+        VehiculoCombustible combustible, 
+        VehiculoEstado estado,
+        TipoVehiculo tipo,
+        Cliente cliente)
+        {
+       this.year = year;
+       this.marca = marca;
+       this.modelo = modelo;
+       this.precio = precio;
+       this.estado = estado;
+       this.combustible = combustible;
+       this.tipo = tipo;
+       this.propietario = cliente;
+    }
     public int getYear() {
         return year;
     }

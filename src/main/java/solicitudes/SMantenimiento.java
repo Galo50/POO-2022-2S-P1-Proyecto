@@ -41,4 +41,9 @@ public class SMantenimiento extends Solicitud{
     carro.setEstado(VehiculoEstado.ADMITIDO);
     mantenimientos.add(carro);
     }
+
+    public Vehiculo getCarro() {
+        return carro;
+    }
+    
 }
