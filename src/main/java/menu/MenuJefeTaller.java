@@ -69,11 +69,13 @@ public class MenuJefeTaller {
         }
        jefe.setSolicitudes(solicitudesJefe); 
     }
-    public  void darAlta ( ArrayList <Vehiculo> mantenimientos,JefeTaller jefe){
+    public static  void darAlta ( ArrayList <Vehiculo> mantenimientos,JefeTaller jefe){
         ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
         for (Solicitud i : jefeSolicitudes){
             if(i instanceof SMantenimiento == true ){
-                Vehiculo carro = i.getCarro();
+                SMantenimiento sm1 = (SMantenimiento) i;
+                Vehiculo carro = sm1.getCarro();
+                Cliente cliente= carro.getPropietario();
                 mantenimientos.remove(carro);
                 carro.setEstado(VehiculoEstado.ENTREGADO);
                 SEntrega se1 = new SEntrega(jefe,cliente);

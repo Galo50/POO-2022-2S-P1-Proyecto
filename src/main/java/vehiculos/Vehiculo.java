@@ -119,4 +119,9 @@ public abstract class Vehiculo {
     public TipoVehiculo getTipo() {
         return this.tipo;
     }
+
+    public Cliente getPropietario() {
+        return propietario;
+    }
+    
 }
