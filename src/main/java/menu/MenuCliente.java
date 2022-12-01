@@ -52,7 +52,7 @@ public class MenuCliente {
                 System.out.println("Marca: " + i.getMarca()
                         + "\nModelo: " + i.getModelo()
                         + "\nAño de Fabricación: " + i.getYear()
-                        + "----- Página: " + vehiculosMain.indexOf(i) + " -----");
+                        + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
             }
         }
     }

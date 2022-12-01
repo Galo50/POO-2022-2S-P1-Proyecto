@@ -83,6 +83,7 @@ public class Menu {
             if (opcion != 1 && opcion != 6) {
                 Print.iniciarSesion();
                 usuarioAutenticado = MenuAutenticar.iniciarSesion(scanner, usuarios);
+                usuarioDeseaSalir = true;
             }
         }
         

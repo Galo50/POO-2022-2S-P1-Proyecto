@@ -19,6 +19,7 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         Main.usuarios = Cargar.usuarios();
+        Main.vehiculos = Cargar.vehiculos();
         
         if (Main.usuarios.isEmpty()) {
             Guardar.crearSupervisorPredeterminado();
@@ -29,6 +30,7 @@ public class Main {
         
         while(userLoggedIn == null) {
             userLoggedIn = Menu.autenticar(scanner, usuarios); // Este de aquí es quien genera el mensaje de Bievenida.
+            System.out.println("EL USERLOGGEDIN ES EL WE: " + userLoggedIn.getTipo());
             
             if (userLoggedIn != null) {
                 Print.darBienvenidaUsuario(userLoggedIn);
@@ -46,7 +48,7 @@ public class Main {
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
-                    MenuSupervisor.show(scanner, usuarios);
+                    MenuSupervisor.show(scanner, usuarios, vehiculos);
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {

@@ -1,5 +1,6 @@
 package menu;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
@@ -8,7 +9,7 @@ import usuarios.*;
 import vehiculos.*;
 
 public class MenuSupervisor {
-    public static void show(Scanner scanner, ArrayList<Usuario> usuarios) {
+    public static void show(Scanner scanner, ArrayList<Usuario> usuarios, ArrayList<Vehiculo> vehiculosMain) throws IOException {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -25,11 +26,15 @@ public class MenuSupervisor {
             }
             
             if (opcion == 3) {
+                crearVehiculo(scanner, vehiculosMain);
+            }
+            
+            if (opcion == 4) {
                 Usuario usuarioCreado = crearUsuario(scanner);
                 usuarios.add(usuarioCreado);
             }
             
-            usuarioDeseaSalir = opcion == 4;
+            usuarioDeseaSalir = opcion == 5;
         }
     }
     
@@ -37,7 +42,7 @@ public class MenuSupervisor {
         
     }
     
-    public static void crearVehiculo(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+    public static void crearVehiculo(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) throws IOException {
         boolean usuarioDeseaSalir = false;
         Vehiculo vehiculoCreado = null;
         
@@ -47,9 +52,9 @@ public class MenuSupervisor {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
-                vehiculosMain.add(MenuIngreso.iAutomovil());
+                vehiculoCreado = MenuIngreso.iAutomovil();
+                vehiculosMain.add(vehiculoCreado);
                 Guardar.vehiculos(vehiculosMain);
-                
             }
             
             if (opcion == 2) {

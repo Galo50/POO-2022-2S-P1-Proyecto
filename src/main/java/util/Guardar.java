@@ -32,7 +32,7 @@ public class Guardar {
     public static void vehiculos(ArrayList<Vehiculo> vehiculos) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        File file = new File("solicitudes.json");
+        File file = new File("vehiculos.json");
         file.createNewFile();
         
         objectMapper.writeValue(file, vehiculos);
