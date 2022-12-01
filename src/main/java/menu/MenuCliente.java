@@ -17,7 +17,7 @@ public class MenuCliente {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeCliente();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 7);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 8);
             
             if (opcion == 1) {
                 consultarStock(vehiculosMain);
