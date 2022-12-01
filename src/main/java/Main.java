@@ -26,6 +26,8 @@ public class Main {
             Main.usuarios = Cargar.usuarios();
         }
         
+        Print.darBienvenidaPrograma();
+        
         Usuario userLoggedIn = null;
         
         while(userLoggedIn == null) {
