@@ -63,7 +63,6 @@ public class Menu {
                      usuarioAutenticado = MenuUsuario.crearCliente(scanner);
                      
                      usuarios.add(usuarioAutenticado);
-                     Guardar.usuarios(usuarios);
                      terminarAutenticacion = true;
                 }
 

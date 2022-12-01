@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import store.AppState;
 import util.Print;
-import util.Guardar;
 import usuarios.*;
 import vehiculos.*;
 
@@ -33,7 +32,6 @@ public class MenuSupervisor {
             if (opcion == 4) {
                 Usuario usuarioCreado = crearUsuario(scanner);
                 usuarios.add(usuarioCreado);
-                Guardar.usuarios(usuarios);
             }
             
             if (opcion == 5) {
@@ -59,14 +57,11 @@ public class MenuSupervisor {
             if (opcion == 1) {
                 vehiculoCreado = MenuIngreso.iAutomovil();
                 vehiculosMain.add(vehiculoCreado);
-                Guardar.vehiculos(vehiculosMain);
             }
             
             if (opcion == 2) {
                 vehiculoCreado = MenuIngreso.iCamion();
                 vehiculosMain.add(vehiculoCreado);
-                Guardar.vehiculos(vehiculosMain);
-                
             }
             
             if (opcion == 3) {
