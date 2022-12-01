@@ -29,7 +29,7 @@ public class MenuCliente {
             }
             
             if (opcion == 4) {
-                consultarCotizaciones();
+                solicitarCotizaciones(scanner, vehiculosMain);
             }
             
             if (opcion == 5) {
@@ -51,7 +51,8 @@ public class MenuCliente {
             if (i.getEstado() == VehiculoEstado.INVENTARIO) {
                 System.out.println("Marca: " + i.getMarca()
                         + "\nModelo: " + i.getModelo()
-                        + "\nAño de Fabricación: " + i.getYear() + "\n");
+                        + "\nAño de Fabricación: " + i.getYear()
+                        + "----- Página: " + vehiculosMain.indexOf(i) + " -----");
             }
         }
     }
@@ -74,8 +75,31 @@ public class MenuCliente {
         // TODO
     }
     
-    public static void solicitarCotizaciones() {
+    public static void solicitarCotizaciones(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
         // TODO
+        System.out.print("""
+                         ############ SOLICITUD COTIZACIÓN ############
+                         Indique la página del vehículo a generar la
+                         solicitud:""");
+        boolean pagVehiculo = false;
+        while (!pagVehiculo) {
+            if (vehiculosMain.isEmpty()) {
+                System.out.println("\nNO HAY VEHÍCULOS EN STOCK!");
+                pagVehiculo = true;
+            }
+            else {
+                int opcionVehiculo = scanner.nextInt();
+                if (opcionVehiculo >= 0 && opcionVehiculo <= vehiculosMain.size()) {
+                    System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo));
+                    pagVehiculo = true;
+                }
+                //if (vehiculosMain.get(opcion).getEstado() == VehiculoEstado.INVENTARIO) {
+                //    System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo));
+                //    pagVehiculo = true;
+                //}
+            }
+            
+        }
     }
     
     public static void consultarMantenimientos() {

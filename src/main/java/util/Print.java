@@ -180,9 +180,10 @@ public class Print {
             |===============================================|
             |                  * Opciones *                 |
             |1. Consultar solicitudes de compra             |
-            |2. Añadir vehículos                            |
-            |3. Añadir usuarios                             |
-            |4. Salir                                       |
+            |2. Consultar Vendidos                          |
+            |3. Añadir vehículos                            |
+            |4. Añadir usuarios                             |
+            |5. Salir                                       |
             |-----------------------------------------------|
                            
        """);

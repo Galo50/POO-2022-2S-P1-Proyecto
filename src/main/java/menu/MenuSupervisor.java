@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import util.Print;
+import util.Guardar;
 import usuarios.*;
 import vehiculos.*;
 
@@ -36,7 +37,7 @@ public class MenuSupervisor {
         
     }
     
-    public static void crearVehiculo(Scanner scanner) {
+    public static void crearVehiculo(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
         boolean usuarioDeseaSalir = false;
         Vehiculo vehiculoCreado = null;
         
@@ -46,6 +47,8 @@ public class MenuSupervisor {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
+                vehiculosMain.add(MenuIngreso.iAutomovil());
+                Guardar.vehiculos(vehiculosMain);
                 
             }
             

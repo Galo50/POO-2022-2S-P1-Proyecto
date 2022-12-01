@@ -38,7 +38,7 @@ public class Main {
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
-                    MenuJefeTaller.show(scanner, vehiculos);
+                    //MenuJefeTaller.show(scanner, vehiculos);
                 } 
 
                 if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
