@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import solicitudes.SEntrega;
+import solicitudes.SRespuesta;
 import solicitudes.Solicitud;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
@@ -38,10 +39,17 @@ public class MenuJefeTaller {
     
     
     public static void entregarVehiculos(Scanner scanner, ArrayList<Vehiculo> vehiculosParaEntregar,JefeTaller jefe) {
+        ArrayList<Solicitud> jefeSolicitudes = jefe.getSolicitudes();
+        for (Solicitud i : jefeSolicitudes){
+            if(i instanceof SRespuesta == true ){
+                Usuario cliente = i.getDestinatario();
+                    
+                    
+                    }        
+        }
+      
         
-        scanner=(int) scanner;
-        Vehiculo carro = vehiculosParaEntregar[scanner];
-        SEntrega se1 = new SEntrega(carro,jefe,cliente);
+        SEntrega se1 = new SEntrega(jefe,cliente);
         ArrayList<Solicitud> solicitudesCliente = cliente.getSolicitudes();
         solicitudesCliente.add(se1);
         cliente.setSolicitudes(solicitudesCliente);
