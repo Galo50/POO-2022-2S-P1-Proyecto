@@ -93,12 +93,11 @@ public class MenuCliente {
                     System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo));
                     pagVehiculo = true;
                 }
-                //if (vehiculosMain.get(opcion).getEstado() == VehiculoEstado.INVENTARIO) {
-                //    System.out.println("Encontró al vehículo: " + vehiculosMain.get(opcionVehiculo));
-                //    pagVehiculo = true;
-                //}
+                else {
+                    System.out.println("No se encontró un vehículo en dicha página!");
+                    pagVehiculo = true;
+                }
             }
-            
         }
     }
     
