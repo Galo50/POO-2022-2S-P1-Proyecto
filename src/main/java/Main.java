@@ -7,13 +7,11 @@ import java.util.Scanner;
 import menu.MenuCliente;
 import usuarios.*;
 import vehiculos.*;
-import solicitudes.Solicitud;
 import menu.*;  
 import store.AppState;
 
 public class Main {
     public static ArrayList<Usuario> usuarios = new ArrayList();
-    public static ArrayList<Solicitud> solicitudes = new ArrayList();
     public static ArrayList<Vehiculo> vehiculos = new ArrayList();
     
     public static Scanner scanner = new Scanner(System.in);
