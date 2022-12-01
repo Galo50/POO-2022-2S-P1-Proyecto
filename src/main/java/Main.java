@@ -20,7 +20,6 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         Main.usuarios = Cargar.usuarios();
-        Main.vehiculos = Cargar.vehiculos();
         
         if (Main.usuarios.isEmpty()) {
             Guardar.crearSupervisorPredeterminado();
