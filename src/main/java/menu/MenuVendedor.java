@@ -6,42 +6,47 @@ package menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import util.Print;
+import vehiculos.Vehiculo;
+import vehiculos.VehiculoEstado;
 /**
  *
  * @author Todos :v
  */
 public class MenuVendedor {
-    public static void show(Scanner scanner) {
-        // TODO
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
+        boolean usuarioDeseaSalir = false;
+        
+        while (!usuarioDeseaSalir) {
+            Print.opcionesDeVendedor();
+            
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 4);
+            
+            if (opcion == 1) {
+                accesoStock(vehiculosMain);
+            }
+            
+            if (opcion == 2) {
+                
+            }
+            
+            if (opcion == 3) {
+                
+            }
+            
+            usuarioDeseaSalir = opcion == 4;
+        }
     }
     
-    public static int menuVendedor() {
-        ArrayList<Integer> listaOpciones;
-        listaOpciones = new ArrayList<>();
-        listaOpciones.add(1);
-        listaOpciones.add(2);
-        listaOpciones.add(3);
-        listaOpciones.add(4);
-        int optionChose;
-        Scanner inputJava = new Scanner(System.in);
-        
-        System.out.println("""
-                           |===============================================|
-                           |                 MENÚ VENDEDOR                 |
-                           |===============================================|
-                           |                  * Opciones *                 |
-                           |1. Acceso a Stock                              |
-                           |2. Bandeja de Solicitudes                      |
-                           |3. Sugerir Modelos                             |
-                           |4. Salir                                       |
-                           |-----------------------------------------------|
-                           
-                               -Ingrese el número de la opción a elegir- """);
-        optionChose = inputJava.nextInt();
-        while (!(listaOpciones.contains(optionChose))) {
-                System.out.println("Dicho valor se encuentra fuera del rango de Opciones!");
-                optionChose = inputJava.nextInt();
+    public static void accesoStock(ArrayList<Vehiculo> vehiculosMain) {
+        System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
+        for (Vehiculo i: vehiculosMain) {
+            if (i.getEstado() == VehiculoEstado.INVENTARIO) {
+                System.out.println("Marca: " + i.getMarca()
+                        + "\nModelo: " + i.getModelo()
+                        + "\nAño de Fabricación: " + i.getYear()
+                        + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
+            }
         }
-        return optionChose;
     }
 }

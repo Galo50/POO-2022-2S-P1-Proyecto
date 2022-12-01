@@ -51,7 +51,7 @@ public class Main {
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
-                    MenuVendedor.show(scanner);
+                    MenuVendedor.show(scanner, vehiculos);
                 }
             }
         }
