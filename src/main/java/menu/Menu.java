@@ -47,7 +47,6 @@ public class Menu {
     public static Usuario autenticar(Scanner scanner, ArrayList<Usuario> usuarios) throws IOException {
         Usuario usuarioAutenticado = null;
         
-        Print.darBienvenidaPrograma();
         Print.solicitarIniciarSesion();
         boolean usuarioDeseaSalir = false;
         
