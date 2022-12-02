@@ -17,7 +17,7 @@ import vehiculos.Vehiculo;
  * @author Todos xd
  */
 public class MenuMecanico {
-    public static void show(Scanner scanner,Usuario userLoggedIn,JefeTaller destinatario) {
+    public static void show(Scanner scanner,Usuario userLoggedIn,ArrayList<Usuario> usuarios) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -30,7 +30,7 @@ public class MenuMecanico {
             }
             
             if (opcion == 2) {
-            
+                enviarCambioEstado(scanner,userLoggedIn, usuarios);
                         
             }
                 
@@ -53,20 +53,28 @@ public class MenuMecanico {
                     "\nTipo de Vehículo: " + i.getTipo());
         }  
     }
-    public static void enviarCambioEstado(Scanner scanner, Mecanico remitente, JefeTaller destinatario) {
-        ArrayList<Vehiculo> carros = remitente.getCarros();
-        System.out.print("""
+    public static void enviarCambioEstado(Scanner scanner, Usuario userLoggedIn,ArrayList<Usuario> usuarios ) {
+        for (Usuario i: usuarios){
+            if (i instanceof JefeTaller == true){
+                JefeTaller destinatario = (JefeTaller)i;
+                 Mecanico remitente = (Mecanico) userLoggedIn;
+                ArrayList<Vehiculo> carros = remitente.getCarros();
+                System.out.print("""
                          ############ SOLICITUD CAMBIO DE ESTADO ############
                          Indique la posicion del vehículo a generar la
                          solicitud:""");
         
-        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
-        int posicion = (int)position;
-        Vehiculo carroChose = carros.get(posicion);
-        SEstado se1 = new SEstado(carroChose, remitente, destinatario);
-        ArrayList<Solicitud> solicitudesJefe=destinatario.getSolicitudes();
-        solicitudesJefe.add(se1);
-        destinatario.setSolicitudes(solicitudesJefe);
-        System.out.println("Solicitud enviada con éxito!");
+                float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+                int posicion = (int)position;
+                Vehiculo carroChose = carros.get(posicion);
+                SEstado se1 = new SEstado(carroChose, remitente, destinatario);
+                ArrayList<Solicitud> solicitudesJefe=destinatario.getSolicitudes();
+                solicitudesJefe.add(se1);
+                destinatario.setSolicitudes(solicitudesJefe);
+                System.out.println("Solicitud enviada con éxito!");
+            }
+              
+        }
     }
+       
 }

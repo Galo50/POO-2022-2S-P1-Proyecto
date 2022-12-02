@@ -46,7 +46,7 @@ public class Main {
                 } 
 
                 if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
-                    MenuMecanico.show(scanner);
+                    MenuMecanico.show(scanner,userLoggedIn,usuarios);
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
