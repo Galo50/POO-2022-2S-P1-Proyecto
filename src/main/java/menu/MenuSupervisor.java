@@ -3,13 +3,14 @@ package menu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import solicitudes.*;
 import store.AppState;
 import util.Print;
 import usuarios.*;
 import vehiculos.*;
 
 public class MenuSupervisor {
-    public static void show(Scanner scanner, ArrayList<Usuario> usuarios, ArrayList<Vehiculo> vehiculosMain) throws IOException {
+    public static void show(Scanner scanner, ArrayList<Usuario> usuarios, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) throws IOException {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -18,7 +19,7 @@ public class MenuSupervisor {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
-                consultarSolicitudesDeCompra();
+                consultarSolicitudesDeCompra(userLoggedIn, scanner);
             }
             
             if (opcion == 2) {
@@ -41,8 +42,30 @@ public class MenuSupervisor {
         }
     }
     
-    public static void consultarSolicitudesDeCompra() {
+    public static void consultarSolicitudesDeCompra(Usuario userLoggedIn, Scanner scanner) {
+        boolean continuarLeyendo = true;
+        System.out.println("############ SOLICITUDES DE COMPRA ############");
+        ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
         
+        while (!bandejaEntrada.isEmpty() && continuarLeyendo) {
+            Solicitud solicitud = bandejaEntrada.get(0);
+            solicitud.imprimir();
+            
+            bandejaEntrada.remove(0);
+            
+            System.out.println("Por favor, seleccione: 1. Leer otro mensaje | 2. Salir");
+            float opcion = Menu.solicitarNumero(scanner, "Ingrese su opción: ", 1, 2);
+            
+            if (opcion == 2) {
+                continuarLeyendo = false;
+            }
+            
+            if (bandejaEntrada.isEmpty()) {
+                System.out.println("No hay más mensajes por ahora.");
+            }
+        }
+
+        userLoggedIn.setSolicitudes(bandejaEntrada);
     }
     
     public static void vendidosVendedor(Scanner scanner, ArrayList<Usuario> usuarios) {

@@ -52,14 +52,6 @@ public class Cliente extends Usuario {
         return carros;
     }
     
-    public void solicitudesCliente() {
-        System.out.println("############ LISTA DE SOLICITUDES ############");
-        for(Solicitud i: this.solicitudes) {
-            i.imprimir();
-            solicitudes.remove(i);
-        }
-    }
-    
     public void solicitarMantenimiento(Vehiculo carro, String tipoMantenimiento, Cliente remitente, JefeTaller jefeTaller) {
         SMantenimiento sm1 = new SMantenimiento(tipoMantenimiento, carro, remitente, jefeTaller);
         jefeTaller.solicitudes.add(sm1);

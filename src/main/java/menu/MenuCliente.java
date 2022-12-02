@@ -43,7 +43,7 @@ public class MenuCliente {
             }
             
             if (opcion == 7) {
-                revisarSolicitudes();
+                bandejaDeEntrada(userLoggedIn, scanner);
             }
             
             if (opcion == 8) {
@@ -177,7 +177,30 @@ public class MenuCliente {
     public static void solicitarMantenimiento() {
         // TODO
     }
-    public static void revisarSolicitudes() {
+    public static void bandejaDeEntrada(Usuario userLoggedIn, Scanner scanner) {
         // TODO
+        boolean continuarLeyendo = true;
+        System.out.println("############ BANDEJA DE ENTRADA ############");
+        ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
+        
+        while (!bandejaEntrada.isEmpty() && continuarLeyendo) {
+            Solicitud solicitud = bandejaEntrada.get(0);
+            solicitud.imprimir();
+            
+            bandejaEntrada.remove(0);
+            
+            System.out.println("Por favor, seleccione: 1. Leer otro mensaje | 2. Salir");
+            float opcion = Menu.solicitarNumero(scanner, "Ingrese su opción: ", 1, 2);
+            
+            if (opcion == 2) {
+                continuarLeyendo = false;
+            }
+            
+            if (bandejaEntrada.isEmpty()) {
+                System.out.println("No hay más mensajes por ahora.");
+            }
+        }
+
+        userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }

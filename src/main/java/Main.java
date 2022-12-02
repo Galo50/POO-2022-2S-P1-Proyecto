@@ -49,7 +49,7 @@ public class Main {
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.SUPERVISOR) {
-                    MenuSupervisor.show(scanner, usuarios, vehiculos);
+                    MenuSupervisor.show(scanner, usuarios, vehiculos, userLoggedIn);
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.VENDEDOR) {
