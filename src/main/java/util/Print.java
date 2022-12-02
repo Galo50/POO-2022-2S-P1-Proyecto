@@ -222,4 +222,18 @@ public class Print {
             |-----------------------------------------------|
         """);
     }
+    
+    public static void opcionesAceptar() {
+                System.out.println("""
+            |===============================================|
+            |        DETERMINE LA ACCION A REALIZAR         |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Aceptar                                     |
+            |2. Rechazar                                    |
+            |3. Salir al menu                               |
+            |-----------------------------------------------|
+                           
+        """);
+    }
 }

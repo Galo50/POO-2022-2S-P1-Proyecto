@@ -7,9 +7,10 @@ import store.AppState;
 import util.Print;
 import usuarios.*;
 import vehiculos.*;
+import solicitudes.*;
 
 public class MenuSupervisor {
-    public static void show(Scanner scanner, ArrayList<Usuario> usuarios, ArrayList<Vehiculo> vehiculosMain) throws IOException {
+    public static void show(Scanner scanner, ArrayList<Usuario> usuarios, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) throws IOException {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -18,7 +19,7 @@ public class MenuSupervisor {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
             
             if (opcion == 1) {
-                consultarSolicitudesDeCompra();
+                consultarSolicitudesDeCompra(userLoggedIn, scanner);
             }
             
             if (opcion == 2) {
@@ -41,8 +42,52 @@ public class MenuSupervisor {
         }
     }
     
-    public static void consultarSolicitudesDeCompra() {
+    public static void consultarSolicitudesDeCompra(Usuario userLoggedIn, Scanner scanner) {
+        ArrayList<Solicitud> solicitudes = userLoggedIn.getSolicitudes();
+        boolean continuarLeyendo = true;
         
+        System.out.println("############ BANDEJA DE ENTRADA ############");
+        
+        while (!solicitudes.isEmpty() && continuarLeyendo) {
+            Solicitud solicitud = solicitudes.get(0);
+            solicitud.imprimir();
+            
+            if (solicitud.getTipo() == TipoSolicitud.COMPRA) {
+                Print.opcionesAceptar();
+                float opcion = Menu.solicitarNumero(scanner, "Su opción por favor: ", 1, 3);
+                
+                Usuario remitente = solicitud.getRemitente();
+                if (opcion == 1) {
+                    SRespuesta respuesta = new SRespuesta("Compra de vehículo", userLoggedIn, remitente);
+                    remitente.getSolicitudes().add(respuesta);
+                }
+                
+                if (opcion == 2) {
+                    String justificacion = scanner.nextLine();
+                    SRechazo rechazo = new SRechazo(justificacion, "Compra de vehículo", userLoggedIn, remitente);
+                    remitente.getSolicitudes().add(rechazo);
+                }
+                
+                if (opcion != 3) {
+                    solicitudes.remove(0);
+                }
+            }
+            
+            if (solicitud.getTipo() != TipoSolicitud.COMPRA) {
+                solicitudes.remove(0);
+            }
+            
+            System.out.println("Por favor, seleccione: 1. Leer otro mensaje | 2. Salir");
+            float opcion = Menu.solicitarNumero(scanner, "Ingrese su opción: ", 1, 2);
+            
+            if (opcion == 2) {
+                continuarLeyendo = false;
+            }
+            
+            if (solicitudes.isEmpty()) {
+                System.out.println("No hay más mensajes por ahora.");
+            }
+        }
     }
     
     public static void vendidosVendedor(Scanner scanner, ArrayList<Usuario> usuarios) {
