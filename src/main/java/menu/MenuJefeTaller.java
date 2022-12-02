@@ -5,6 +5,7 @@ import java.util.Scanner;
 import solicitudes.*;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
+import usuarios.Mecanico;
 import usuarios.Usuario;
 import util.Print;
 import vehiculos.Vehiculo;
@@ -41,6 +42,7 @@ public class MenuJefeTaller {
                 administrarMantenimiento(scanner,jefe,carrosMantenimiento);
             }
             if (opcion == 6 ){
+                asignarMecanico(scanner,usuarios,vehiculos);
             
             }
             
@@ -104,5 +106,24 @@ public class MenuJefeTaller {
         int posicion = (int)position;
         Vehiculo carro = carros.get(posicion);
         carro.setEstado(VehiculoEstado.PRUEBA);
+    }
+    
+    public static void asignarMecanico(Scanner scanner, ArrayList<Usuario> usuarios,ArrayList<Vehiculo> carros) {
+         System.out.print("""
+                         ############ ASIGNACION DE MECANICO ############
+                         Indique la posicion del vehículo a asignar: """);
+        
+        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+        int posicion = (int)position;
+        Vehiculo carro = carros.get(posicion);
+        for (Usuario i: usuarios){
+            if (i instanceof Mecanico == true){
+                Mecanico mecanico = (Mecanico)i;        
+                ArrayList<Vehiculo> carrosMecanico= mecanico.getCarros();
+                carrosMecanico.add(carro);
+                mecanico.setCarros(carrosMecanico);
+            
+           }
+       }        
     }
 }
