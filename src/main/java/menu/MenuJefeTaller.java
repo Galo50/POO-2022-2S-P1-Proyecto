@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import solicitudes.*;
+import store.AppState;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
 import usuarios.Mecanico;
@@ -46,7 +47,11 @@ public class MenuJefeTaller {
             
             }
             
-            usuarioDeseaSalir = opcion == 7;
+            if (opcion == 7) {
+                usuarioDeseaSalir = true;
+                AppState.setUserLoggedIn(null);
+            }
+            
         }
     }
     
@@ -67,7 +72,13 @@ public class MenuJefeTaller {
      
     
     public static void consultarMantenimientos(ArrayList<Vehiculo> carrosMantenimiento) {
-        System.out.println("Actualmente existen "+carrosMantenimiento.size()+"vehiculos en el taller");
+        if (carrosMantenimiento.isEmpty()) {
+            System.out.println("No hay mantenimientos.");
+        }
+        
+        if (!carrosMantenimiento.isEmpty()) {
+            System.out.println("Actualmente existen "+carrosMantenimiento.size()+"vehiculos en el taller");
+        }
     }
     
     public static void consultarSolicitudesDeMantenimiento(JefeTaller jefe) {

@@ -37,6 +37,10 @@ public abstract class Solicitud {
     public TipoSolicitud getTipo() {
         return this.tipo;
     }
+    
+    public Usuario getRemitente() {
+        return remitente;
+    }
 
     public Usuario getDestinatario() {
         return destinatario;

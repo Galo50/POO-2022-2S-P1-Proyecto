@@ -170,8 +170,10 @@ public class Print {
             |2. Consultar mantenimientos                    |
             |3. Consultar solicitudes de mantenimiento      |    
             |4. Dar de alta vehículos                       |
+            |5. Administrar mantenimientos                  |
+            |6. Asignar mecanico                            |
             |                                               |
-            |5. Cerrar Sesión                               |
+            |7. Cerrar Sesión                               |
             |-----------------------------------------------|
         """);
     }
@@ -221,6 +223,21 @@ public class Print {
         """);
     }
     
+
+    public static void opcionesAceptar() {
+                System.out.println("""
+            |===============================================|
+            |        DETERMINE LA ACCION A REALIZAR         |
+            |===============================================|
+            |                  * Opciones *                 |
+            |1. Aceptar                                     |
+            |2. Rechazar                                    |
+            |3. Salir al menu                               |
+            |-----------------------------------------------|
+                           
+        """);
+    }
+
     public static void drawAutomovil() {
                 System.out.println("""
                                      ______
@@ -254,5 +271,6 @@ public class Print {
                                           |_|-/ \\_|__   
                                         _/..\\-.\\|   |   
                                    _hjm__\\""/`````(o)___""");
+
     }
 }
