@@ -66,7 +66,7 @@ public class MenuVendedor {
         for (Solicitud i: bandejaEntrada) {
             System.out.println("PARÁMETRO DE i: " + i.getDestinatario());
             i.imprimir();
-            bandejaEntrada.remove(i);
+            bandejaEntrada.remove(0); 
         }
         userLoggedIn.setSolicitudes(bandejaEntrada);
     }

@@ -4,7 +4,9 @@
  */
 package menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import solicitudes.*;
 import store.AppState;
 import usuarios.*;
 import util.Print;
@@ -15,19 +17,24 @@ import vehiculos.Vehiculo;
  * @author Todos xd
  */
 public class MenuMecanico {
-    public static void show(Scanner scanner) {
+    public static void show(Scanner scanner,Usuario userLoggedIn,JefeTaller destinatario) {
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
             Print.opcionesDeMecanico();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 2);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 3);
             
             if (opcion == 1) {
-
+                consultarVehiculosEnEtapaDePrueba(userLoggedIn);
             }
             
             if (opcion == 2) {
+            
+                        
+            }
+                
+            if (opcion == 3) {    
                 usuarioDeseaSalir = true;
                 AppState.setUserLoggedIn(null);
             }
@@ -46,5 +53,20 @@ public class MenuMecanico {
                     "\nTipo de Vehículo: " + i.getTipo());
         }  
     }
-
+    public static void enviarCambioEstado(Scanner scanner, Mecanico remitente, JefeTaller destinatario) {
+        ArrayList<Vehiculo> carros = remitente.getCarros();
+        System.out.print("""
+                         ############ SOLICITUD CAMBIO DE ESTADO ############
+                         Indique la posicion del vehículo a generar la
+                         solicitud:""");
+        
+        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+        int posicion = (int)position;
+        Vehiculo carroChose = carros.get(posicion);
+        SEstado se1 = new SEstado(carroChose, remitente, destinatario);
+        ArrayList<Solicitud> solicitudesJefe=destinatario.getSolicitudes();
+        solicitudesJefe.add(se1);
+        destinatario.setSolicitudes(solicitudesJefe);
+        System.out.println("Solicitud enviada con éxito!");
+    }
 }
