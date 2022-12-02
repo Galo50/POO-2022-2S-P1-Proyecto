@@ -173,7 +173,7 @@ public class Print {
             |5. Administrar mantenimientos                  |
             |6. Asignar mecanico                            |
             |                                               |
-            |5. Cerrar Sesión                               |
+            |7. Cerrar Sesión                               |
             |-----------------------------------------------|
         """);
     }
