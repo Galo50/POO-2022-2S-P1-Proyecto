@@ -29,6 +29,8 @@ public class JefeTaller extends Usuario{
     ) {
         super(userName, password, nombres, apellidos, solicitudes, TipoUsuario.JEFE_TALLER);
         this.certificacionTecnica = certificacionTecnica;
+        this.carrosMantenimiento = new ArrayList();
+        this.carrosEntregar = new ArrayList();
     }
 
     public ArrayList<Vehiculo> getCarrosMantenimiento() {
