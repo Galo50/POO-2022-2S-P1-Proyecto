@@ -52,56 +52,6 @@ public class Cliente extends Usuario {
         return carros;
     }
     
-    public void drawVehicles(ArrayList<Vehiculo> carrosDisponibles) {
-        System.out.println("############ GRAFICACIÓN DE VEHÍCULOS EN STOCK ############");
-        for (Vehiculo i: carrosDisponibles) {
-            if (i instanceof Automovil) {
-                System.out.println("""
-                                     ______
-                                    /|_||_\\`.__
-                                   (   _    _ _\\
-                                   =`-(_)--(_)-' """);
-                System.out.println("\n");
-            }
-            if (i instanceof Camion) {
-                System.out.println("""
-                                      o_______________}o{
-                                      |              |   \\
-                                      |    911       |____\\_____
-                                      | _____        |    |_o__ |
-                                      [/ ___ \\       |   / ___ \\|
-                                     []_/.-.\\_\\______|__/_/.-.\\_[]
-                                        |(O)|             |(O)|
-                                         '-'   ScS         '-'""");
-                System.out.println("\n");
-            }
-            if (i instanceof Motocicleta) {
-                System.out.println("""
-                                      ,
-                                   .-/c-.,::  
-                                   (_)'==(_)""");
-                System.out.println("\n");
-            }
-            if (i instanceof Tractor) {
-                System.out.println("""
-                                         /\\  ,-,---,
-                                        //\\\\/|_|___|  Y
-                                    ,__//  \\\\|/``\\ |--'-q  _
-                                     \\_/    {( () ) {(===t||
-                                              \\__/````\\_/  \\ """);
-                System.out.println("\n");
-            }
-        }
-    }
-    
-    public void solicitudesCliente() {
-        System.out.println("############ LISTA DE SOLICITUDES ############");
-        for(Solicitud i: this.solicitudes) {
-            i.imprimir();
-            solicitudes.remove(i);
-        }
-    }
-    
     public void solicitarMantenimiento(Vehiculo carro, String tipoMantenimiento, Cliente remitente, JefeTaller jefeTaller) {
         SMantenimiento sm1 = new SMantenimiento(tipoMantenimiento, carro, remitente, jefeTaller);
         jefeTaller.solicitudes.add(sm1);

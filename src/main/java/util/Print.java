@@ -223,6 +223,7 @@ public class Print {
         """);
     }
     
+
     public static void opcionesAceptar() {
                 System.out.println("""
             |===============================================|
@@ -235,5 +236,41 @@ public class Print {
             |-----------------------------------------------|
                            
         """);
+    }
+
+    public static void drawAutomovil() {
+                System.out.println("""
+                                     ______
+                                    /|_||_\\`.__
+                                   (   _    _ _\\
+                                   =`-(_)--(_)-' """);
+    }
+    
+    public static void drawCamion() {
+                System.out.println("""
+                                      o_______________}o{
+                                      |              |   \\
+                                      |              |____\\_____
+                                      | _____        |    |_o__ |
+                                      [/ ___ \\       |   / ___ \\|
+                                     []_/.-.\\_\\______|__/_/.-.\\_[]
+                                        |(O)|             |(O)|
+                                         '-'   ScS         '-'""");
+    }
+    
+    public static void drawMotocicleta() {
+                System.out.println("""
+                                      ,
+                                   .-/c-.,::  
+                                   (_)'==(_)""");
+    }
+    
+    public static void drawTractor() {
+                System.out.println("""
+                                          |`o``\\  ,     
+                                          |_|-/ \\_|__   
+                                        _/..\\-.\\|   |   
+                                   _hjm__\\""/`````(o)___""");
+
     }
 }

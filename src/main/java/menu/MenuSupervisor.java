@@ -3,6 +3,7 @@ package menu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import solicitudes.*;
 import store.AppState;
 import util.Print;
 import usuarios.*;
@@ -87,7 +88,10 @@ public class MenuSupervisor {
             if (solicitudes.isEmpty()) {
                 System.out.println("No hay más mensajes por ahora.");
             }
+
         }
+
+        userLoggedIn.setSolicitudes(solicitudes);
     }
     
     public static void vendidosVendedor(Scanner scanner, ArrayList<Usuario> usuarios) {
