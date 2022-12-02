@@ -3,6 +3,7 @@ package menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 import solicitudes.*;
+import store.AppState;
 import usuarios.Cliente;
 import usuarios.JefeTaller;
 import usuarios.Mecanico;
@@ -46,7 +47,11 @@ public class MenuJefeTaller {
             
             }
             
-            usuarioDeseaSalir = opcion == 7;
+            if (opcion == 7) {
+                usuarioDeseaSalir = false;
+                AppState.setUserLoggedIn(null);
+            }
+            
         }
     }
     
