@@ -117,30 +117,34 @@ public class Cargar {
     public static ArrayList<Vehiculo> vehiculos() throws IOException {
         ArrayList<Vehiculo> vehiculos = new ArrayList();
         
-        File file = new File("vehiculos.json");
-        
-        ObjectMapper mapper = new ObjectMapper();
-        
-        JsonNode node = mapper.valueToTree(mapper.readValue(file, JsonNode.class));
-        for (int i = 0; i < node.size(); i++) {
-            JsonNode vehiculoJson = node.get(i);
-            String tipo = vehiculoJson.get("tipo").textValue();
-            
-            if (tipo.equals(TipoVehiculo.AUTOMOVIL.name())) {
-                vehiculos.add(mapper.readValue(vehiculoJson.toString(), Automovil.class));
+        try {
+            File file = new File("vehiculos.json");
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            JsonNode node = mapper.valueToTree(mapper.readValue(file, JsonNode.class));
+            for (int i = 0; i < node.size(); i++) {
+                JsonNode vehiculoJson = node.get(i);
+                String tipo = vehiculoJson.get("tipo").textValue();
+
+                if (tipo.equals(TipoVehiculo.AUTOMOVIL.name())) {
+                    vehiculos.add(mapper.readValue(vehiculoJson.toString(), Automovil.class));
+                }
+
+                if (tipo.equals(TipoVehiculo.CAMION.name())) {
+                    vehiculos.add(mapper.readValue(vehiculoJson.toString(), Camion.class));
+                }
+
+                if (tipo.equals(TipoVehiculo.MOTOCICLETA.name())) {
+                    vehiculos.add(mapper.readValue(vehiculoJson.toString(), Motocicleta.class));
+                }
+
+                if (tipo.equals(TipoVehiculo.TRACTOR.name())) {
+                    vehiculos.add(mapper.readValue(vehiculoJson.toString(), Tractor.class));
+                }
             }
-            
-            if (tipo.equals(TipoVehiculo.CAMION.name())) {
-                vehiculos.add(mapper.readValue(vehiculoJson.toString(), Camion.class));
-            }
-            
-            if (tipo.equals(TipoVehiculo.MOTOCICLETA.name())) {
-                vehiculos.add(mapper.readValue(vehiculoJson.toString(), Motocicleta.class));
-            }
-            
-            if (tipo.equals(TipoVehiculo.TRACTOR.name())) {
-                vehiculos.add(mapper.readValue(vehiculoJson.toString(), Tractor.class));
-            }
+        } catch(FileNotFoundException e) {
+            Print.ficheroNoEncontrado();
         }
         
         return vehiculos;

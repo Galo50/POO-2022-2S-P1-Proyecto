@@ -17,12 +17,12 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) throws IOException {
+        Guardar.crearUsuariosPredeterminados();
         Main.usuarios = Cargar.usuarios();
+       
+        Guardar.crearVehiculosPredeterminados();
+        Main.vehiculos = Cargar.vehiculos();
         
-        if (Main.usuarios.isEmpty()) {
-            Guardar.crearSupervisorPredeterminado();
-            Main.usuarios = Cargar.usuarios();
-        }
         
         Print.darBienvenidaPrograma();
         

@@ -22,7 +22,7 @@ public class MenuSupervisor {
             }
             
             if (opcion == 2) {
-
+                vendidosVendedor(scanner,usuarios);
             }
             
             if (opcion == 3) {
@@ -43,6 +43,28 @@ public class MenuSupervisor {
     
     public static void consultarSolicitudesDeCompra() {
         
+    }
+    
+    public static void vendidosVendedor(Scanner scanner, ArrayList<Usuario> usuarios) {
+        System.out.println("""
+                           |===============================================|
+                           |       INGRESE EL ID DEL VENDEDOR BUSCADO      |
+                           |===============================================|""");
+        String idBuscado = scanner.nextLine();
+        for (Usuario i: usuarios){
+            if (i instanceof Vendedor == true){
+                Vendedor vendedor =(Vendedor)i;
+                if (vendedor.getId().equals(idBuscado)==true){
+                    System.out.println("El " + vendedor.getNombres()+ " vendió un total de "
+        + vendedor.getVendidos() + ".");
+                }
+                else{
+                     System.out.println("No se encontro vendedor con ese id ");
+                }
+        
+        
+            }
+        }
     }
     
     public static void crearVehiculo(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) throws IOException {
