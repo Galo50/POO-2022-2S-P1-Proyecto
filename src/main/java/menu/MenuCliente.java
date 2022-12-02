@@ -20,7 +20,7 @@ public class MenuCliente {
             float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 8);
             
             if (opcion == 1) {
-                consultarStock(vehiculosMain);
+                consultarStock(scanner, vehiculosMain);
             }
             
             if (opcion == 2) {
@@ -54,15 +54,24 @@ public class MenuCliente {
         }
     }
     
-    public static void consultarStock(ArrayList<Vehiculo> vehiculosMain) {
+    public static void consultarStock(Scanner scanner, ArrayList<Vehiculo> vehiculosMain) {
         // TODO
+        float readStock = 1;
+        String mensaje = """
+                         ¿Desea seguir leyendo la siguiente página?
+                         1. Sí
+                         2. No
+                         """;
         System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
         for (Vehiculo i: vehiculosMain) {
-            if (i.getEstado() == VehiculoEstado.INVENTARIO) {
-                System.out.println("Marca: " + i.getMarca()
-                        + "\nModelo: " + i.getModelo()
-                        + "\nAño de Fabricación: " + i.getYear()
-                        + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
+            if (readStock == 1) {
+                if (i.getEstado() == VehiculoEstado.INVENTARIO) {
+                    System.out.println("Marca: " + i.getMarca()
+                            + "\nModelo: " + i.getModelo()
+                            + "\nAño de Fabricación: " + i.getYear()
+                            + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
+                    readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                }
             }
         }
     }
