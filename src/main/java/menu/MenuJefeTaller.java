@@ -48,7 +48,7 @@ public class MenuJefeTaller {
             }
             
             if (opcion == 7) {
-                usuarioDeseaSalir = false;
+                usuarioDeseaSalir = true;
                 AppState.setUserLoggedIn(null);
             }
             
