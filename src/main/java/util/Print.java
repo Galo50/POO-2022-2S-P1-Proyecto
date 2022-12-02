@@ -170,6 +170,8 @@ public class Print {
             |2. Consultar mantenimientos                    |
             |3. Consultar solicitudes de mantenimiento      |    
             |4. Dar de alta vehículos                       |
+            |5. Administrar mantenimientos                  |
+            |6. Asignar mecanico                            |
             |                                               |
             |5. Cerrar Sesión                               |
             |-----------------------------------------------|
