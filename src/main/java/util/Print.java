@@ -200,10 +200,8 @@ public class Print {
             |                  * Opciones *                 |
             |1. Acceso a Stock                              |
             |2. Bandeja de Solicitudes                      |
-            |3. Sugerir Modelos                             |
-            |4. Editar Modelos                              |
             |                                               |
-            |5. Cerrar Sesión                               |
+            |3. Cerrar Sesión                               |
             |-----------------------------------------------|                       
         """);
     }

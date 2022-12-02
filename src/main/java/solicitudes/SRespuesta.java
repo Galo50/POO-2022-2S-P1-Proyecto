@@ -6,7 +6,7 @@ package solicitudes;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import usuarios.Usuario;
-import vehiculos.Vehiculo;
+import vehiculos.*;
 
 
 /**
@@ -55,6 +55,10 @@ public class SRespuesta extends Solicitud{
         if (precio != 0.0){
     System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y tendra un costo de "+precio+"centavos por kilometro");
             }
+        
+        if(carro != null){ 
+    System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y este el precio del vehiculo"+carro.getPrecio());        
         }
-    }
+    }   
+}
     

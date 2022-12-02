@@ -33,6 +33,22 @@ public class SCotizacion extends Solicitud{
     System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le solicito una cotizacion del vehiculo "+carro.getMarca()+" "+carro.getModelo());
     
     }
+
+    public TipoSolicitud getTipo() {
+        return tipo;
+    }
+
+    public Usuario getRemitente() {
+        return remitente;
+    }
+
+    public Usuario getDestinatario() {
+        return destinatario;
+    }
+
+    public Vehiculo getCarro() {
+        return carro;
+    }
     
 
     
