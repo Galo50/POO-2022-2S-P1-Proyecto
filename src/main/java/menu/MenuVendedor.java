@@ -23,7 +23,7 @@ public class MenuVendedor {
         while (!usuarioDeseaSalir) {
             Print.opcionesDeVendedor();
             
-            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 5);
+            float opcion = Menu.solicitarNumero(scanner, Print.ingresarOpcion, 1, 3);
             
             if (opcion == 1) {
                 accesoStock(vehiculosMain);
@@ -34,14 +34,6 @@ public class MenuVendedor {
             }
             
             if (opcion == 3) {
-                
-            }
-            
-            if (opcion == 4) {
-                
-            }
-            
-            if (opcion == 5) {
                 usuarioDeseaSalir = true;
                 AppState.setUserLoggedIn(null);
             }
@@ -68,6 +60,26 @@ public class MenuVendedor {
         while (!bandejaEntrada.isEmpty() && continuarLeyendo) {
             Solicitud solicitud = bandejaEntrada.get(0);
             solicitud.imprimir();
+            if (solicitud instanceof SCotizacion == true){
+                SCotizacion solicitud2=(SCotizacion)solicitud;
+                int respuesta= MenuBooleano.menuBooleano();
+                if (respuesta == 1){
+                    SRespuesta sr1= new SRespuesta("cotizacion",userLoggedIn,solicitud2.getRemitente(),solicitud2.getCarro());
+                    Usuario cliente = solicitud2.getRemitente();
+                    ArrayList<Solicitud> solicitudesCliente=cliente.getSolicitudes();
+                    solicitudesCliente.add(sr1);
+                }
+                if (respuesta == 2){
+                    String justificacion = scanner.nextLine();
+                    SRechazo sr1= new SRechazo(justificacion,"cotizacion",userLoggedIn,solicitud2.getRemitente());
+                    Usuario cliente = solicitud2.getRemitente();
+                    ArrayList<Solicitud> solicitudesCliente=cliente.getSolicitudes();
+                    solicitudesCliente.add(sr1);
+                }
+                if (respuesta == 3){
+                    System.out.println("Mensaje anulado ");
+                }
+            }
             
             bandejaEntrada.remove(0);
             
