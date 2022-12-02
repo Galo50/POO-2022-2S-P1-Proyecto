@@ -146,7 +146,7 @@ public class Guardar {
         
         Automovil automovilTres = new Automovil(5, false, true, 2020, "Chevrolet", 4, "Spark", 12000, VehiculoCombustible.GASOLINA, VehiculoEstado.INVENTARIO);
         
-        Motocicleta motocicleta = new Motocicleta(TipoMoto.TODO_TERRENO, 2017, "HONDA", VehiculoCombustible.GASOLINA, "450ECO Slow Flash", 6500.0, VehiculoEstado.INVENTARIO);
+        //Motocicleta motocicleta = new Motocicleta(TipoMoto.TODO_TERRENO, 2017, "HONDA", VehiculoCombustible.GASOLINA, "450ECO Slow Flash", 6500.0, VehiculoEstado.INVENTARIO);
         
         ArrayList<Vehiculo> vehiculos = new ArrayList();
         vehiculos.add(automovilUno);
@@ -154,7 +154,7 @@ public class Guardar {
         vehiculos.add(camion);
         vehiculos.add(tractor);
         vehiculos.add(automovilTres);
-        vehiculos.add(motocicleta);
+        //vehiculos.add(motocicleta);
         
         Guardar.vehiculos(vehiculos);
     }
