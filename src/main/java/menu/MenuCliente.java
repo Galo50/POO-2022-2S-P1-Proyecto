@@ -65,12 +65,18 @@ public class MenuCliente {
         System.out.println("############ CATÁLOGO DE VEHÍCULOS EN STOCK ############");
         for (Vehiculo i: vehiculosMain) {
             if (readStock == 1) {
-                if (i.getEstado() == VehiculoEstado.INVENTARIO) {
+                if (i.getEstado() == VehiculoEstado.INVENTARIO && vehiculosMain.indexOf(i) + 1 != vehiculosMain.size()) {
                     System.out.println("Marca: " + i.getMarca()
                             + "\nModelo: " + i.getModelo()
                             + "\nAño de Fabricación: " + i.getYear()
                             + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
                     readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                }
+                if (vehiculosMain.indexOf(i) + 1 == vehiculosMain.size() && i.getEstado() == VehiculoEstado.INVENTARIO) {
+                    System.out.println("Marca: " + i.getMarca()
+                            + "\nModelo: " + i.getModelo()
+                            + "\nAño de Fabricación: " + i.getYear()
+                            + "\n----- Página: " + vehiculosMain.indexOf(i) + " -----\n");
                 }
             }
         }
