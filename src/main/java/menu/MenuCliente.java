@@ -7,8 +7,7 @@ import store.AppState;
 import solicitudes.*;
 import util.Print;
 import usuarios.*;
-import vehiculos.Vehiculo;
-import vehiculos.VehiculoEstado;
+import vehiculos.*;
 
 public class MenuCliente {
     public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn, ArrayList<Usuario> usuariosMain) {
@@ -28,7 +27,7 @@ public class MenuCliente {
             }
             
             if (opcion == 3) {
-                visualizarVehiculosAdquiridos();
+                visualizarVehiculosAdquiridos(scanner, vehiculosMain, userLoggedIn);
             }
             
             if (opcion == 4) {
@@ -96,8 +95,37 @@ public class MenuCliente {
         }
     }
     
-    public static void visualizarVehiculosAdquiridos() {
+    public static void visualizarVehiculosAdquiridos(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn) {
         // TODO
+        if (userLoggedIn.getTipo() == TipoUsuario.CLIENTE) {
+            float readStock = 1;
+            String mensaje = """
+                         ¿Desea seguir graficando vuestros autos?
+                         1. Sí
+                         2. No
+                         """;
+            Cliente c1 = (Cliente)userLoggedIn;
+            for (Vehiculo i: c1.getCarros()) {
+                if (readStock == 1) {
+                    if (i.getTipo() == TipoVehiculo.AUTOMOVIL) {
+                        Print.drawAutomovil();
+                        readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                    }
+                    if (i.getTipo() == TipoVehiculo.CAMION) {
+                        Print.drawCamion();
+                        readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                    }
+                    if (i.getTipo() == TipoVehiculo.MOTOCICLETA) {
+                        Print.drawMotocicleta();
+                        readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                    }
+                    if (i.getTipo() == TipoVehiculo.TRACTOR) {
+                        Print.drawTractor();
+                        readStock = Menu.solicitarNumero(scanner, mensaje, 1, 2);
+                    } 
+                }
+            }
+        }
     }
     
     public static void solicitarCotizaciones(Scanner scanner, ArrayList<Vehiculo> vehiculosMain, Usuario userLoggedIn, ArrayList<Usuario> usuariosMain) {
