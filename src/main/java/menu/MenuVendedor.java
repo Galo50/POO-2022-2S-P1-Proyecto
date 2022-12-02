@@ -63,11 +63,10 @@ public class MenuVendedor {
     public static void bandejaDeEntrada(Usuario userLoggedIn) {
         System.out.println("############ BANDEJA DE ENTRADA ############");
         ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
-        for (Solicitud i: bandejaEntrada) {
-            System.out.println("PARÁMETRO DE i: " + i.getDestinatario());
+        for (int i = 0; i > bandejaEntrada.size(); i++) {
             i.imprimir();
-            bandejaEntrada.remove(0); 
+            bandejaEntrada.remove(iPosition);
         }
-        userLoggedIn.setSolicitudes(bandejaEntrada);
+        //userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }

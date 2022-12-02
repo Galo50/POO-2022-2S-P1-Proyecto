@@ -30,7 +30,7 @@ public class SCotizacion extends Solicitud{
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le solicito una cotizacion del vehiculo "+carro.getMarca()+" "+carro.getModelo());
+    System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le solicito una cotizacion del vehiculo "+carro.getMarca()+" "+carro.getModelo());
     
     }
     
