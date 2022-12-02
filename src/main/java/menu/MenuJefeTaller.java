@@ -102,7 +102,7 @@ public class MenuJefeTaller {
                          Indique la posicion del vehículo a cambiar 
                          de estado: """);
         
-        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,0,carros.size()-1);
         int posicion = (int)position;
         Vehiculo carro = carros.get(posicion);
         carro.setEstado(VehiculoEstado.PRUEBA);
@@ -113,7 +113,7 @@ public class MenuJefeTaller {
                          ############ ASIGNACION DE MECANICO ############
                          Indique la posicion del vehículo a asignar: """);
         
-        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,0,carros.size()-1);
         int posicion = (int)position;
         Vehiculo carro = carros.get(posicion);
         for (Usuario i: usuarios){
