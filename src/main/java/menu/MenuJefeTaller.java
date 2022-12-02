@@ -11,7 +11,9 @@ import vehiculos.Vehiculo;
 import vehiculos.VehiculoEstado;
 
 public class MenuJefeTaller {
-    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Vehiculo> carrosMantenimiento, JefeTaller jefeMain) {
+    public static void show(Scanner scanner, ArrayList<Vehiculo> vehiculos, ArrayList<Usuario> usuarios, Usuario userLoggedIn) {
+        JefeTaller jefe = (JefeTaller)userLoggedIn;
+        ArrayList<Vehiculo> carrosMantenimiento =jefe.getCarrosMantenimiento();
         boolean usuarioDeseaSalir = false;
         
         while (!usuarioDeseaSalir) {
@@ -21,7 +23,7 @@ public class MenuJefeTaller {
             
             if (opcion == 1) {
                 
-                entregarVehiculos(vehiculos,jefeMain);
+                entregarVehiculos(vehiculos,jefe);
             }
             
             if (opcion == 2) {
@@ -29,14 +31,14 @@ public class MenuJefeTaller {
             }
             
             if (opcion == 3) {
-                consultarSolicitudesDeMantenimiento( jefeMain);
+                consultarSolicitudesDeMantenimiento( jefe);
             }
             
             if (opcion == 4) {
-                darAlta(carrosMantenimiento, jefeMain);
+                darAlta(carrosMantenimiento, jefe);
             }
             if (opcion == 5){
-            
+                administrarMantenimiento(scanner,jefe,carrosMantenimiento);
             }
             if (opcion == 6 ){
             
@@ -92,7 +94,15 @@ public class MenuJefeTaller {
             }
         }
     }    
-    public void AdministrarMantenimiento(Vehiculo carro){
+    public static void administrarMantenimiento(Scanner scanner ,JefeTaller jefe,ArrayList<Vehiculo> carros){
+        System.out.print("""
+                         ############ SOLICITUD CAMBIO DE ESTADO ############
+                         Indique la posicion del vehículo a cambiar 
+                         de estado: """);
+        
+        float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+        int posicion = (int)position;
+        Vehiculo carro = carros.get(posicion);
         carro.setEstado(VehiculoEstado.PRUEBA);
     }
 }
