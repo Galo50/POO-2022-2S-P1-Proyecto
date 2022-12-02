@@ -30,7 +30,7 @@ public class MenuVendedor {
             }
             
             if (opcion == 2) {
-                bandejaDeEntrada(userLoggedIn);
+                bandejaDeEntrada(userLoggedIn, scanner);
             }
             
             if (opcion == 3) {
@@ -60,20 +60,29 @@ public class MenuVendedor {
         }
     }
     
-    public static void bandejaDeEntrada(Usuario userLoggedIn) {
+    public static void bandejaDeEntrada(Usuario userLoggedIn, Scanner scanner) {
+        boolean continuarLeyendo = true;
         System.out.println("############ BANDEJA DE ENTRADA ############");
         ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
-        for (Solicitud i: bandejaEntrada) {
-            System.out.println("--------------------------");
-            i.imprimir();
-            System.out.println("//------------------------");
+        
+        while (!bandejaEntrada.isEmpty() && continuarLeyendo) {
+            Solicitud solicitud = bandejaEntrada.get(0);
+            solicitud.imprimir();
+            
+            bandejaEntrada.remove(0);
+            
+            System.out.println("Por favor, seleccione: 1. Leer otro mensaje | 2. Salir");
+            float opcion = Menu.solicitarNumero(scanner, "Ingrese su opción: ", 1, 2);
+            
+            if (opcion == 2) {
+                continuarLeyendo = false;
+            }
+            
+            if (bandejaEntrada.isEmpty()) {
+                System.out.println("No hay más mensajes por ahora.");
+            }
         }
-        for (int i = 0; i < bandejaEntrada.size(); i++) {
-            System.out.println("El size de BandejaEntrada es: " + bandejaEntrada.size());
-            System.out.println("El valor de i es: " + i);
-            bandejaEntrada.remove(i);
-            System.out.println("AHORA QUEDAN: " + bandejaEntrada.size());
-        }
+
         userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }
