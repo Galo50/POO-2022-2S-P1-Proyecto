@@ -54,6 +54,7 @@ public class MenuMecanico {
         }  
     }
     public static void enviarCambioEstado(Scanner scanner, Usuario userLoggedIn,ArrayList<Usuario> usuarios ) {
+        /*
         for (Usuario i: usuarios){
             if (i instanceof JefeTaller == true){
                 JefeTaller destinatario = (JefeTaller)i;
@@ -75,6 +76,8 @@ public class MenuMecanico {
             }
               
         }
+*/
+        System.out.println("Opcion en mantenimiento, vuelva mañana.");
     }
        
 }
