@@ -26,7 +26,7 @@ public class SEntrega extends Solicitud{
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le informo que su vehiculo puede ser retirado a partir del dia de mañana en nuestro local");
+    System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le informo que su vehiculo puede ser retirado a partir del dia de mañana en nuestro local");
     
     }
 }

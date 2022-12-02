@@ -25,7 +25,7 @@ public class SCompra extends Solicitud  {
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le informo mi interes por comprar el vehiculo  "+carro.getMarca()+" "+carro.getModelo()+" que actualmente tienen en el catalogo");
+    System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le informo mi interes por comprar el vehiculo  "+carro.getMarca()+" "+carro.getModelo()+" que actualmente tienen en el catalogo");
     
     }
 }

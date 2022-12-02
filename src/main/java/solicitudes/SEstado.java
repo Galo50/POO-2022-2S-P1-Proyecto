@@ -26,7 +26,7 @@ public class SEstado extends Solicitud{
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le informo que el vehiculo "+carro.getMarca()+" "+carro.getModelo() +" le fueron realizadas todas las reparaciones respectivas y puede cambiar al estado \"A prueba\"");
+    System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le informo que el vehiculo "+carro.getMarca()+" "+carro.getModelo() +" le fueron realizadas todas las reparaciones respectivas y puede cambiar al estado \"A prueba\"");
     
     }
 }

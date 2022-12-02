@@ -29,7 +29,7 @@ public class SRecomendacion extends Solicitud{
     
     @Override
     public void imprimir(){
-    System.out.println("Estimado "+destinatario+"\n Por medio de la presente le recomiendo este vehiculo "+carro.getMarca()+" "+carro.getModelo() +" ya que puede estar mas apegado a sus gustos");
+    System.out.println("Estimado "+destinatario.getNombres()+"\n Por medio de la presente le recomiendo este vehiculo "+carro.getMarca()+" "+carro.getModelo() +" ya que puede estar mas apegado a sus gustos");
     
     }
     
