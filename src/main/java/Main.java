@@ -41,8 +41,7 @@ public class Main {
                 }
 
                 if (userLoggedIn.getTipo() == TipoUsuario.JEFE_TALLER) {
-                    JefeTaller jefeMain = (JefeTaller)userLoggedIn;
-                    MenuJefeTaller.show(scanner, vehiculos, jefeMain.getCarrosMantenimiento(), jefeMain);
+                    MenuJefeTaller.show(scanner, vehiculos, usuarios,userLoggedIn);
                 } 
 
                 if (userLoggedIn.getTipo() == TipoUsuario.MECANICO) {
