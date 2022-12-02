@@ -64,7 +64,7 @@ public class MenuMecanico {
                          Indique la posicion del vehículo a generar la
                          solicitud:""");
         
-                float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,1,carros.size());
+                float position = Menu.solicitarNumero(scanner, Print.ingresarOpcion,0,carros.size()-1);
                 int posicion = (int)position;
                 Vehiculo carroChose = carros.get(posicion);
                 SEstado se1 = new SEstado(carroChose, remitente, destinatario);
