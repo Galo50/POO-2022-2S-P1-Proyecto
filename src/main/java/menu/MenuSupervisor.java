@@ -65,11 +65,13 @@ public class MenuSupervisor {
             }
             
             if (opcion == 3) {
-                
+                vehiculoCreado = MenuIngreso.iMotocicleta();
+                vehiculosMain.add(vehiculoCreado);
             }
             
             if (opcion == 4) {
-                
+                vehiculoCreado = MenuIngreso.iTractor();
+                vehiculosMain.add(vehiculoCreado);
             }
             
             usuarioDeseaSalir = opcion == 5;
