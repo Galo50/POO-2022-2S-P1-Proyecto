@@ -137,7 +137,8 @@ public class Print {
             |===============================================|
             |1. Si                                          |
             |2. No                                          |    
-            |-----------------------------------------------|    """);
+            |-----------------------------------------------|    
+        """);
     }
     
     public static void opcionesDeCliente() {
@@ -152,9 +153,9 @@ public class Print {
             |4. Solicitar cotizaciones                      |
             |5. Consultar mantenimientos                    |
             |6. Solicitar mantenimiento                     |
-            |7. Bandeja de entrada                           |  
-            |                                               |       |
-            |8. Salir                                       |
+            |7. Bandeja de entrada                          |  
+            |                                               |
+            |8. Cerrar Sesión                               |
             |-----------------------------------------------|
         """);
     }
@@ -167,12 +168,12 @@ public class Print {
             |                  * Opciones *                 |
             |1. Entregar vehículos                          |
             |2. Consultar mantenimientos                    |
-            |3. Consultar solicitudes de mantenimiento      
-            |4. Dar de alta vehículos
-            |5. Salir                                       |
+            |3. Consultar solicitudes de mantenimiento      |    
+            |4. Dar de alta vehículos                       |
+            |                                               |
+            |5. Cerrar Sesión                               |
             |-----------------------------------------------|
-
-       """);
+        """);
     }
     
     public static void opcionesDeSupervisor() {
@@ -182,13 +183,13 @@ public class Print {
             |===============================================|
             |                  * Opciones *                 |
             |1. Consultar solicitudes de compra             |
-            |2. Consultar Vendidos                           |
+            |2. Consultar Vendidos                          |
             |3. Añadir vehículos                            |
             |4. Añadir usuarios                             |
-            |5. Salir                                       |
-            |-----------------------------------------------|
-                           
-       """);
+            |                                               |
+            |5. Cerrar Sesión                               |
+            |-----------------------------------------------|                 
+        """);
     }
     
     public static void opcionesDeVendedor() {
@@ -201,10 +202,10 @@ public class Print {
             |2. Bandeja de Solicitudes                      |
             |3. Sugerir Modelos                             |
             |4. Editar Modelos                              |
-            |5. Salir                                       |
-            |-----------------------------------------------|
-                           
-       """);
+            |                                               |
+            |5. Cerrar Sesión                               |
+            |-----------------------------------------------|                       
+        """);
     }
         
         
@@ -215,10 +216,10 @@ public class Print {
             |===============================================|
             |                  * Opciones *                 |
             |1. Consultar vehículos en etapa de prueba      |
-            |2. Enviar Cambio de Estado
-             3. Salir                                       |
+            |2. Enviar Cambio de Estado                     |
+            |                                               |
+            |3. Cerrar Sesión                               |
             |-----------------------------------------------|
-
-       """);
+        """);
     }
 }
