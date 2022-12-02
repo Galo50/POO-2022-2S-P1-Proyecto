@@ -63,10 +63,17 @@ public class MenuVendedor {
     public static void bandejaDeEntrada(Usuario userLoggedIn) {
         System.out.println("############ BANDEJA DE ENTRADA ############");
         ArrayList<Solicitud> bandejaEntrada = userLoggedIn.getSolicitudes();
-        for (int i = 0; i > bandejaEntrada.size(); i++) {
+        for (Solicitud i: bandejaEntrada) {
+            System.out.println("--------------------------");
             i.imprimir();
-            bandejaEntrada.remove(iPosition);
+            System.out.println("//------------------------");
         }
-        //userLoggedIn.setSolicitudes(bandejaEntrada);
+        for (int i = 0; i < bandejaEntrada.size(); i++) {
+            System.out.println("El size de BandejaEntrada es: " + bandejaEntrada.size());
+            System.out.println("El valor de i es: " + i);
+            bandejaEntrada.remove(i);
+            System.out.println("AHORA QUEDAN: " + bandejaEntrada.size());
+        }
+        userLoggedIn.setSolicitudes(bandejaEntrada);
     }
 }
