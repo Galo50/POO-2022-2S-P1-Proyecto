@@ -26,7 +26,7 @@ public class Main {
         }
         
         if (Main.vehiculos.isEmpty()) {
-            Guardar.crearUsuariosPredeterminados();
+            Guardar.crearVehiculosPredeterminados();
             Main.vehiculos = Cargar.vehiculos();
         }
         
