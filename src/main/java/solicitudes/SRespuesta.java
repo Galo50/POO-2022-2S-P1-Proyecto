@@ -16,7 +16,7 @@ import vehiculos.*;
 public class SRespuesta extends Solicitud{
     public String tramite;
     public double precio;
-    public Vehiculo carro;
+    public Vehiculo vehiculo;
 
     public SRespuesta(
             @JsonProperty("tramite") String tramite, 
@@ -44,7 +44,7 @@ public class SRespuesta extends Solicitud{
     ) {
         super(remitente, destinatario, TipoSolicitud.RESPUESTA);
         this.tramite = tramite;
-        this.carro = carro;
+        this.vehiculo = carro;
     }
     
     @Override
@@ -56,28 +56,18 @@ public class SRespuesta extends Solicitud{
     System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y tendra un costo de "+precio+"centavos por kilometro");
             }
         
-        if(carro != null){ 
-            if(carro instanceof Automovil == true){
-                Automovil carro2 =(Automovil) carro;
-            System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y este el precio del vehiculo"+carro2.getPrecio()        
-       +"marca " +carro2.getMarca()+"modelo"+carro2.getModelo()+"Año "+carro2.getYear()+"combustible"+ carro2.getCombustible()+"Convertible"+carro2.getConvertible()+"Asientos"+carro2.getAsientos());
-            }
-            if(carro instanceof Camion == true){
-            Camion carro2 =(Camion) carro;
-            System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y este el precio del vehiculo"+carro2.getPrecio()        
-       +"marca " +carro2.getMarca()+"modelo"+carro2.getModelo()+"Año "+carro2.getYear()+"combustible"+ carro2.getCombustible()+"Ejes"+carro2.getEjes()+"Capacidad de carga "+carro2.getCarga());
-            }
-            if(carro instanceof Tractor == true){
-            Tractor carro2 =(Tractor) carro;
-            System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y este el precio del vehiculo"+carro2.getPrecio()        
-       +"marca " +carro2.getMarca()+"modelo"+carro2.getModelo()+"Año "+carro2.getYear()+"combustible"+ carro2.getCombustible()+"Agricola"+carro2.getAgricola()+"tipo de tranmision"+carro2.getTransmision());
-            }
-            if(carro instanceof Motocicleta == true){
-            Motocicleta carro2 =(Motocicleta) carro;
-            System.out.println("Estimado "+destinatario.getNombres()+" "+destinatario.getApellidos()+"\n Por medio de la presente se le informa que su solicitud de "+tramite+" fue aceptada y este el precio del vehiculo"+carro2.getPrecio()        
-       +"marca " +carro2.getMarca()+"modelo"+carro2.getModelo()+"Año "+carro2.getYear()+"combustible"+ carro2.getCombustible()+"llantas"+carro2.getLlantas()+"tipo de Motocicleta"+carro2.getTipoMoto());
-            }
-          
+        if(vehiculo != null){ 
+            System.out.println(
+                "Estimado "+destinatario.getNombres()
+                +" "+destinatario.getApellidos()
+                +"\n Por medio de la presente se le informa que su solicitud de "
+                +tramite+" fue aceptada y este el precio del vehiculo"
+                +vehiculo.getPrecio()
+                +"marca " +vehiculo.getMarca()
+                +"modelo"+vehiculo.getModelo()
+                +"Año "+vehiculo.getYear()
+                +"combustible"+ vehiculo.getCombustible()
+            );
         }
     }   
 }
